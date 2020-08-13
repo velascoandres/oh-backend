@@ -2,13 +2,18 @@ import { OpcionesConfiguracion } from "./interfaces/opciones-configuracion.inter
 import { DynamicModule, Module } from "@nestjs/common";
 import { OPCIONES_CONFIGURACION } from "./constantes";
 import { ConfiguracionService } from "./configuracion.service";
+import { MODULOS } from "src/constantes/modulos";
 
 @Module({
+    imports: [
+        ...MODULOS,
+    ],
     providers: [
         ConfiguracionService,
     ],
     exports: [
         ConfiguracionService,
+        ...MODULOS,
     ],
 })
 export class ConfiguracionModule {

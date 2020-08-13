@@ -1,8 +1,8 @@
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { ConfiguracionModule } from 'src/modulo-configuracion/configuracion.module';
-import { ConfiguracionService } from 'src/modulo-configuracion/configuracion.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { ENTIDADES_MYSQL } from './entidades-mysql';
 import { ENTIDADES_MONGO } from './entidades-mongo';
+import { ConfiguracionModule } from 'src/submodulos/configuracion/configuracion.module';
+import { ConfiguracionService } from 'src/submodulos/configuracion/configuracion.service';
 
 
 export const BASE_DATOS_PROVIDERS = [
@@ -14,9 +14,9 @@ export const BASE_DATOS_PROVIDERS = [
         inject: [ConfiguracionService],
         useFactory: async (config: ConfiguracionService) => ({
             ...config.configuracionMysql,
-            // entities: [
-            //     ...ENTIDADES_MYSQL,
-            // ],
+            entities: [
+                ...ENTIDADES_MYSQL,
+            ],
         }),
     },
     ),

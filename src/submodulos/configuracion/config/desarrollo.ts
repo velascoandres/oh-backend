@@ -1,4 +1,4 @@
-const redis = require('redis');
+import redis = require('redis');
 const client = redis.createClient(30502);
 
 export const CONFIGURACION_DESARROLLO = {
@@ -14,7 +14,7 @@ export const CONFIGURACION_DESARROLLO = {
     retryDelay: 40000,
     retryAttempts: 3,
     connectTimeout: 40000,
-    keepConnectionAlive: true,
+    keepConnectionAlive: false,
     dropSchema: true,
     charset: 'utf8mb4',
     timezone: 'local',
