@@ -1,0 +1,64 @@
+version: '0.1'
+services:
+  mysql_db:
+    container_name: pimba_mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      # Nombre de la base de datos
+      MYSQL_DATABASE: 'prueba'
+      # Usuario de la base de datos
+      MYSQL_USER: 'pimba_man'
+      # Password de la base de datos
+      MYSQL_PASSWORD: '12345678'
+      # Password del root
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '30501:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+      # Where our data will be persisted
+    volumes:
+      - mysql-volume:/var/lib/mysql
+  redis_db:
+    container_name: pimba_redis
+    image: redis:latest
+    restart: always
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '30502:6379'
+    expose:
+      # Opens port 6379 on the container
+      - '6379'
+    volumes:
+      - redis-volume:/data
+  mongo_db:
+    container_name: pimba_mongo
+    image: mongo:latest
+    restart: always
+    environment:
+      # Usuario de la base de datos
+      MONGO_INITDB_ROOT_USERNAME: 'pimba_man'
+      # Password de la base de datos
+      MONGO_INITDB_ROOT_PASSWORD: '12345678'
+      # Nombre de la Base de datos
+      MONGO_INITDB_DATABASE: 'prueba'
+      # Root password
+      MONGODB_ROOT_PASSWORD: '12345678'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '30503:27017'
+    expose:
+      # Opens port 27017 on the container
+      - '27017'
+    volumes:
+      - mongo-db-volume:/data/db
+      - mongo-config-volume:/data/configdb
+# Names our volume
+volumes:
+  mysql-volume:
+  redis-volume:
+  mongo-config-volume:
+  mongo-db-volume:
