@@ -14,10 +14,13 @@ import { PerfilUsuarioEntity } from './perfil-usuario.entity';
     ),
   ],
   providers: [
-    PerfilUsuarioService
+    PerfilUsuarioService,
   ],
   controllers: [
     PerfilUsuarioController,
+  ],
+  exports: [
+    PerfilUsuarioService,
   ]
 })
 export class PerfilUsuarioModule { }

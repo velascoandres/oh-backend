@@ -1,7 +1,6 @@
 import { BaseDTO } from '@pimba/excalibur/lib';
 import {
     IsOptional,
-    IsNumberString,
     IsIn,
     IsNotEmpty,
     Length,
@@ -19,8 +18,8 @@ export class InmuebleCreateDto extends BaseDTO {
     descripcion: string;
 
     @IsNotEmpty()
-    @IsNumberString()
-    predio: string;
+    @IsNumber()
+    predio: number;
 
     @IsNotEmpty()
     perfilUsuario: number;

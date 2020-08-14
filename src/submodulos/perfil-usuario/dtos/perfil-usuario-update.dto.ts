@@ -8,6 +8,7 @@ import {
     IsIn,
     IsNumber
 } from 'class-validator';
+import { LETRAS_ESPACIOS } from 'src/constantes/expresiones-regulares';
 
 export class PerfilUsuarioUpdateDto extends BaseDTO {
     @IsOptional()
