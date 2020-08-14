@@ -1,4 +1,4 @@
-const redis = require('redis');
+import redis = require('redis');
 const client = redis.createClient(30502);
 
 export const CONFIGURATION_PRODUCCION = {
@@ -21,7 +21,7 @@ export const CONFIGURATION_PRODUCCION = {
     ssl: false,
   },
   redisConnection: {
-    client: client,
+    client,
     host: 'localhost',
     port: 30502,
   },

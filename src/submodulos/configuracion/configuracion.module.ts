@@ -1,8 +1,8 @@
-import { OpcionesConfiguracion } from "./interfaces/opciones-configuracion.interface";
-import { DynamicModule, Module } from "@nestjs/common";
-import { OPCIONES_CONFIGURACION } from "./constantes";
-import { ConfiguracionService } from "./configuracion.service";
-import { MODULOS } from "src/constantes/modulos";
+import { OpcionesConfiguracion } from './interfaces/opciones-configuracion.interface';
+import { DynamicModule, Module } from '@nestjs/common';
+import { OPCIONES_CONFIGURACION } from './constantes';
+import { ConfiguracionService } from './configuracion.service';
+import { MODULOS } from 'src/constantes/modulos';
 
 @Module({
     imports: [

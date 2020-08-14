@@ -21,7 +21,7 @@ export const CONFIGURACION_DESARROLLO = {
     ssl: false,
   },
   redisConnection: {
-    client: client,
+    client,
     host: 'localhost',
     port: 30502,
   },
