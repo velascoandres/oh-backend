@@ -1,0 +1,722 @@
+[
+    {
+        "entidad": "inmueble",
+        "entidadId": 1,
+        "type": "Point",
+        "coordenadas": [
+            -2.49996,
+            -62.58106
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 2,
+        "type": "Point",
+        "coordenadas": [
+            -63.54018,
+            -64.47531
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 3,
+        "type": "Point",
+        "coordenadas": [
+            -39.21321,
+            -61.99008
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 4,
+        "type": "Point",
+        "coordenadas": [
+            -14.10576,
+            -16.22129
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 5,
+        "type": "Point",
+        "coordenadas": [
+            -63.569,
+            -51.88333
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 6,
+        "type": "Point",
+        "coordenadas": [
+            -53.42903,
+            -17.68264
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 7,
+        "type": "Point",
+        "coordenadas": [
+            -16.68976,
+            -71.52536
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 8,
+        "type": "Point",
+        "coordenadas": [
+            -1.24125,
+            -72.37926
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 9,
+        "type": "Point",
+        "coordenadas": [
+            -43.53029,
+            -68.99459
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 10,
+        "type": "Point",
+        "coordenadas": [
+            -3.94037,
+            -14.63314
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 11,
+        "type": "Point",
+        "coordenadas": [
+            -1.72524,
+            -21.87887
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 12,
+        "type": "Point",
+        "coordenadas": [
+            -77.10803,
+            -47.20839
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 13,
+        "type": "Point",
+        "coordenadas": [
+            -67.13594,
+            -57.00705
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 14,
+        "type": "Point",
+        "coordenadas": [
+            -5.98023,
+            -43.71027
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 15,
+        "type": "Point",
+        "coordenadas": [
+            -65.95307,
+            -39.96088
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 16,
+        "type": "Point",
+        "coordenadas": [
+            -22.29759,
+            -62.7966
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 17,
+        "type": "Point",
+        "coordenadas": [
+            -24.22877,
+            -30.77712
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 18,
+        "type": "Point",
+        "coordenadas": [
+            -66.08199,
+            -60.98972
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 19,
+        "type": "Point",
+        "coordenadas": [
+            -20.11195,
+            -62.20375
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 20,
+        "type": "Point",
+        "coordenadas": [
+            -16.85033,
+            -26.74497
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 21,
+        "type": "Point",
+        "coordenadas": [
+            -78.05783,
+            -76.52474
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 22,
+        "type": "Point",
+        "coordenadas": [
+            -76.27184,
+            -58.0124
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 23,
+        "type": "Point",
+        "coordenadas": [
+            -13.12301,
+            -60.34989
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 24,
+        "type": "Point",
+        "coordenadas": [
+            -6.20456,
+            -20.05922
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 25,
+        "type": "Point",
+        "coordenadas": [
+            -70.31221,
+            -74.17948
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 26,
+        "type": "Point",
+        "coordenadas": [
+            -39.20451,
+            -58.0936
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 27,
+        "type": "Point",
+        "coordenadas": [
+            -28.95009,
+            -15.84963
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 28,
+        "type": "Point",
+        "coordenadas": [
+            -77.49584,
+            -33.59914
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 29,
+        "type": "Point",
+        "coordenadas": [
+            -2.15514,
+            -3.10398
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 30,
+        "type": "Point",
+        "coordenadas": [
+            -19.99884,
+            -77.49658
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 31,
+        "type": "Point",
+        "coordenadas": [
+            -30.13068,
+            -76.68148
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 32,
+        "type": "Point",
+        "coordenadas": [
+            -23.5129,
+            -76.01878
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 33,
+        "type": "Point",
+        "coordenadas": [
+            -50.5783,
+            -61.0197
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 34,
+        "type": "Point",
+        "coordenadas": [
+            -2.10025,
+            -59.8567
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 35,
+        "type": "Point",
+        "coordenadas": [
+            -2.94002,
+            -45.5449
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 36,
+        "type": "Point",
+        "coordenadas": [
+            -63.9358,
+            -23.7986
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 37,
+        "type": "Point",
+        "coordenadas": [
+            -76.4220,
+            -24.5327
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 38,
+        "type": "Point",
+        "coordenadas": [
+            -44.4530,
+            -67.2655
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 39,
+        "type": "Point",
+        "coordenadas": [
+            -35.0294,
+            -41.7986
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 40,
+        "type": "Point",
+        "coordenadas": [
+            -64.7576,
+            -54.3723
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 41,
+        "type": "Point",
+        "coordenadas": [
+            -54.1634,
+            -74.5999
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 42,
+        "type": "Point",
+        "coordenadas": [
+            -12.1909,
+            -77.4678
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 43,
+        "type": "Point",
+        "coordenadas": [
+            -65.3103,
+            -2.82812
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 44,
+        "type": "Point",
+        "coordenadas": [
+            -56.7111,
+            -68.2038
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 45,
+        "type": "Point",
+        "coordenadas": [
+            -40.5887,
+            -55.0503
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 46,
+        "type": "Point",
+        "coordenadas": [
+            -22.6710,
+            -41.0732
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 47,
+        "type": "Point",
+        "coordenadas": [
+            -9.80908,
+            -19.1761
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 48,
+        "type": "Point",
+        "coordenadas": [
+            -17.8993,
+            -69.6986
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 49,
+        "type": "Point",
+        "coordenadas": [
+            -70.8789,
+            -72.2217
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 50,
+        "type": "Point",
+        "coordenadas": [
+            -44.3376,
+            -58.8616
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 51,
+        "type": "Point",
+        "coordenadas": [
+            -36.0656,
+            -71.3658
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 52,
+        "type": "Point",
+        "coordenadas": [
+            -6.36331,
+            -9.95256
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 53,
+        "type": "Point",
+        "coordenadas": [
+            -64.2688,
+            -56.0694
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 54,
+        "type": "Point",
+        "coordenadas": [
+            -5.37735,
+            -16.9756
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 55,
+        "type": "Point",
+        "coordenadas": [
+            -5.52283,
+            -70.2725
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 56,
+        "type": "Point",
+        "coordenadas": [
+            -30.9606,
+            -39.6616
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 57,
+        "type": "Point",
+        "coordenadas": [
+            -32.9265,
+            -77.3131
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 58,
+        "type": "Point",
+        "coordenadas": [
+            -25.2928,
+            -48.5977
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 59,
+        "type": "Point",
+        "coordenadas": [
+            -9.68369,
+            -73.3924
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 60,
+        "type": "Point",
+        "coordenadas": [
+            -45.1703,
+            -55.4296
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 61,
+        "type": "Point",
+        "coordenadas": [
+            -36.3689,
+            -47.4242
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 62,
+        "type": "Point",
+        "coordenadas": [
+            -66.8855,
+            -40.3034
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 63,
+        "type": "Point",
+        "coordenadas": [
+            -71.9939,
+            -18.1262
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 64,
+        "type": "Point",
+        "coordenadas": [
+            -52.6616,
+            -18.5196
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 65,
+        "type": "Point",
+        "coordenadas": [
+            -71.1122,
+            -43.2834
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 66,
+        "type": "Point",
+        "coordenadas": [
+            -51.9428,
+            -15.2260
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 67,
+        "type": "Point",
+        "coordenadas": [
+            -37.5351,
+            -50.7927
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 68,
+        "type": "Point",
+        "coordenadas": [
+            -32.3670,
+            -53.5401
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 69,
+        "type": "Point",
+        "coordenadas": [
+            -56.0485,
+            -16.9164
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 70,
+        "type": "Point",
+        "coordenadas": [
+            -43.8708,
+            -21.1154
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 71,
+        "type": "Point",
+        "coordenadas": [
+            -59.6191,
+            -70.3314
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 72,
+        "type": "Point",
+        "coordenadas": [
+            -49.2699,
+            -24.6126
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 73,
+        "type": "Point",
+        "coordenadas": [
+            -7.85856,
+            -40.1772
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 74,
+        "type": "Point",
+        "coordenadas": [
+            -6.97339,
+            -64.4107
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 75,
+        "type": "Point",
+        "coordenadas": [
+            -69.4051,
+            -32.8415
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 76,
+        "type": "Point",
+        "coordenadas": [
+            -15.4121,
+            -12.9009
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 77,
+        "type": "Point",
+        "coordenadas": [
+            -44.7177,
+            -26.942
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 78,
+        "type": "Point",
+        "coordenadas": [
+            -0.72457,
+            -0.88554
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 79,
+        "type": "Point",
+        "coordenadas": [
+            -73.4947,
+            -61.3988
+        ]
+    },
+    {
+        "entidad": "inmueble",
+        "entidadId": 80,
+        "type": "Point",
+        "coordenadas": [
+            -54.4245,
+            -21.6912
+        ]
+    }
+]

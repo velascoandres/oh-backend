@@ -21,5 +21,5 @@ export class EntidadCoordenadaEntity extends AbstractMongoEntity {
     type: 'Point' = 'Point';
 
     @Column()
-    coordinates: [number, number];
+    coordenadas: [number, number];
 }
