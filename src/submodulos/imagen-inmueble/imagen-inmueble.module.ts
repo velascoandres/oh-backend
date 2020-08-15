@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ImagenInmuebleService } from './imagen-inmueble.service';
 import { ImagenInmuebleController } from './imagen-inmueble.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ImagenInmuebleEntity } from './imagen-inmueble';
+import { ImagenInmuebleEntity } from './imagen-inmueble.entity';
 
 @Module({
   imports: [

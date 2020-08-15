@@ -1,6 +1,8 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import { AbstractEntity } from '@pimba/excalibur/lib';
 import { PerfilUsuarioEntity } from '../perfil-usuario/perfil-usuario.entity';
+import { type } from 'os';
+import { ImagenInmuebleEntity } from '../imagen-inmueble/imagen-inmueble.entity';
 
 @Entity('inmueble')
 export class InmuebleEntity extends AbstractEntity {
@@ -102,6 +104,12 @@ export class InmuebleEntity extends AbstractEntity {
         },
     )
     habilitado: 0 | 1 = 0;
+
+    @OneToMany(
+        type => ImagenInmuebleEntity,
+        imagenInmueble => imagenInmueble.inmueble,
+    )
+    imagenes: ImagenInmuebleEntity[];
 
     @ManyToOne(
         type => PerfilUsuarioEntity,
