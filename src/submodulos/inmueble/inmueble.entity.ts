@@ -1,8 +1,8 @@
 import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
 import { AbstractEntity } from '@pimba/excalibur/lib';
 import { PerfilUsuarioEntity } from '../perfil-usuario/perfil-usuario.entity';
-import { type } from 'os';
 import { ImagenInmuebleEntity } from '../imagen-inmueble/imagen-inmueble.entity';
+import { CategoriaEntity } from '../categoria/categoria.entity';
 
 @Entity('inmueble')
 export class InmuebleEntity extends AbstractEntity {
@@ -101,6 +101,14 @@ export class InmuebleEntity extends AbstractEntity {
         {
             type: 'tinyint',
             default: 0,
+        }
+    )
+    enAlquiler: 0 | 1 = 0;
+
+    @Column(
+        {
+            type: 'tinyint',
+            default: 0,
         },
     )
     habilitado: 0 | 1 = 0;
@@ -119,4 +127,10 @@ export class InmuebleEntity extends AbstractEntity {
         }
     )
     perfilUsuario: PerfilUsuarioEntity | number;
+
+    @ManyToOne(
+        type => CategoriaEntity,
+        categoria => categoria.inmuebles,
+    )
+    categoria: CategoriaEntity | number;
 }

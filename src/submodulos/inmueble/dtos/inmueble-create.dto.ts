@@ -64,4 +64,9 @@ export class InmuebleCreateDto extends BaseDTO {
     @IsNumber()
     @IsIn([0, 1])
     habilitado: 0 | 1 = 0;
+
+    @IsOptional()
+    @IsNumber()
+    @IsIn([0, 1])
+    enAlquiler: 0 | 1 = 0;
 }
