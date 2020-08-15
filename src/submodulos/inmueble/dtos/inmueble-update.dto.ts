@@ -29,6 +29,10 @@ export class InmuebleUpdateDto extends BaseDTO{
 
     @IsOptional()
     @IsNumber()
+    precio: number;
+
+    @IsOptional()
+    @IsNumber()
     areaTerreno: number;
 
     @IsOptional()

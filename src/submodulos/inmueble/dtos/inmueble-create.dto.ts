@@ -38,6 +38,10 @@ export class InmuebleCreateDto extends BaseDTO {
 
     @IsNotEmpty()
     @IsNumber()
+    precio: number;
+
+    @IsNotEmpty()
+    @IsNumber()
     habitaciones: number;
 
     @IsNotEmpty()

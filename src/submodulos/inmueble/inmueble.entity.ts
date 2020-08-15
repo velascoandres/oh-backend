@@ -47,6 +47,16 @@ export class InmuebleEntity extends AbstractEntity {
     )
     areaTerreno: number;
 
+
+    @Column(
+        {
+            type: 'decimal',
+            precision: 8,
+            scale: 2
+        },
+    )
+    precio: number;
+
     @Column(
         {
             type: 'decimal',
