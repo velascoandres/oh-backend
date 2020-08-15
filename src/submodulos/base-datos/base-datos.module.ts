@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import {CONFIGURACION_MYSQL, CONFIGURACION_MONGODB } from './constantes/base-datos.providers';
+import { CONFIGURACION_MYSQL, CONFIGURACION_MONGODB } from './constantes/base-datos.providers';
 import { InmuebleService } from '../inmueble/inmueble.service';
 import { ConfiguracionService } from '../configuracion/configuracion.service';
 import { ConfiguracionModule } from '../configuracion/configuracion.module';
@@ -8,6 +8,7 @@ import { PerfilUsuarioService } from '../perfil-usuario/perfil-usuario.service';
 import { EntidadCoordenadaService } from '../entidad-coordenada/entidad-coordenada.service';
 import { ImagenInmuebleService } from '../imagen-inmueble/imagen-inmueble.service';
 import { CategoriaService } from '../categoria/categoria.service';
+import { InmuebleFavoritoService } from '../inmueble-favorito/inmueble-favorito.service';
 
 @Module({
     imports: [
@@ -28,6 +29,7 @@ export class BaseDatosModule {
         private readonly _entidadCoordenadasService: EntidadCoordenadaService,
         private readonly _inmuebleImagenService: ImagenInmuebleService,
         private readonly _categoriaService: CategoriaService,
+        private readonly _inmuebleFavoritoService: InmuebleFavoritoService,
     ) {
 
         const crearDatosPrueba = this._configService.get('crearDatosPrueba');
@@ -51,6 +53,7 @@ export class BaseDatosModule {
             this._categoriaService,
         );
         console.log('Creado datos para categoria');
+
         await crearDatos(
             './datos-prueba/datos-usuario.json',
             this._perfilUsuarioService,
@@ -61,15 +64,23 @@ export class BaseDatosModule {
             this._inmuebleService,
         );
         console.log('Creado datos para inmueble');
+
         await crearDatos(
             './datos-prueba/datos-imagen-inmueble.json',
             this._inmuebleImagenService,
         );
         console.log('Creado datos para imagen-inmueble');
+
         await crearDatos(
             './datos-prueba/datos-entidad-coordenada.json',
             this._entidadCoordenadasService,
         );
         console.log('Creado datos para entidad coordenada');
+
+        await crearDatos(
+            './datos-prueba/datos-inmueble-favorito.json',
+            this._inmuebleFavoritoService,
+        );
+        console.log('Creado datos para inmueble favorito');
     }
 }
