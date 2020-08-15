@@ -3,6 +3,7 @@ import { AbstractEntity } from '@pimba/excalibur/lib';
 import { PerfilUsuarioEntity } from '../perfil-usuario/perfil-usuario.entity';
 import { ImagenInmuebleEntity } from '../imagen-inmueble/imagen-inmueble.entity';
 import { CategoriaEntity } from '../categoria/categoria.entity';
+import { InmuebleFavoritoEntity } from '../inmueble-favorito/inmueble-favorito.entity';
 
 @Entity('inmueble')
 export class InmuebleEntity extends AbstractEntity {
@@ -118,6 +119,13 @@ export class InmuebleEntity extends AbstractEntity {
         imagenInmueble => imagenInmueble.inmueble,
     )
     imagenes: ImagenInmuebleEntity[];
+
+
+    @OneToMany(
+        type => InmuebleFavoritoEntity,
+        inmueble => inmueble.perfilUsuario,
+    )
+    inmueblesFavoritos: InmuebleFavoritoEntity[];
 
     @ManyToOne(
         type => PerfilUsuarioEntity,

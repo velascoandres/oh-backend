@@ -3,6 +3,7 @@ import { PerfilUsuarioModule } from 'src/submodulos/perfil-usuario/perfil-usuari
 import { CategoriaModule } from 'src/submodulos/categoria/categoria.module';
 import { ImagenInmuebleModule } from 'src/submodulos/imagen-inmueble/imagen-inmueble.module';
 import { EntidadCoordenadaModule } from 'src/submodulos/entidad-coordenada/entidad-coordenada.module';
+import { InmuebleFavoritoModule } from 'src/submodulos/inmueble-favorito/inmueble-favorito.module';
 
 export const MODULOS = [
     InmuebleModule,
@@ -10,4 +11,5 @@ export const MODULOS = [
     CategoriaModule,
     ImagenInmuebleModule,
     EntidadCoordenadaModule,
+    InmuebleFavoritoModule,
 ];

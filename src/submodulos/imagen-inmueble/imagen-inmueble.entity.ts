@@ -1,4 +1,4 @@
-import { Entity, Column, ManyToMany, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne } from 'typeorm';
 import { AbstractEntity } from '@pimba/excalibur/lib';
 import { InmuebleEntity } from '../inmueble/inmueble.entity';
 
@@ -12,4 +12,12 @@ export class ImagenInmuebleEntity extends AbstractEntity {
         inmueble => inmueble.imagenes,
     )
     inmueble: InmuebleEntity | number;
+
+    @Column(
+        {
+            type: 'tinyint',
+            default: 0,
+        },
+    )
+    habilitado: 0 | 1 = 1;
 }

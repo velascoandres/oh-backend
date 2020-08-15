@@ -18,4 +18,11 @@ export class CategoriaEntity extends AbstractEntity {
     )
     inmuebles: InmuebleEntity[];
 
+    @Column(
+        {
+            type: 'tinyint',
+            default: 0,
+        },
+    )
+    habilitado: 0 | 1 = 1;
 }
