@@ -1,18 +1,23 @@
 import { Module } from '@nestjs/common';
-import { BASE_DATOS_PROVIDERS } from './constantes/base-datos.providers';
+import {CONFIGURACION_MYSQL, CONFIGURACION_MONGODB } from './constantes/base-datos.providers';
 import { InmuebleService } from '../inmueble/inmueble.service';
 import { ConfiguracionService } from '../configuracion/configuracion.service';
 import { ConfiguracionModule } from '../configuracion/configuracion.module';
 import { crearDatos } from '@pimba/excalibur/lib';
 import { PerfilUsuarioService } from '../perfil-usuario/perfil-usuario.service';
+import { EntidadCoordenadaService } from '../entidad-coordenada/entidad-coordenada.service';
+import { ImagenInmuebleService } from '../imagen-inmueble/imagen-inmueble.service';
+import { CategoriaService } from '../categoria/categoria.service';
 
 @Module({
     imports: [
-        ...BASE_DATOS_PROVIDERS,
+        ...CONFIGURACION_MYSQL,
+        ...CONFIGURACION_MONGODB,
         ConfiguracionModule,
     ],
     exports: [
-        ...BASE_DATOS_PROVIDERS,
+        ...CONFIGURACION_MYSQL,
+        ...CONFIGURACION_MONGODB,
     ],
 })
 export class BaseDatosModule {
@@ -20,6 +25,9 @@ export class BaseDatosModule {
         private readonly _configService: ConfiguracionService,
         private readonly _inmuebleService: InmuebleService,
         private readonly _perfilUsuarioService: PerfilUsuarioService,
+        private readonly _entidadCoordenadasService: EntidadCoordenadaService,
+        private readonly _inmuebleImagenService: ImagenInmuebleService,
+        private readonly _categoriaService: CategoriaService,
     ) {
 
         const crearDatosPrueba = this._configService.get('crearDatosPrueba');
@@ -39,6 +47,11 @@ export class BaseDatosModule {
 
     async cargarDatosPrueba() {
         await crearDatos(
+            './datos-prueba/datos-categoria.json',
+            this._categoriaService,
+        );
+        console.log('Creado datos para categoria');
+        await crearDatos(
             './datos-prueba/datos-usuario.json',
             this._perfilUsuarioService,
         );
@@ -48,5 +61,15 @@ export class BaseDatosModule {
             this._inmuebleService,
         );
         console.log('Creado datos para inmueble');
+        await crearDatos(
+            './datos-prueba/datos-imagen-inmueble.json',
+            this._inmuebleImagenService,
+        );
+        console.log('Creado datos para imagen-inmueble');
+        await crearDatos(
+            './datos-prueba/datos-entidad-coordenada.json',
+            this._entidadCoordenadasService,
+        );
+        console.log('Creado datos para entidad coordenada');
     }
 }

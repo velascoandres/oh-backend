@@ -13,10 +13,12 @@ import { EntidadCoordenadaEntity } from './entidad-coordenada.entity';
       'conexion_mongo',
     ),
   ],
-  providers: [EntidadCoordenadaService],
+  providers: [
+    EntidadCoordenadaService,
+  ],
   controllers: [EntidadCoordenadaController],
   exports: [
     EntidadCoordenadaService,
   ],
 })
-export class EntidadCoordenadaModule {}
+export class EntidadCoordenadaModule { }
