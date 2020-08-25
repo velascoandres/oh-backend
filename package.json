@@ -27,7 +27,7 @@
     "@nestjs/platform-socket.io": "^7.4.2",
     "@nestjs/typeorm": "^7.1.0",
     "@nestjs/websockets": "^7.4.2",
-    "@pimba/excalibur": "0.0.27-test",
+    "@pimba/excalibur": "0.0.30-test",
     "class-validator": "^0.12.2",
     "mongodb": "^3.6.0",
     "mysql": "^2.18.1",
