@@ -9,6 +9,8 @@ import { EntidadCoordenadaService } from '../entidad-coordenada/entidad-coordena
 import { ImagenInmuebleService } from '../imagen-inmueble/imagen-inmueble.service';
 import { CategoriaService } from '../categoria/categoria.service';
 import { InmuebleFavoritoService } from '../inmueble-favorito/inmueble-favorito.service';
+import {PrecioService} from '../precio/precio.service';
+import {TipoMonedaService} from '../tipo-moneda/tipo-moneda.service';
 
 @Module({
     imports: [
@@ -30,6 +32,8 @@ export class BaseDatosModule {
         private readonly _inmuebleImagenService: ImagenInmuebleService,
         private readonly _categoriaService: CategoriaService,
         private readonly _inmuebleFavoritoService: InmuebleFavoritoService,
+        private readonly _precioService: PrecioService,
+        private readonly _tipoMonedaService: TipoMonedaService,
     ) {
 
         const crearDatosPrueba = this._configService.get('crearDatosPrueba');
@@ -49,6 +53,11 @@ export class BaseDatosModule {
 
     async cargarDatosPrueba() {
         await crearDatos(
+            './datos-prueba/datos-tipo-moneda.json',
+            this._tipoMonedaService,
+        );
+        console.log('Creado datos para tipo moneda');
+        await crearDatos(
             './datos-prueba/datos-categoria.json',
             this._categoriaService,
         );
@@ -64,6 +73,12 @@ export class BaseDatosModule {
             this._inmuebleService,
         );
         console.log('Creado datos para inmueble');
+
+        await crearDatos(
+            './datos-prueba/datos-precio.json',
+            this._precioService,
+        );
+        console.log('Creado datos para precio');
 
         await crearDatos(
             './datos-prueba/datos-imagen-inmueble.json',

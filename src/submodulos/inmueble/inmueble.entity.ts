@@ -1,9 +1,10 @@
-import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
-import { AbstractEntity } from '@pimba/excalibur/lib';
-import { PerfilUsuarioEntity } from '../perfil-usuario/perfil-usuario.entity';
-import { ImagenInmuebleEntity } from '../imagen-inmueble/imagen-inmueble.entity';
-import { CategoriaEntity } from '../categoria/categoria.entity';
-import { InmuebleFavoritoEntity } from '../inmueble-favorito/inmueble-favorito.entity';
+import {Entity, Column, ManyToOne, OneToMany, OneToOne} from 'typeorm';
+import {AbstractEntity} from '@pimba/excalibur/lib';
+import {PerfilUsuarioEntity} from '../perfil-usuario/perfil-usuario.entity';
+import {ImagenInmuebleEntity} from '../imagen-inmueble/imagen-inmueble.entity';
+import {CategoriaEntity} from '../categoria/categoria.entity';
+import {InmuebleFavoritoEntity} from '../inmueble-favorito/inmueble-favorito.entity';
+import {PrecioEntity} from '../precio/precio.entity';
 
 @Entity('inmueble')
 export class InmuebleEntity extends AbstractEntity {
@@ -48,14 +49,14 @@ export class InmuebleEntity extends AbstractEntity {
     areaTerreno: number;
 
 
-    @Column(
-        {
-            type: 'decimal',
-            precision: 8,
-            scale: 2
-        },
-    )
-    precio: number;
+    // @Column(
+    //     {
+    //         type: 'decimal',
+    //         precision: 8,
+    //         scale: 2
+    //     },
+    // )
+    // precio: number;
 
     @Column(
         {
@@ -151,4 +152,10 @@ export class InmuebleEntity extends AbstractEntity {
         categoria => categoria.inmuebles,
     )
     categoria: CategoriaEntity | number;
+
+    @OneToOne(
+        type => PrecioEntity,
+        precio => precio.inmueble,
+    )
+    precio: PrecioEntity | number;
 }

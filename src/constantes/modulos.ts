@@ -4,6 +4,8 @@ import { CategoriaModule } from 'src/submodulos/categoria/categoria.module';
 import { ImagenInmuebleModule } from 'src/submodulos/imagen-inmueble/imagen-inmueble.module';
 import { EntidadCoordenadaModule } from 'src/submodulos/entidad-coordenada/entidad-coordenada.module';
 import { InmuebleFavoritoModule } from 'src/submodulos/inmueble-favorito/inmueble-favorito.module';
+import {PrecioModule} from '../submodulos/precio/precio.module';
+import {TipoMonedaModule} from '../submodulos/tipo-moneda/tipo-moneda.module';
 
 export const MODULOS = [
     InmuebleModule,
@@ -12,4 +14,6 @@ export const MODULOS = [
     ImagenInmuebleModule,
     EntidadCoordenadaModule,
     InmuebleFavoritoModule,
+    PrecioModule,
+    TipoMonedaModule,
 ];
