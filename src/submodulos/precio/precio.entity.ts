@@ -22,7 +22,7 @@ export class PrecioEntity extends AbstractEntity {
 
     @ManyToOne(
         type => TipoMonedaEntity,
-        tipoMoneda => tipoMoneda.precio,
+        tipoMoneda => tipoMoneda.precios,
     )
     tipoMoneda: TipoMonedaEntity | number;
 

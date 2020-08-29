@@ -1,4 +1,4 @@
-import {Entity, Column, ManyToOne, OneToMany, OneToOne} from 'typeorm';
+import {Entity, Column, ManyToOne, OneToMany, OneToOne, JoinColumn} from 'typeorm';
 import {AbstractEntity} from '@pimba/excalibur/lib';
 import {PerfilUsuarioEntity} from '../perfil-usuario/perfil-usuario.entity';
 import {ImagenInmuebleEntity} from '../imagen-inmueble/imagen-inmueble.entity';
@@ -157,5 +157,6 @@ export class InmuebleEntity extends AbstractEntity {
         type => PrecioEntity,
         precio => precio.inmueble,
     )
+    @JoinColumn()
     precio: PrecioEntity | number;
 }

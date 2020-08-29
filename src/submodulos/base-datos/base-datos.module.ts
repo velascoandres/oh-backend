@@ -1,14 +1,14 @@
-import { Module } from '@nestjs/common';
-import { CONFIGURACION_MYSQL, CONFIGURACION_MONGODB } from './constantes/base-datos.providers';
-import { InmuebleService } from '../inmueble/inmueble.service';
-import { ConfiguracionService } from '../configuracion/configuracion.service';
-import { ConfiguracionModule } from '../configuracion/configuracion.module';
-import { crearDatos } from '@pimba/excalibur/lib';
-import { PerfilUsuarioService } from '../perfil-usuario/perfil-usuario.service';
-import { EntidadCoordenadaService } from '../entidad-coordenada/entidad-coordenada.service';
-import { ImagenInmuebleService } from '../imagen-inmueble/imagen-inmueble.service';
-import { CategoriaService } from '../categoria/categoria.service';
-import { InmuebleFavoritoService } from '../inmueble-favorito/inmueble-favorito.service';
+import {Module} from '@nestjs/common';
+import {CONFIGURACION_MYSQL, CONFIGURACION_MONGODB} from './constantes/base-datos.providers';
+import {InmuebleService} from '../inmueble/inmueble.service';
+import {ConfiguracionService} from '../configuracion/configuracion.service';
+import {ConfiguracionModule} from '../configuracion/configuracion.module';
+import {crearDatos} from '@pimba/excalibur/lib';
+import {PerfilUsuarioService} from '../perfil-usuario/perfil-usuario.service';
+import {EntidadCoordenadaService} from '../entidad-coordenada/entidad-coordenada.service';
+import {ImagenInmuebleService} from '../imagen-inmueble/imagen-inmueble.service';
+import {CategoriaService} from '../categoria/categoria.service';
+import {InmuebleFavoritoService} from '../inmueble-favorito/inmueble-favorito.service';
 import {PrecioService} from '../precio/precio.service';
 import {TipoMonedaService} from '../tipo-moneda/tipo-moneda.service';
 
@@ -68,17 +68,19 @@ export class BaseDatosModule {
             this._perfilUsuarioService,
         );
         console.log('Creado datos para perfil-usuario');
-        await crearDatos(
-            './datos-prueba/datos-inmueble.json',
-            this._inmuebleService,
-        );
-        console.log('Creado datos para inmueble');
+
 
         await crearDatos(
             './datos-prueba/datos-precio.json',
             this._precioService,
         );
         console.log('Creado datos para precio');
+
+        await crearDatos(
+            './datos-prueba/datos-inmueble.json',
+            this._inmuebleService,
+        );
+        console.log('Creado datos para inmueble');
 
         await crearDatos(
             './datos-prueba/datos-imagen-inmueble.json',

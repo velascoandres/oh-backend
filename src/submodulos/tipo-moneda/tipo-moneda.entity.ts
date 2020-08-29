@@ -1,6 +1,5 @@
 import {Column, Entity, OneToMany} from 'typeorm';
 import {AbstractEntity} from '@pimba/excalibur/lib';
-import {InmuebleEntity} from '../inmueble/inmueble.entity';
 import {PrecioEntity} from '../precio/precio.entity';
 
 @Entity('tipo_moneda')
@@ -33,5 +32,5 @@ export class TipoMonedaEntity extends AbstractEntity {
         type => PrecioEntity,
         precio => precio.tipoMoneda,
     )
-    precio: PrecioEntity[];
+    precios: PrecioEntity[];
 }
