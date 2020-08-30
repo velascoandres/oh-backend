@@ -1,20 +1,39 @@
-import { Injectable } from '@nestjs/common';
-import { AbstractService } from '@pimba/excalibur/lib';
-import { ImagenInmuebleEntity } from './imagen-inmueble.entity';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import {Injectable} from '@nestjs/common';
+import {AbstractService, GoogleCloudStorageService} from '@pimba/excalibur/lib';
+import {ImagenInmuebleEntity} from './imagen-inmueble.entity';
+import {InjectRepository} from '@nestjs/typeorm';
+import {EntityManager, Repository} from 'typeorm';
+import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
 
 @Injectable()
 export class ImagenInmuebleService
-    extends AbstractService<ImagenInmuebleEntity>
-{
+    extends AbstractService<ImagenInmuebleEntity> {
 
     constructor(
         @InjectRepository(ImagenInmuebleEntity)
         private readonly _imgInmuebleRepository: Repository<ImagenInmuebleEntity>,
+        private readonly _googleCloudService: GoogleCloudStorageService,
     ) {
         super(
             _imgInmuebleRepository,
         );
+    }
+
+    async guardarImagenesTransaccion(
+        entityManager: EntityManager,
+        imagenes: UploadedFileMetadata[], idInmueble: number
+    ): Promise<ImagenInmuebleEntity[]> {
+        const imagenesGuardadas: ImagenInmuebleEntity[] = [];
+        const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
+        for (const archivoImagen of imagenes) {
+            const url = await this._googleCloudService.upload(archivoImagen);
+            const imagenAGuardar: Partial<ImagenInmuebleEntity> = {
+                url,
+                inmueble: idInmueble,
+            };
+            const imagenGuardada: ImagenInmuebleEntity = await imagenInmuebleRepositorio.save(imagenAGuardar);
+            imagenesGuardadas.push(imagenGuardada);
+        }
+        return imagenesGuardadas;
     }
 }

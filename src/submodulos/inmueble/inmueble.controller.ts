@@ -14,7 +14,10 @@ import {InmuebleService} from './inmueble.service';
 import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
 import {InmuebleUpdateDto} from './dtos/inmueble-update.dto';
 import {FilesInterceptor} from '@nestjs/platform-express';
-import {ImagenInmuebleCreateDto} from '../imagen-inmueble/dtos/imagen-inmueble-create.dto';
+import {PrecioCreateDto} from '../precio/dtos/precio-create.dto';
+import {plainToClass} from 'class-transformer';
+import {validate} from 'class-validator';
+import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
 
 @Controller('inmueble')
 export class InmuebleController extends ApiController<InmuebleEntity> {
@@ -39,12 +42,42 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
         )
     )
     async createOne(
-        @Body() newRecord: InmuebleCreateDto,
+        @Body('inmueble') inmueble: InmuebleCreateDto,
+        @Body('precio') precio: PrecioCreateDto,
         @Req() req: any,
         @Res() response: any,
-        @UploadedFiles() imagenes: ImagenInmuebleCreateDto,
+        @UploadedFiles() imagenes: UploadedFileMetadata[],
     ): Promise<void> {
-        console.log(imagenes, newRecord);
-        response.status(HttpStatus.OK).send(newRecord);
+
+        const precioParseado = await plainToClass(PrecioCreateDto, precio);
+        const inmuebleParseado = await plainToClass(InmuebleCreateDto, inmueble);
+
+        const erroresPrecio = await validate(precioParseado);
+        const erroresInmueble = await validate(inmuebleParseado);
+        const precioValido = erroresPrecio.length > 0;
+        const inmuebleValido = erroresInmueble.length > 0;
+
+        if (precioValido && inmuebleValido) {
+            // llamar al servicio;
+            try {
+                const respuesta = await this._inmuebleService.registrarInmueblePrecio(
+                    inmuebleParseado,
+                    precioParseado,
+                    imagenes,
+                );
+                response.status(HttpStatus.OK).send(respuesta);
+            } catch (error) {
+                response.status(HttpStatus.OK).send(inmueble);
+            }
+        } else {
+            console.log({
+                errores: {
+                    erroresInmueble,
+                    erroresPrecio,
+                }
+            });
+            response.status(HttpStatus.BAD_REQUEST).send({mensaje: 'datos invalidos'});
+        }
+
     }
 }

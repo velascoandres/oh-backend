@@ -3,6 +3,7 @@ import { InmuebleController } from './inmueble.controller';
 import { InmuebleService } from './inmueble.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { InmuebleEntity } from './inmueble.entity';
+import {ImagenInmuebleModule} from '../imagen-inmueble/imagen-inmueble.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { InmuebleEntity } from './inmueble.entity';
       ],
       'default'
     ),
+    ImagenInmuebleModule,
   ],
   controllers: [
     InmuebleController,
