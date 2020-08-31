@@ -653,8 +653,8 @@
     "tieneCocina": 1,
     "tieneSala": 1,
     "plantas": 8,
-    "habilitado": 0,
-    "perfilUsuario": 21,
+    "habilitado": 1,
+    "perfilUsuario": 74,
     "enAlquilter": 1,
     "categoria": 5,
     "precio": 33
@@ -694,7 +694,7 @@
     "tieneSala": 1,
     "plantas": 4,
     "habilitado": 1,
-    "perfilUsuario": 72,
+    "perfilUsuario": 74,
     "enAlquilter": 1,
     "categoria": 4,
     "precio": 35
