@@ -1,5 +1,5 @@
 import {BaseDTO} from '@pimba/excalibur/lib';
-import {IsNotEmpty, IsNumber} from 'class-validator';
+import {IsNotEmpty, IsNumber, IsNumberString} from 'class-validator';
 
 export class PrecioCreateDto extends BaseDTO {
     @IsNotEmpty()
@@ -7,5 +7,15 @@ export class PrecioCreateDto extends BaseDTO {
     valor: number;
     @IsNotEmpty()
     @IsNumber()
+    tipoMoneda: number;
+}
+
+
+export class PrecioCreateMovilDto extends BaseDTO {
+    @IsNotEmpty()
+    @IsNumberString()
+    valor: number;
+    @IsNotEmpty()
+    @IsNumberString()
     tipoMoneda: number;
 }

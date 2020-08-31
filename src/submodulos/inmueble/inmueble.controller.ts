@@ -11,13 +11,15 @@ import {
 import {ApiController} from '@pimba/excalibur/lib';
 import {InmuebleEntity} from './inmueble.entity';
 import {InmuebleService} from './inmueble.service';
-import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
+import {InmuebleCreateDto, InmuebleCreateMovilDto} from './dtos/inmueble-create.dto';
 import {InmuebleUpdateDto} from './dtos/inmueble-update.dto';
 import {FilesInterceptor} from '@nestjs/platform-express';
-import {PrecioCreateDto} from '../precio/dtos/precio-create.dto';
+import {PrecioCreateMovilDto} from '../precio/dtos/precio-create.dto';
 import {plainToClass} from 'class-transformer';
 import {validate} from 'class-validator';
 import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
+import {DeepPartial} from 'typeorm';
+import {PrecioEntity} from '../precio/precio.entity';
 
 @Controller('inmueble')
 export class InmuebleController extends ApiController<InmuebleEntity> {
@@ -33,7 +35,7 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
         );
     }
 
-    @Post()
+    @Post('publicar-inmueble')
     @UseInterceptors(
         FilesInterceptor(
             'imagenes[]',
@@ -41,39 +43,44 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
             {},
         )
     )
-    async createOne(
-        @Body('inmueble') inmueble: InmuebleCreateDto,
-        @Body('precio') precio: PrecioCreateDto,
+    async publicarInmueble(
+        @Body() inmueble: InmuebleCreateMovilDto,
+        @Body('tipoMoneda') tipoMoneda: number,
+        @Body('valor') valor: number,
         @Req() req: any,
         @Res() response: any,
         @UploadedFiles() imagenes: UploadedFileMetadata[],
     ): Promise<void> {
-
-        const precioParseado = await plainToClass(PrecioCreateDto, precio);
-        const inmuebleParseado = await plainToClass(InmuebleCreateDto, inmueble);
+        const precio: DeepPartial<PrecioEntity> = {
+            valor,
+            tipoMoneda,
+        };
+        const precioParseado = await plainToClass(PrecioCreateMovilDto, precio);
+        const inmuebleParseado = await plainToClass(InmuebleCreateMovilDto, inmueble);
 
         const erroresPrecio = await validate(precioParseado);
         const erroresInmueble = await validate(inmuebleParseado);
-        const precioValido = erroresPrecio.length > 0;
-        const inmuebleValido = erroresInmueble.length > 0;
+        const precioValido = erroresPrecio.length === 0;
+        const inmuebleValido = erroresInmueble.length === 0;
 
         if (precioValido && inmuebleValido) {
             // llamar al servicio;
             try {
                 const respuesta = await this._inmuebleService.registrarInmueblePrecio(
                     inmuebleParseado,
-                    precioParseado,
+                    precio,
                     imagenes,
                 );
                 response.status(HttpStatus.OK).send(respuesta);
             } catch (error) {
-                response.status(HttpStatus.OK).send(inmueble);
+                console.error(error);
+                response.status(HttpStatus.INTERNAL_SERVER_ERROR).send('Error del servidor');
             }
         } else {
             console.log({
                 errores: {
-                    erroresInmueble,
-                    erroresPrecio,
+                    erroresInmueble: erroresInmueble.toString(),
+                    erroresPrecio: erroresPrecio.toString(),
                 }
             });
             response.status(HttpStatus.BAD_REQUEST).send({mensaje: 'datos invalidos'});

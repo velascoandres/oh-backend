@@ -27,9 +27,9 @@ export class InmuebleUpdateDto extends BaseDTO{
     @Length(4, 256)
     direccion: string;
 
-    @IsOptional()
-    @IsNumber()
-    precio: number;
+    // @IsOptional()
+    // @IsNumber()
+    // precio: number;
 
     @IsOptional()
     @IsNumber()

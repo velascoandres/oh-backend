@@ -8,7 +8,7 @@ export class PrecioEntity extends AbstractEntity {
     @Column(
         {
             type: 'decimal',
-            precision: 8,
+            precision: 10,
             scale: 2
         },
     )

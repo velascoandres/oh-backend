@@ -81,26 +81,26 @@ export class InmuebleEntity extends AbstractEntity {
     )
     parqueaderos: number;
 
-    @Column(
-        {
-            type: 'int',
-        }
-    )
-    unidadesSanitarias: number;
+    // @Column(
+    //     {
+    //         type: 'int',
+    //     }
+    // )
+    // unidadesSanitarias: number;
 
-    @Column(
-        {
-            type: 'tinyint',
-        }
-    )
-    tieneCocina: 0 | 1;
-
-    @Column(
-        {
-            type: 'tinyint',
-        }
-    )
-    tieneSala: 0 | 1;
+    // @Column(
+    //     {
+    //         type: 'tinyint',
+    //     }
+    // )
+    // tieneCocina: 0 | 1;
+    //
+    // @Column(
+    //     {
+    //         type: 'tinyint',
+    //     }
+    // )
+    // tieneSala: 0 | 1;
 
     @Column(
         {

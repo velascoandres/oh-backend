@@ -13,7 +13,7 @@ import {GoogleCloudStorageModule} from '@pimba/excalibur/lib';
             ],
             'default',
         ),
-        GoogleCloudStorageModule.register({bucketDefaultName: 'test-gcs'}),
+        GoogleCloudStorageModule.register({bucketDefaultName: 'pimba_test_gcs'}),
     ],
     providers: [
         ImagenInmuebleService,

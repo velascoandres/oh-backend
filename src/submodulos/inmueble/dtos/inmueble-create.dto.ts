@@ -1,10 +1,10 @@
-import { BaseDTO } from '@pimba/excalibur/lib';
+import {BaseDTO} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsIn,
     IsNotEmpty,
     Length,
-    IsNumber,
+    IsNumber, IsNumberString,
 } from 'class-validator';
 
 
@@ -18,7 +18,7 @@ export class InmuebleCreateDto extends BaseDTO {
     descripcion: string;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     predio: number;
 
     @IsNotEmpty()
@@ -29,19 +29,19 @@ export class InmuebleCreateDto extends BaseDTO {
     direccion: string;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     areaTerreno: number;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     areaConstruccion: number;
 
-    @IsNotEmpty()
-    @IsNumber()
-    precio: number;
+    // @IsNotEmpty()
+    // @ValidateNested()
+    // precio: PrecioCreateDto;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     habitaciones: number;
 
     @IsNotEmpty()
@@ -49,7 +49,7 @@ export class InmuebleCreateDto extends BaseDTO {
     parqueaderos: number;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     unidadesSanitarias: number;
 
     @IsNotEmpty()
@@ -61,7 +61,7 @@ export class InmuebleCreateDto extends BaseDTO {
     tieneSala: 0 | 1;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     plantas: number;
 
     @IsOptional()
@@ -70,7 +70,63 @@ export class InmuebleCreateDto extends BaseDTO {
     habilitado: 0 | 1 = 0;
 
     @IsOptional()
+    @IsNumberString()
+    @IsIn(['0', '1'])
+    enAlquiler: 0 | 1 = 0;
+}
+
+export class InmuebleCreateMovilDto extends BaseDTO {
+    @IsNotEmpty()
+    nombre: string;
+
+    @IsNotEmpty()
+
+    @Length(4, 256)
+    descripcion: string;
+
+    @IsNotEmpty()
+    @IsNumberString()
+    predio: number;
+
+    @IsNotEmpty()
+    perfilUsuario: number;
+
+    @IsNotEmpty()
+    @Length(4, 256)
+    direccion: string;
+
+    @IsNotEmpty()
+    @IsNumberString()
+    areaTerreno: number;
+
+    @IsNotEmpty()
+    @IsNumberString()
+    areaConstruccion: number;
+
+    // @IsNotEmpty()
+    // @ValidateNested()
+    // precio: PrecioCreateDto;
+
+    @IsNotEmpty()
+    @IsNumberString()
+    habitaciones: number;
+
+    @IsNotEmpty()
+    @IsNumberString()
+    parqueaderos: number;
+
+
+    @IsNotEmpty()
+    @IsNumberString()
+    plantas: number;
+
+    @IsOptional()
     @IsNumber()
     @IsIn([0, 1])
+    habilitado: 0 | 1 = 0;
+
+    @IsOptional()
+    @IsNumberString()
+    @IsIn(['0', '1'])
     enAlquiler: 0 | 1 = 0;
 }
