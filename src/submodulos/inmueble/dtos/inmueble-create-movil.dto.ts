@@ -7,13 +7,11 @@ import {
     IsNumber, IsNumberString,
 } from 'class-validator';
 
-
-export class InmuebleCreateDto extends BaseDTO {
+export class InmuebleCreateMovilDto extends BaseDTO {
     @IsNotEmpty()
     nombre: string;
 
     @IsNotEmpty()
-
     @Length(4, 256)
     descripcion: string;
 
@@ -45,20 +43,9 @@ export class InmuebleCreateDto extends BaseDTO {
     habitaciones: number;
 
     @IsNotEmpty()
-    @IsNumber()
+    @IsNumberString()
     parqueaderos: number;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    unidadesSanitarias: number;
-
-    @IsNotEmpty()
-    @IsIn([0, 1])
-    tieneCocina: 0 | 1;
-
-    @IsNotEmpty()
-    @IsIn([0, 1])
-    tieneSala: 0 | 1;
 
     @IsNotEmpty()
     @IsNumberString()

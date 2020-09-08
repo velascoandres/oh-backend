@@ -56,4 +56,39 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
             }
         );
     }
+
+    async actualizarInmueblePrecio(
+        idInmueble: number,
+        inmueble: DeepPartial<InmuebleEntity>,
+        precio: PrecioCreateDto | PrecioCreateMovilDto | DeepPartial<PrecioEntity>,
+        imagenes: UploadedFileMetadata[],
+    ): Promise<InmuebleEntity> {
+        return await getManager().transaction('SERIALIZABLE',
+            async (entityManager: EntityManager) => {
+                // guardar precio
+                const precioRepositorio = entityManager.getRepository(PrecioEntity);
+                await precioRepositorio.update({inmueble: idInmueble}, precio as DeepPartial<PrecioEntity>);
+                const precioRecuperado = await precioRepositorio.findOne({
+                    where: {inmueble: idInmueble},
+                    relations: ['tipoMoneda']
+                });
+                // guardar inmueble
+                const inmuebleRepositorio = entityManager.getRepository(InmuebleEntity);
+                delete inmueble.createdAt;
+                delete inmueble.updatedAt;
+                inmueble.habilitado = 1;
+                await inmuebleRepositorio.update(idInmueble, inmueble);
+                const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {relations: ['categoria', 'imagenes']});
+                // guardar imagenes
+                const imagenesGuardadas = await this._imagenInmuebleService
+                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble);
+                const inmuebleCreadoCompleto: InmuebleEntity = {
+                    ...inmuebleEditado,
+                    precio: {...precioRecuperado},
+                    imagenes: {...imagenesGuardadas},
+                };
+                return inmuebleCreadoCompleto;
+            }
+        );
+    }
 }

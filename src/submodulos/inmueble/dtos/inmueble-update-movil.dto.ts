@@ -2,65 +2,47 @@ import {BaseDTO} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsIn,
-    IsNotEmpty,
     Length,
-    IsNumber, IsNumberString,
+    IsNumber, IsNumberString, IsArray,
 } from 'class-validator';
 
-
-export class InmuebleCreateDto extends BaseDTO {
-    @IsNotEmpty()
+export class InmuebleUpdateMovilDto extends BaseDTO {
+    @IsOptional()
     nombre: string;
 
-    @IsNotEmpty()
-
+    @IsOptional()
     @Length(4, 256)
     descripcion: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumberString()
     predio: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     perfilUsuario: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     @Length(4, 256)
     direccion: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumberString()
     areaTerreno: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumberString()
     areaConstruccion: number;
 
-    // @IsNotEmpty()
-    // @ValidateNested()
-    // precio: PrecioCreateDto;
-
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumberString()
     habitaciones: number;
 
-    @IsNotEmpty()
-    @IsNumber()
+    @IsOptional()
+    @IsNumberString()
     parqueaderos: number;
 
-    @IsNotEmpty()
-    @IsNumberString()
-    unidadesSanitarias: number;
 
-    @IsNotEmpty()
-    @IsIn([0, 1])
-    tieneCocina: 0 | 1;
-
-    @IsNotEmpty()
-    @IsIn([0, 1])
-    tieneSala: 0 | 1;
-
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumberString()
     plantas: number;
 
@@ -73,4 +55,9 @@ export class InmuebleCreateDto extends BaseDTO {
     @IsNumberString()
     @IsIn(['0', '1'])
     enAlquiler: 0 | 1 = 0;
+
+    @IsOptional()
+    @IsArray({each: true})
+    @IsNumber()
+    imagenesAEliminar: number[] = [];
 }
