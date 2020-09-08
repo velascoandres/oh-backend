@@ -8,6 +8,7 @@ import {PrecioCreateDto, PrecioCreateMovilDto} from '../precio/dtos/precio-creat
 import {PrecioEntity} from '../precio/precio.entity';
 import {ImagenInmuebleService} from '../imagen-inmueble/imagen-inmueble.service';
 import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
+import {InmuebleUpdateMovilDto} from './dtos/inmueble-update-movil.dto';
 
 @Injectable()
 export class InmuebleService extends AbstractService<InmuebleEntity> {
@@ -59,7 +60,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
 
     async actualizarInmueblePrecio(
         idInmueble: number,
-        inmueble: DeepPartial<InmuebleEntity>,
+        inmueble: DeepPartial<InmuebleEntity> & InmuebleUpdateMovilDto,
         precio: PrecioCreateDto | PrecioCreateMovilDto | DeepPartial<PrecioEntity>,
         imagenes: UploadedFileMetadata[],
     ): Promise<InmuebleEntity> {
@@ -81,7 +82,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {relations: ['categoria', 'imagenes']});
                 // guardar imagenes
                 const imagenesGuardadas = await this._imagenInmuebleService
-                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble);
+                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble, inmueble.imagenesAEliminar);
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleEditado,
                     precio: {...precioRecuperado},

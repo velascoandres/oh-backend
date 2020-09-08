@@ -123,7 +123,8 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
             if (precioValido && inmuebleValido) {
                 // llamar al servicio;
                 try {
-                    return await this._inmuebleService.registrarInmueblePrecio(
+                    return await this._inmuebleService.actualizarInmueblePrecio(
+                        idInmueble,
                         inmuebleParseado,
                         precio,
                         imagenes,

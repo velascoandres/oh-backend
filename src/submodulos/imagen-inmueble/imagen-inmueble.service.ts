@@ -21,7 +21,8 @@ export class ImagenInmuebleService
 
     async guardarImagenesTransaccion(
         entityManager: EntityManager,
-        imagenes: UploadedFileMetadata[], idInmueble: number
+        imagenes: UploadedFileMetadata[], idInmueble: number,
+        imagenesEliminar?: number[],
     ): Promise<ImagenInmuebleEntity[]> {
         const imagenesGuardadas: ImagenInmuebleEntity[] = [];
         const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
@@ -33,6 +34,9 @@ export class ImagenInmuebleService
             };
             const imagenGuardada: ImagenInmuebleEntity = await imagenInmuebleRepositorio.save(imagenAGuardar);
             imagenesGuardadas.push(imagenGuardada);
+        }
+        if (imagenesEliminar && imagenesEliminar.length > 0) {
+            await imagenInmuebleRepositorio.delete(imagenesEliminar);
         }
         return imagenesGuardadas;
     }
