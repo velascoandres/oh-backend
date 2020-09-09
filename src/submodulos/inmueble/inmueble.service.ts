@@ -9,6 +9,7 @@ import {PrecioEntity} from '../precio/precio.entity';
 import {ImagenInmuebleService} from '../imagen-inmueble/imagen-inmueble.service';
 import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
 import {InmuebleUpdateMovilDto} from './dtos/inmueble-update-movil.dto';
+import {CategoriaEntity} from '../categoria/categoria.entity';
 
 @Injectable()
 export class InmuebleService extends AbstractService<InmuebleEntity> {
@@ -44,14 +45,18 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 // recuperar precio con tipoMondena
                 const precioRecuperado = await precioRepositorio
                     .findOne({where: {id: precioCreado.id}, relations: ['tipoMoneda']});
-                console.log(precioRecuperado);
                 // guardar imagenes
                 const imagenesGuardadas = await this._imagenInmuebleService
                     .guardarImagenesTransaccion(entityManager, imagenes, inmuebleCreado.id);
+                // Recuperamos la categoria
+                const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
+                const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleCreado.categoria as number);
+                // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleCreado,
                     precio: {...precioRecuperado},
                     imagenes: {...imagenesGuardadas},
+                    categoria: categoriaRecuperada,
                 };
                 return inmuebleCreadoCompleto;
             }
@@ -83,10 +88,15 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 // guardar imagenes
                 const imagenesGuardadas = await this._imagenInmuebleService
                     .guardarImagenesTransaccion(entityManager, imagenes, idInmueble, inmueble.imagenesAEliminar);
+                // Recuperamos la categoria
+                const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
+                const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleEditado.categoria as number);
+                // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleEditado,
                     precio: {...precioRecuperado},
-                    imagenes: {...imagenesGuardadas},
+                    imagenes: [...imagenesGuardadas],
+                    categoria: categoriaRecuperada,
                 };
                 return inmuebleCreadoCompleto;
             }
