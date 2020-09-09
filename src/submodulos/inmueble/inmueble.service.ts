@@ -55,7 +55,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleCreado,
                     precio: {...precioRecuperado},
-                    imagenes: {...imagenesGuardadas},
+                    imagenes: [...imagenesGuardadas],
                     categoria: categoriaRecuperada,
                 };
                 return inmuebleCreadoCompleto;
