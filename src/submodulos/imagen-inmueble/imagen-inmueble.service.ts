@@ -26,7 +26,6 @@ export class ImagenInmuebleService
     ): Promise<ImagenInmuebleEntity[]> {
         const imagenesGuardadas: ImagenInmuebleEntity[] = [];
         const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
-        if (imagenes && imagenes.length) {
             for (const archivoImagen of imagenes) {
                 const url = await this._googleCloudService.upload(archivoImagen);
                 const imagenAGuardar: Partial<ImagenInmuebleEntity> = {
@@ -36,7 +35,6 @@ export class ImagenInmuebleService
                 const imagenGuardada: ImagenInmuebleEntity = await imagenInmuebleRepositorio.save(imagenAGuardar);
                 imagenesGuardadas.push(imagenGuardada);
             }
-        }
         return imagenesGuardadas;
     }
 

@@ -87,8 +87,11 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 await inmuebleRepositorio.update(idInmueble, inmueble);
                 const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {relations: ['categoria', 'imagenes']});
                 // guardar imagenes nuevas
-                await this._imagenInmuebleService
-                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble);
+                const tieneNuevasImagenes = imagenes && imagenes.length > 0;
+                if (tieneNuevasImagenes) {
+                    await this._imagenInmuebleService
+                        .guardarImagenesTransaccion(entityManager, imagenes, idInmueble);
+                }
                 // eliminamos imagenes seleccionadas para eliminar
                 await this._imagenInmuebleService
                     .eliminarImagenesTransaccion(entityManager, idInmueble, inmueble.imagenesAEliminar);
