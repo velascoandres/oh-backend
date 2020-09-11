@@ -114,10 +114,14 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
                 valor,
                 tipoMoneda,
             };
-            if (inmueble.imagenesEliminar){
+            if (inmueble.imagenesEliminar) {
                 inmueble.imagenesEliminar = inmueble.imagenesEliminar.toString().split(',');
             }
             const precioParseado = await plainToClass(PrecioUpdateMovilDto, precio);
+            // Borramos propiedades de precio
+            delete inmueble.valor;
+            delete inmueble.tipoMoneda;
+            delete inmueble.imagenes;
             const inmuebleParseado = await plainToClass(InmuebleUpdateMovilDto, inmueble);
 
             const erroresPrecio = await validate(precioParseado);

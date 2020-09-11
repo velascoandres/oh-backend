@@ -47,8 +47,8 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     plantas: number;
 
     @IsOptional()
-    @IsNumber()
-    @IsIn([0, 1])
+    @IsNumberString()
+    @IsIn(['1', '0'])
     habilitado: 0 | 1 = 0;
 
     @IsOptional()
@@ -59,8 +59,12 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     @IsOptional()
     @IsArray()
     imagenesEliminar: number[] | string[] = [];
-    precio: number;
-    tipoMoneda?: number;
-    valor?: number;
-    imagenes?: any[];
+    @IsOptional()
+    @IsNumberString()
+    valor: number;
+    @IsOptional()
+    @IsNumberString()
+    tipoMoneda: string;
+    @IsOptional()
+    imagenes: any[];
 }

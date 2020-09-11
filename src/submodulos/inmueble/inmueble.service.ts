@@ -77,15 +77,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 delete inmueble.updatedAt;
                 const imagenesEliminar = [...inmueble.imagenesEliminar];
                 delete inmueble.imagenesEliminar;
-                const precioAct: InmuebleUpdateMovilDto = {
-                    ...inmueble
-                };
-                delete precioAct.tipoMoneda;
-                delete precioAct.valor;
-                delete precioAct.precio;
-                delete precioAct.imagenes;
-                precioAct.habilitado = 1;
-                await inmuebleRepositorio.update(idInmueble, precioAct);
+                await inmuebleRepositorio.update(idInmueble, inmueble);
                 const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {
                         relations: ['categoria', 'imagenes', 'precio', 'perfilUsuario']
                     }
@@ -113,16 +105,12 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 // recuperamos todas las imagenes del inmueble
                 const imagenRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
                 const imagenesGuardadas = await imagenRepositorio.find({where: {inmueble: idInmueble}});
-                // // Recuperamos la categoria
-                // const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
-                // const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleEditado.categoria as number);
                 // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleEditado,
                     precio: {...precioRecuperadoActualizado},
                     imagenes: [...imagenesGuardadas],
                 };
-                console.log(inmuebleCreadoCompleto);
                 return inmuebleCreadoCompleto;
             }
         );
