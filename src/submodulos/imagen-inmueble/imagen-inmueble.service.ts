@@ -42,7 +42,7 @@ export class ImagenInmuebleService
     async eliminarImagenesTransaccion(
         entityManager: EntityManager,
         idInmueble: number,
-        imagenesEliminar?: number[],
+        imagenesEliminar?: number[] | string[],
     ): Promise<void> {
         const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
         if (imagenesEliminar && imagenesEliminar.length > 0) {

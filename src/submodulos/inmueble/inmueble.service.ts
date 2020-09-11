@@ -3,7 +3,6 @@ import {AbstractService} from '@pimba/excalibur/lib';
 import {InmuebleEntity} from './inmueble.entity';
 import {InjectRepository} from '@nestjs/typeorm';
 import {DeepPartial, EntityManager, getManager, Repository} from 'typeorm';
-import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
 import {PrecioCreateDto, PrecioCreateMovilDto} from '../precio/dtos/precio-create.dto';
 import {PrecioEntity} from '../precio/precio.entity';
 import {ImagenInmuebleService} from '../imagen-inmueble/imagen-inmueble.service';
@@ -72,21 +71,37 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
     ): Promise<InmuebleEntity> {
         return await getManager().transaction('SERIALIZABLE',
             async (entityManager: EntityManager) => {
-                // guardar precio
-                const precioRepositorio = entityManager.getRepository(PrecioEntity);
-                await precioRepositorio.update({inmueble: idInmueble}, precio as DeepPartial<PrecioEntity>);
-                const precioRecuperado = await precioRepositorio.findOne({
-                    where: {inmueble: idInmueble},
-                    relations: ['tipoMoneda']
-                });
                 // guardar inmueble
                 const inmuebleRepositorio = entityManager.getRepository(InmuebleEntity);
                 delete inmueble.createdAt;
                 delete inmueble.updatedAt;
-                inmueble.habilitado = 1;
-                await inmuebleRepositorio.update(idInmueble, inmueble);
-                const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {relations: ['categoria', 'imagenes']});
+                const imagenesEliminar = [...inmueble.imagenesEliminar];
+                delete inmueble.imagenesEliminar;
+                const precioAct: InmuebleUpdateMovilDto = {
+                    ...inmueble
+                };
+                delete precioAct.tipoMoneda;
+                delete precioAct.valor;
+                delete precioAct.precio;
+                delete precioAct.imagenes;
+                precioAct.habilitado = 1;
+                await inmuebleRepositorio.update(idInmueble, precioAct);
+                const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {
+                        relations: ['categoria', 'imagenes', 'precio', 'perfilUsuario']
+                    }
+                );
+                // guardar precio
+                const precioRepositorio = entityManager.getRepository(PrecioEntity);
+                const precioRecuperado = await precioRepositorio.findOne({
+                    where: {id: (inmuebleEditado.precio as PrecioEntity).id},
+                });
+                await precioRepositorio.update(precioRecuperado.id, precio as DeepPartial<PrecioEntity>);
+                const precioRecuperadoActualizado = await precioRepositorio.findOne({
+                    where: {id: precioRecuperado.id},
+                    relations: ['tipoMoneda']
+                });
                 // guardar imagenes nuevas
+                console.log('imagenes', imagenes);
                 const tieneNuevasImagenes = imagenes && imagenes.length > 0;
                 if (tieneNuevasImagenes) {
                     await this._imagenInmuebleService
@@ -94,20 +109,20 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 }
                 // eliminamos imagenes seleccionadas para eliminar
                 await this._imagenInmuebleService
-                    .eliminarImagenesTransaccion(entityManager, idInmueble, inmueble.imagenesAEliminar);
+                    .eliminarImagenesTransaccion(entityManager, idInmueble, imagenesEliminar as number[]);
                 // recuperamos todas las imagenes del inmueble
                 const imagenRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
                 const imagenesGuardadas = await imagenRepositorio.find({where: {inmueble: idInmueble}});
-                // Recuperamos la categoria
-                const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
-                const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleEditado.categoria as number);
+                // // Recuperamos la categoria
+                // const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
+                // const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleEditado.categoria as number);
                 // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleEditado,
-                    precio: {...precioRecuperado},
+                    precio: {...precioRecuperadoActualizado},
                     imagenes: [...imagenesGuardadas],
-                    categoria: categoriaRecuperada,
                 };
+                console.log(inmuebleCreadoCompleto);
                 return inmuebleCreadoCompleto;
             }
         );

@@ -57,7 +57,10 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     enAlquiler: 0 | 1 = 0;
 
     @IsOptional()
-    @IsArray({each: true})
-    @IsNumber()
-    imagenesAEliminar: number[] = [];
+    @IsArray()
+    imagenesEliminar: number[] | string[] = [];
+    precio: number;
+    tipoMoneda?: number;
+    valor?: number;
+    imagenes?: any[];
 }
