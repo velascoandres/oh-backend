@@ -10,6 +10,7 @@ import {ImagenInmuebleService} from '../imagen-inmueble/imagen-inmueble.service'
 import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
 import {InmuebleUpdateMovilDto} from './dtos/inmueble-update-movil.dto';
 import {CategoriaEntity} from '../categoria/categoria.entity';
+import {ImagenInmuebleEntity} from '../imagen-inmueble/imagen-inmueble.entity';
 
 @Injectable()
 export class InmuebleService extends AbstractService<InmuebleEntity> {
@@ -85,9 +86,15 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 inmueble.habilitado = 1;
                 await inmuebleRepositorio.update(idInmueble, inmueble);
                 const inmuebleEditado = await this._inmuebleRepository.findOne(idInmueble, {relations: ['categoria', 'imagenes']});
-                // guardar imagenes
-                const imagenesGuardadas = await this._imagenInmuebleService
-                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble, inmueble.imagenesAEliminar);
+                // guardar imagenes nuevas
+                await this._imagenInmuebleService
+                    .guardarImagenesTransaccion(entityManager, imagenes, idInmueble);
+                // eliminamos imagenes seleccionadas para eliminar
+                await this._imagenInmuebleService
+                    .eliminarImagenesTransaccion(entityManager, idInmueble, inmueble.imagenesAEliminar);
+                // recuperamos todas las imagenes del inmueble
+                const imagenRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
+                const imagenesGuardadas = await imagenRepositorio.find({where: {inmueble: idInmueble}});
                 // Recuperamos la categoria
                 const categoriaRepositorio = entityManager.getRepository(CategoriaEntity);
                 const categoriaRecuperada = await categoriaRepositorio.findOne(inmuebleEditado.categoria as number);

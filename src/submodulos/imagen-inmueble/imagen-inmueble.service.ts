@@ -19,25 +19,37 @@ export class ImagenInmuebleService
         );
     }
 
+    // transaccion para guardar
     async guardarImagenesTransaccion(
         entityManager: EntityManager,
         imagenes: UploadedFileMetadata[], idInmueble: number,
-        imagenesEliminar?: number[],
     ): Promise<ImagenInmuebleEntity[]> {
         const imagenesGuardadas: ImagenInmuebleEntity[] = [];
         const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
-        for (const archivoImagen of imagenes) {
-            const url = await this._googleCloudService.upload(archivoImagen);
-            const imagenAGuardar: Partial<ImagenInmuebleEntity> = {
-                url,
-                inmueble: idInmueble,
-            };
-            const imagenGuardada: ImagenInmuebleEntity = await imagenInmuebleRepositorio.save(imagenAGuardar);
-            imagenesGuardadas.push(imagenGuardada);
-        }
-        if (imagenesEliminar && imagenesEliminar.length > 0) {
-            await imagenInmuebleRepositorio.delete(imagenesEliminar);
+        if (imagenes && imagenes.length) {
+            for (const archivoImagen of imagenes) {
+                const url = await this._googleCloudService.upload(archivoImagen);
+                const imagenAGuardar: Partial<ImagenInmuebleEntity> = {
+                    url,
+                    inmueble: idInmueble,
+                };
+                const imagenGuardada: ImagenInmuebleEntity = await imagenInmuebleRepositorio.save(imagenAGuardar);
+                imagenesGuardadas.push(imagenGuardada);
+            }
         }
         return imagenesGuardadas;
     }
+
+    // transaccion para eliminar
+    async eliminarImagenesTransaccion(
+        entityManager: EntityManager,
+        idInmueble: number,
+        imagenesEliminar?: number[],
+    ): Promise<void> {
+        const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
+        if (imagenesEliminar && imagenesEliminar.length > 0) {
+            await imagenInmuebleRepositorio.delete(imagenesEliminar);
+        }
+    }
+
 }
