@@ -57,11 +57,12 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     enAlquiler: 0 | 1 = 0;
 
     @IsOptional()
-    @IsArray()
-    imagenesEliminar: number[] | string[] = [];
+    imagenesEliminar: any | any[];
+
     @IsOptional()
     @IsNumberString()
     valor: number;
+
     @IsOptional()
     @IsNumberString()
     tipoMoneda: string;

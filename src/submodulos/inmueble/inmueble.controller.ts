@@ -101,37 +101,31 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
         )
     )
     async EditarpublicacionInmueble(
-        @Body() inmueble: InmuebleUpdateMovilDto,
-        @Body('tipoMoneda') tipoMoneda: number,
-        @Body('valor') valor: number,
         @Param('idInmueble') idInmueble: number,
+        @Body() inmuebleConPrecio: InmuebleUpdateMovilDto,
         @UploadedFiles() imagenes: UploadedFileMetadata[],
     ): Promise<InmuebleEntity> {
         idInmueble = Number(idInmueble);
         const esIdValido = !isNaN(idInmueble);
         if (esIdValido) {
-            const precio: DeepPartial<PrecioEntity> = {
-                valor,
-                tipoMoneda,
-            };
-            if (inmueble.imagenesEliminar) {
-                inmueble.imagenesEliminar = inmueble.imagenesEliminar.toString().split(',');
-            }
-            const precioParseado = await plainToClass(PrecioUpdateMovilDto, precio);
-            // Borramos propiedades de precio
-            delete inmueble.valor;
-            delete inmueble.tipoMoneda;
-            delete inmueble.imagenes;
-            const inmuebleParseado = await plainToClass(InmuebleUpdateMovilDto, inmueble);
-
-            const erroresPrecio = await validate(precioParseado);
+            const inmuebleParseado = await plainToClass(InmuebleUpdateMovilDto, inmuebleConPrecio);
             const erroresInmueble = await validate(inmuebleParseado);
-            const precioValido = erroresPrecio.length === 0;
             const inmuebleValido = erroresInmueble.length === 0;
 
-            if (precioValido && inmuebleValido) {
+            if (inmuebleValido) {
                 // llamar al servicio;
                 try {
+                    // Borramos propiedades de precio e imagen
+                    delete inmuebleParseado.valor;
+                    delete inmuebleParseado.tipoMoneda;
+                    delete inmuebleParseado.imagenes;
+                    const precio: DeepPartial<PrecioEntity> = {
+                        valor: inmuebleConPrecio.valor,
+                        tipoMoneda: +inmuebleConPrecio.tipoMoneda,
+                    };
+                    if (inmuebleParseado.imagenesEliminar) {
+                        inmuebleParseado.imagenesEliminar = (inmuebleParseado.imagenesEliminar as string).split(',');
+                    }
                     return await this._inmuebleService.actualizarInmueblePrecio(
                         idInmueble,
                         inmuebleParseado,
@@ -146,7 +140,6 @@ export class InmuebleController extends ApiController<InmuebleEntity> {
                 console.log({
                     errores: {
                         erroresInmueble: erroresInmueble.toString(),
-                        erroresPrecio: erroresPrecio.toString(),
                     }
                 });
                 throw new BadRequestException({mensaje: 'datos invalidos'});
