@@ -17,7 +17,7 @@ import {InmuebleService} from './inmueble.service';
 import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
 import {InmuebleUpdateDto} from './dtos/inmueble-update.dto';
 import {FilesInterceptor} from '@nestjs/platform-express';
-import {PrecioCreateMovilDto, PrecioUpdateMovilDto} from '../precio/dtos/precio-create.dto';
+import {PrecioCreateMovilDto} from '../precio/dtos/precio-create.dto';
 import {plainToClass} from 'class-transformer';
 import {validate} from 'class-validator';
 import {UploadedFileMetadata} from '@pimba/excalibur/lib/modules/libs/google-cloud-storage/src/interfaces';
