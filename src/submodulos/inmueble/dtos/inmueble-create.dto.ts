@@ -1,10 +1,10 @@
-import {BaseDTO} from '@pimba/excalibur/lib';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsIn,
     IsNotEmpty,
     Length,
-    IsNumber, IsNumberString,
+    IsNumber, IsNumberString, isNumber, isNumberString,
 } from 'class-validator';
 
 
@@ -18,7 +18,12 @@ export class InmuebleCreateDto extends BaseDTO {
     descripcion: string;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     predio: number;
 
     @IsNotEmpty()
@@ -29,11 +34,21 @@ export class InmuebleCreateDto extends BaseDTO {
     direccion: string;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     areaTerreno: number;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     areaConstruccion: number;
 
     // @IsNotEmpty()
@@ -41,7 +56,12 @@ export class InmuebleCreateDto extends BaseDTO {
     // precio: PrecioCreateDto;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     habitaciones: number;
 
     @IsNotEmpty()
@@ -49,7 +69,12 @@ export class InmuebleCreateDto extends BaseDTO {
     parqueaderos: number;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     unidadesSanitarias: number;
 
     @IsNotEmpty()
@@ -61,16 +86,31 @@ export class InmuebleCreateDto extends BaseDTO {
     tieneSala: 0 | 1;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     plantas: number;
 
     @IsOptional()
-    @IsNumber()
-    @IsIn([0, 1])
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
+    @IsIn([0, 1, '0', '1'])
     habilitado: 0 | 1 = 0;
 
     @IsOptional()
-    @IsNumberString()
-    @IsIn(['0', '1'])
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
+    @IsIn(['0', '1', 0, 1])
     enAlquiler: 0 | 1 = 0;
 }

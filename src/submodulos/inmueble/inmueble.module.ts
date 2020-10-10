@@ -21,7 +21,7 @@ import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
     DataBaseModule.forBulkData(
         {
           entity: InmuebleEntity,
-          // dtoClassValidation: InmuebleCreateDto,
+          dtoClassValidation: InmuebleCreateDto,
           creationOrder: 4,
           pathDev: '/src/submodulos/inmueble/datos-prueba/desarrollo/datos-inmueble.json'
         },

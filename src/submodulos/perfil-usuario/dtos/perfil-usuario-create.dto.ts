@@ -1,4 +1,4 @@
-import {BaseDTO, IsType, IsTypeDirect} from '@pimba/excalibur/lib';
+import {BaseDTO,  IsTypeDirect} from '@pimba/excalibur/lib';
 import {
     IsNotEmpty,
     IsString,
