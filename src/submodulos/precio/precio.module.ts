@@ -3,6 +3,8 @@ import {PrecioService} from './precio.service';
 import {PrecioController} from './precio.controller';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {PrecioEntity} from './precio.entity';
+import {DataBaseModule} from '@pimba/excalibur/lib';
+import {InmuebleEntity} from '../inmueble/inmueble.entity';
 
 @Module({
     imports: [
@@ -12,6 +14,14 @@ import {PrecioEntity} from './precio.entity';
             ],
             'default',
         ),
+        DataBaseModule.forBulkData(
+            {
+                entity: PrecioEntity,
+                // dtoClassValidation: InmuebleCreateDto,
+                creationOrder: 3,
+                pathDev: '/src/submodulos/precio/datos-prueba/desarrollo/datos-precio.json'
+            },
+        )
     ],
     providers: [
         PrecioService,

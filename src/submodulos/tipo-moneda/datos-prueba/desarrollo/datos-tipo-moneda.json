@@ -1,0 +1,15 @@
+[
+  {
+    "nombre": "dolar",
+    "simbolo": "$"
+  },
+  {
+    "nombre": "euro",
+    "simbolo": "€"
+  },
+  {
+    "nombre": "bolivar",
+    "simbolo": "Bs",
+    "esSufijo": 1
+  }
+]

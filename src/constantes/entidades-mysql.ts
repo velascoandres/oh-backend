@@ -3,8 +3,8 @@ import { PerfilUsuarioEntity } from 'src/submodulos/perfil-usuario/perfil-usuari
 import { CategoriaEntity } from 'src/submodulos/categoria/categoria.entity';
 import { ImagenInmuebleEntity } from 'src/submodulos/imagen-inmueble/imagen-inmueble.entity';
 import { InmuebleFavoritoEntity } from 'src/submodulos/inmueble-favorito/inmueble-favorito.entity';
-import {PrecioEntity} from '../../precio/precio.entity';
-import {TipoMonedaEntity} from '../../tipo-moneda/tipo-moneda.entity';
+import {PrecioEntity} from '../submodulos/precio/precio.entity';
+import {TipoMonedaEntity} from '../submodulos/tipo-moneda/tipo-moneda.entity';
 
 export const ENTIDADES_MYSQL = [
     InmuebleEntity,

@@ -1,11 +1,11 @@
-import { BaseDTO } from '@pimba/excalibur/lib';
+import {BaseDTO} from '@pimba/excalibur/lib';
 import {
     IsNotEmpty,
-    IsAlpha
+    IsString
 } from 'class-validator';
 
 export class CategoriaCreateDto extends BaseDTO {
     @IsNotEmpty()
-    @IsAlpha()
+    @IsString()
     nombre: string;
 }

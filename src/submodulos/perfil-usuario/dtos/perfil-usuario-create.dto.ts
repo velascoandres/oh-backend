@@ -1,32 +1,25 @@
-import { BaseDTO } from '@pimba/excalibur/lib';
+import {BaseDTO, IsType, IsTypeDirect} from '@pimba/excalibur/lib';
 import {
     IsNotEmpty,
     IsString,
     IsNumberString,
     Length,
     IsOptional,
-    Matches,
     IsIn,
-    IsNumber
+    IsNumber, isNumber, isNumberString
 } from 'class-validator';
-import { LETRAS_ESPACIOS } from 'src/constantes/expresiones-regulares';
 
 export class PerfilUsuarioCreateDto extends BaseDTO {
     @IsNotEmpty()
-    @Matches(LETRAS_ESPACIOS)
     nombres: string;
 
     @IsNotEmpty()
-    @Matches(LETRAS_ESPACIOS)
     apellidos: string;
 
     @IsNotEmpty()
-    @IsNumberString()
-    @Length(10, 10)
     identificacionPais: string;
 
     @IsNotEmpty()
-    @Length(10, 10)
     telefono: string;
 
     @IsNotEmpty()

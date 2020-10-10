@@ -1,5 +1,5 @@
 import { BaseMongoDTO } from '@pimba/excalibur/lib';
-import { IsOptional, Matches, IsNotEmpty, IsNumber, IsAlpha, IsArray } from 'class-validator';
+import { IsOptional, IsNotEmpty, IsNumber, IsAlpha, IsArray } from 'class-validator';
 
 export class EntidadCoordenadaCreateDto extends BaseMongoDTO {
     @IsNotEmpty()
@@ -11,11 +11,9 @@ export class EntidadCoordenadaCreateDto extends BaseMongoDTO {
     entidad: string;
 
     @IsOptional()
-    @Matches('Point')
     type: 'Point' = 'Point';
 
     @IsNotEmpty()
     @IsArray()
-    @IsNumber({}, { each: true })
     coordenadas: [number, number];
 }
