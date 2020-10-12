@@ -1,7 +1,6 @@
 import { Entity, Column, OneToMany } from 'typeorm';
 import { AbstractEntity } from '@pimba/excalibur/lib';
 import { InmuebleEntity } from '../inmueble/inmueble.entity';
-import { InmuebleFavoritoController } from '../inmueble-favorito/inmueble-favorito.controller';
 import { InmuebleFavoritoEntity } from '../inmueble-favorito/inmueble-favorito.entity';
 
 @Entity('perfil_usuario')

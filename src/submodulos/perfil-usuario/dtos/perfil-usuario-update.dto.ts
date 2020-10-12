@@ -1,31 +1,35 @@
-import { BaseDTO } from '@pimba/excalibur/lib';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
 import {
-    Matches,
-    IsNumberString,
     Length,
     IsString,
     IsOptional,
     IsIn,
     IsNumber
 } from 'class-validator';
-import { LETRAS_ESPACIOS } from 'src/constantes/expresiones-regulares';
+import {LETRAS_ESPACIOS} from 'src/constantes/expresiones-regulares';
+import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
 
 export class PerfilUsuarioUpdateDto extends BaseDTO {
     @IsOptional()
-    @Matches(LETRAS_ESPACIOS)
+    @IsString()
+        // @Matches(LETRAS_ESPACIOS)
     nombres: string;
 
     @IsOptional()
-    @Matches(LETRAS_ESPACIOS)
+    @IsString()
+
+        // @Matches(LETRAS_ESPACIOS)
     apellidos: string;
 
     @IsOptional()
-    @IsNumberString()
-    @Length(10, 10)
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
+        // @Length(10, 10)
     identificacionPais: string;
 
     @IsOptional()
-    @Length(10, 10)
+    @Length(10, 20)
     telefono: string;
 
     @IsOptional()
@@ -33,7 +37,6 @@ export class PerfilUsuarioUpdateDto extends BaseDTO {
     direccion: string;
 
     @IsOptional()
-    @IsNumber()
-    @IsIn([0, 1])
+    @IsIn([0, 1, '0', '1'])
     habilitado: 0 | 1 = 0;
 }

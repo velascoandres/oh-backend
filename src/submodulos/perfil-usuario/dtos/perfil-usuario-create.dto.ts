@@ -1,13 +1,12 @@
-import {BaseDTO,  IsTypeDirect} from '@pimba/excalibur/lib';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
 import {
     IsNotEmpty,
     IsString,
-    IsNumberString,
-    Length,
     IsOptional,
     IsIn,
-    IsNumber, isNumber, isNumberString
+    Length,
 } from 'class-validator';
+import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
 
 export class PerfilUsuarioCreateDto extends BaseDTO {
     @IsNotEmpty()
@@ -17,9 +16,14 @@ export class PerfilUsuarioCreateDto extends BaseDTO {
     apellidos: string;
 
     @IsNotEmpty()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
+    // @Length(10, 10)
     identificacionPais: string;
 
     @IsNotEmpty()
+    @Length(10, 20)
     telefono: string;
 
     @IsNotEmpty()
@@ -27,7 +31,6 @@ export class PerfilUsuarioCreateDto extends BaseDTO {
     direccion: string;
 
     @IsOptional()
-    @IsNumber()
-    @IsIn([0, 1])
+    @IsIn([0, 1, '0', '1'])
     habilitado: 0 | 1 = 0;
 }

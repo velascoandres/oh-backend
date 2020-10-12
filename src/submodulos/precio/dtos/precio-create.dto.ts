@@ -1,30 +1,43 @@
-import {BaseDTO} from '@pimba/excalibur/lib';
-import {IsNotEmpty, IsNumber, IsNumberString, IsOptional} from 'class-validator';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
+import {IsNotEmpty, IsOptional} from 'class-validator';
+import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
 
 export class PrecioCreateDto extends BaseDTO {
     @IsNotEmpty()
-    @IsNumber()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     valor: number;
     @IsNotEmpty()
-    @IsNumber()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     tipoMoneda: number;
 }
 
 
 export class PrecioCreateMovilDto extends BaseDTO {
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     valor: number;
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     tipoMoneda: number;
 }
 
 export class PrecioUpdateMovilDto extends BaseDTO {
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     valor: number;
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     tipoMoneda: number;
 }

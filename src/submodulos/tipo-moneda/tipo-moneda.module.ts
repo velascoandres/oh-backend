@@ -4,7 +4,7 @@ import {TipoMonedaController} from './tipo-moneda.controller';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {TipoMonedaEntity} from './tipo-moneda.entity';
 import {DataBaseModule} from '@pimba/excalibur/lib';
-import {PrecioEntity} from '../precio/precio.entity';
+import {TipoMonedaCreateDto} from './dtos/tipo-moneda-create.dto';
 
 @Module({
     imports: [
@@ -17,7 +17,7 @@ import {PrecioEntity} from '../precio/precio.entity';
         DataBaseModule.forBulkData(
             {
                 entity: TipoMonedaEntity,
-                // dtoClassValidation: InmuebleCreateDto,
+                dtoClassValidation: TipoMonedaCreateDto,
                 creationOrder: 2,
                 pathDev: '/src/submodulos/tipo-moneda/datos-prueba/desarrollo/datos-tipo-moneda.json'
             },

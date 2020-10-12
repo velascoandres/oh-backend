@@ -1,5 +1,6 @@
-import { BaseDTO } from '@pimba/excalibur/lib';
-import { IsOptional, IsUrl, IsNumber } from 'class-validator';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
+import {IsOptional, IsUrl} from 'class-validator';
+import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
 
 export class ImagenInmuebleUpdateDto extends BaseDTO {
     @IsOptional()
@@ -7,6 +8,8 @@ export class ImagenInmuebleUpdateDto extends BaseDTO {
     url: string;
 
     @IsOptional()
-    @IsNumber()
+    @IsTypeOr(
+        VALIDADORES_PERSONALIZADOS.esNumeroStringNumero,
+    )
     inmueble: number;
 }

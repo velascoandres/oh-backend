@@ -4,7 +4,7 @@ import { InmuebleFavoritoController } from './inmueble-favorito.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { InmuebleFavoritoEntity } from './inmueble-favorito.entity';
 import {DataBaseModule} from '@pimba/excalibur/lib';
-import {PrecioEntity} from '../precio/precio.entity';
+import {InmuebleFavoritoCreateDto} from './dtos/inmueble-favorito-create.dto';
 
 @Module({
   imports: [
@@ -17,7 +17,7 @@ import {PrecioEntity} from '../precio/precio.entity';
     DataBaseModule.forBulkData(
         {
           entity: InmuebleFavoritoEntity,
-          // dtoClassValidation: InmuebleCreateDto,
+          dtoClassValidation: InmuebleFavoritoCreateDto,
           creationOrder: 6,
           pathDev: '/src/submodulos/inmueble-favorito/datos-prueba/desarrollo/datos-inmueble-favorito.json'
         },
