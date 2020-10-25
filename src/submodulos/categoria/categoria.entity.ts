@@ -21,7 +21,7 @@ export class CategoriaEntity extends AbstractEntity {
     @Column(
         {
             type: 'tinyint',
-            default: 0,
+            default: 1,
         },
     )
     habilitado: 0 | 1 = 1;
