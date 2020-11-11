@@ -1,4 +1,4 @@
-import { BaseMongoDTO } from '@pimba/excalibur/lib';
+import {BaseMongoDTO} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsNumber,

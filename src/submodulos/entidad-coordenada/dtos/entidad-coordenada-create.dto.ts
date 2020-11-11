@@ -1,5 +1,5 @@
 import {BaseMongoDTO, IsTypeOr} from '@pimba/excalibur/lib';
-import {IsOptional, IsNotEmpty, IsNumber, IsAlpha} from 'class-validator';
+import {IsOptional, IsNotEmpty, IsAlpha, IsNumber} from 'class-validator';
 import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
 
 export class EntidadCoordenadaCreateDto extends BaseMongoDTO {
