@@ -3,7 +3,6 @@ import {
     IsOptional,
     IsNumber,
     IsAlpha,
-    Matches,
     IsArray,
 } from 'class-validator';
 
@@ -17,7 +16,7 @@ export class EntidadCoordenadaUpdateDto extends BaseMongoDTO {
     entidad: string;
 
     @IsOptional()
-    @Matches('Point')
+    // @Matches('Point')
     type: 'Point' = 'Point';
 
     @IsOptional()
