@@ -22,6 +22,6 @@ export class EntidadCoordenadaUpdateDto extends BaseMongoDTO {
     @IsOptional()
     @IsArray()
     @IsNumber({}, { each: true })
-    coordenadas: [number, number];
+    coordinates: [number, number];
 }
 

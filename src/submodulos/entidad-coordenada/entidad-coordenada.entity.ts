@@ -1,5 +1,6 @@
-import { AbstractMongoEntity } from '@pimba/excalibur/lib';
-import { Entity, Column } from 'typeorm';
+import {AbstractMongoEntity} from '@pimba/excalibur/lib';
+import {Entity, Column} from 'typeorm';
+import {Geojson} from './geojson';
 
 @Entity('ent_coord')
 export class EntidadCoordenadaEntity extends AbstractMongoEntity {
@@ -21,5 +22,8 @@ export class EntidadCoordenadaEntity extends AbstractMongoEntity {
     type: 'Point' = 'Point';
 
     @Column()
-    coordenadas: [number, number];
+    coordinates: [number, number];
+
+    @Column()
+    location: Geojson;
 }

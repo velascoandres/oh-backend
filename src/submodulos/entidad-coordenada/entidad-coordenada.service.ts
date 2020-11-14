@@ -15,7 +15,7 @@ export class EntidadCoordenadaService
         super(
             _entidadCoordenadaRepository,
             {
-                fieldOrSpec: { entCoordenada: '2dsphere' },
+                fieldOrSpec: { location: '2dsphere' },
                 options: {
                     min: -180,
                     max: 180,

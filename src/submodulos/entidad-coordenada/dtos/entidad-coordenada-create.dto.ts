@@ -1,6 +1,6 @@
-import {BaseMongoDTO, IsTypeOr} from '@pimba/excalibur/lib';
-import {IsOptional, IsNotEmpty, IsAlpha, IsNumber} from 'class-validator';
-import {VALIDADORES_PERSONALIZADOS} from '../../../constantes/validadores-custom';
+import {BaseMongoDTO} from '@pimba/excalibur/lib';
+import {IsNotEmpty, IsAlpha, IsNumber, ValidateNested} from 'class-validator';
+import {LocationCreateDto} from './location-create.dto';
 
 export class EntidadCoordenadaCreateDto extends BaseMongoDTO {
     @IsNotEmpty()
@@ -11,12 +11,7 @@ export class EntidadCoordenadaCreateDto extends BaseMongoDTO {
     @IsAlpha()
     entidad: string;
 
-    @IsOptional()
-    type: 'Point' = 'Point';
-
     @IsNotEmpty()
-    @IsTypeOr(
-        VALIDADORES_PERSONALIZADOS.arregloNumeros,
-    )
-    coordenadas: [number, number];
+    @ValidateNested()
+    location: LocationCreateDto;
 }
