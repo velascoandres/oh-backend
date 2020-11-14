@@ -3,8 +3,9 @@ import {
     IsOptional,
     IsNumber,
     IsAlpha,
-    IsArray,
+    ValidateNested,
 } from 'class-validator';
+import {LocationCreateDto} from './location-create.dto';
 
 export class EntidadCoordenadaUpdateDto extends BaseMongoDTO {
     @IsOptional()
@@ -16,12 +17,7 @@ export class EntidadCoordenadaUpdateDto extends BaseMongoDTO {
     entidad: string;
 
     @IsOptional()
-    // @Matches('Point')
-    type: 'Point' = 'Point';
-
-    @IsOptional()
-    @IsArray()
-    @IsNumber({}, { each: true })
-    coordinates: [number, number];
+    @ValidateNested()
+    location: LocationCreateDto;
 }
 
