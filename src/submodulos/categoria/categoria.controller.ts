@@ -10,8 +10,9 @@ const opciones: CrudOptions = {
     dtoConfig: {
         createDtoType: CategoriaCreateDto,
         updateDtoType: CategoriaUpdateDto,
-    }
-}
+    },
+    enableErrorMessages: true,
+};
 
 
 @Controller('categoria')

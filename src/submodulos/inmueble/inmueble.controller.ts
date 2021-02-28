@@ -33,7 +33,7 @@ const options:CrudOptions = {
         updateDtoType: InmuebleUpdateDto,
     },
     enableErrorMessages: true,
-}
+};
 
 
 @Controller('inmueble')
