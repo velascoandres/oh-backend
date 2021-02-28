@@ -11,7 +11,6 @@ import {
     UploadedFiles,
     UseInterceptors
 } from '@nestjs/common';
-import {ApiController} from '@pimba/excalibur/lib';
 import {InmuebleEntity} from './inmueble.entity';
 import {InmuebleService} from './inmueble.service';
 import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
@@ -25,18 +24,25 @@ import {DeepPartial} from 'typeorm';
 import {PrecioEntity} from '../precio/precio.entity';
 import {InmuebleCreateMovilDto} from './dtos/inmueble-create-movil.dto';
 import {InmuebleUpdateMovilDto} from './dtos/inmueble-update-movil.dto';
+import {CrudController, CrudOptions} from '@pimba/excalibur/lib';
+
+
+const options:CrudOptions = {
+    dtoConfig: {
+        createDtoType: InmuebleCreateDto,
+        updateDtoType: InmuebleUpdateDto,
+    },
+    enableErrorMessages: true,
+}
+
 
 @Controller('inmueble')
-export class InmuebleController extends ApiController<InmuebleEntity> {
+export class InmuebleController extends CrudController(options) {
     constructor(
         private readonly _inmuebleService: InmuebleService,
     ) {
         super(
             _inmuebleService,
-            {
-                createDtoType: InmuebleCreateDto,
-                updateDtoType: InmuebleUpdateDto,
-            }
         );
     }
 

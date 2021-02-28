@@ -1,4 +1,4 @@
-version: '0.1'
+version: '2.2'
 services:
   mysql_db:
     container_name: pimba_mysql
