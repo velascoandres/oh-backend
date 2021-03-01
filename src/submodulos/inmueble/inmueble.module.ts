@@ -5,9 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { InmuebleEntity } from './inmueble.entity';
 import {ImagenInmuebleModule} from '../imagen-inmueble/imagen-inmueble.module';
 import {DataBaseModule} from '@pimba/excalibur/lib';
-import {ImagenInmuebleEntity} from '../imagen-inmueble/imagen-inmueble.entity';
-import {ImagenInmuebleCreateDto} from '../imagen-inmueble/dtos/imagen-inmueble-create.dto';
 import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
+import { InmuebleV2Controller } from './controllers/v2/inmueble_v2.controller';
 
 @Module({
   imports: [
@@ -29,6 +28,7 @@ import {InmuebleCreateDto} from './dtos/inmueble-create.dto';
   ],
   controllers: [
     InmuebleController,
+    InmuebleV2Controller,
   ],
   providers: [
     InmuebleService

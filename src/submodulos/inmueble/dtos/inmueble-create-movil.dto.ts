@@ -1,10 +1,10 @@
-import {BaseDTO} from '@pimba/excalibur/lib';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsIn,
     IsNotEmpty,
     Length,
-    IsNumber, IsNumberString,
+    IsNumber, IsNumberString, isNumberString, isNumber
 } from 'class-validator';
 
 export class InmuebleCreateMovilDto extends BaseDTO {
@@ -16,7 +16,10 @@ export class InmuebleCreateMovilDto extends BaseDTO {
     descripcion: string;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
     predio: number;
 
     @IsNotEmpty()
@@ -39,25 +42,40 @@ export class InmuebleCreateMovilDto extends BaseDTO {
     // precio: PrecioCreateDto;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
     habitaciones: number;
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
     parqueaderos: number;
 
 
     @IsNotEmpty()
-    @IsNumberString()
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
     plantas: number;
 
     @IsOptional()
-    @IsNumber()
-    @IsIn([0, 1])
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
+    @IsIn([0, 1, '0', '1'])
     habilitado: 0 | 1 = 0;
 
     @IsOptional()
-    @IsNumberString()
-    @IsIn(['0', '1'])
+    @IsTypeOr({
+        IsNumberString: (val) => isNumberString(val),
+        IsNumber: (val) => isNumber(val),
+    })
+    @IsIn(['0', '1', 0 , 1])
     enAlquiler: 0 | 1 = 0;
 }

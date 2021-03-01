@@ -24,6 +24,7 @@ export class ImagenInmuebleService
         entityManager: EntityManager,
         imagenes: UploadedFileMetadata[], idInmueble: number,
     ): Promise<ImagenInmuebleEntity[]> {
+        // if (!imagenes || !imagenes.length) {return []}
         const imagenesGuardadas: ImagenInmuebleEntity[] = [];
         const imagenInmuebleRepositorio = entityManager.getRepository(ImagenInmuebleEntity);
             for (const archivoImagen of imagenes) {
