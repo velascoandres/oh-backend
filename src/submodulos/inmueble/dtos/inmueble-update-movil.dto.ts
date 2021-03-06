@@ -1,9 +1,9 @@
-import {BaseDTO} from '@pimba/excalibur/lib';
+import {BaseDTO, IsTypeOr} from '@pimba/excalibur/lib';
 import {
     IsOptional,
     IsIn,
     Length,
-    IsNumber, IsNumberString, IsArray,
+    IsNumber, IsNumberString, IsArray, isNumber, isNumberString,
 } from 'class-validator';
 
 export class InmuebleUpdateMovilDto extends BaseDTO {
@@ -15,7 +15,12 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     descripcion: string;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     predio: number;
 
     @IsOptional()
@@ -26,45 +31,78 @@ export class InmuebleUpdateMovilDto extends BaseDTO {
     direccion: string;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     areaTerreno: number;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     areaConstruccion: number;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     habitaciones: number;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     parqueaderos: number;
 
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     plantas: number;
 
     @IsOptional()
-    @IsNumberString()
-    @IsIn(['1', '0'])
+    @IsIn(['1', '0', 1, 0])
     habilitado: 0 | 1 = 0;
 
     @IsOptional()
-    @IsNumberString()
-    @IsIn(['0', '1'])
+    @IsIn(['0', '1', 1, 0])
     enAlquiler: 0 | 1 = 0;
 
     @IsOptional()
     imagenesEliminar: any | any[];
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     valor: number;
 
     @IsOptional()
-    @IsNumberString()
+    @IsTypeOr(
+        {
+            isNumber: (value) => isNumber(value),
+            isNumberString: (value) => isNumberString(value),
+        },
+    )
     tipoMoneda: string;
     @IsOptional()
     imagenes: any[];
