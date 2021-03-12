@@ -81,27 +81,6 @@ export class InmuebleEntity extends AbstractEntity {
     )
     parqueaderos: number;
 
-    // @Column(
-    //     {
-    //         type: 'int',
-    //     }
-    // )
-    // unidadesSanitarias: number;
-
-    // @Column(
-    //     {
-    //         type: 'tinyint',
-    //     }
-    // )
-    // tieneCocina: 0 | 1;
-    //
-    // @Column(
-    //     {
-    //         type: 'tinyint',
-    //     }
-    // )
-    // tieneSala: 0 | 1;
-
     @Column(
         {
             type: 'int',
@@ -124,6 +103,16 @@ export class InmuebleEntity extends AbstractEntity {
         },
     )
     habilitado: 0 | 1 = 0;
+
+    @Column(
+        {
+            type: 'decimal',
+            precision: 8,
+            scale: 2
+        }
+    )
+    precio: number;
+
 
     @OneToMany(
         type => ImagenInmuebleEntity,
@@ -152,11 +141,4 @@ export class InmuebleEntity extends AbstractEntity {
         categoria => categoria.inmuebles,
     )
     categoria: CategoriaEntity | number;
-
-    @OneToOne(
-        type => PrecioEntity,
-        precio => precio.inmueble,
-    )
-    @JoinColumn()
-    precio: PrecioEntity | number;
 }

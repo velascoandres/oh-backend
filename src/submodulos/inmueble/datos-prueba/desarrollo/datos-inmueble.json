@@ -17,7 +17,7 @@
     "perfilUsuario": 30,
     "enAlquilter": 1,
     "categoria": 7,
-    "precio": 1
+    "precio": 12300.00
   },
   {
     "id": 2,
@@ -37,7 +37,7 @@
     "perfilUsuario": 13,
     "enAlquilter": 0,
     "categoria": 7,
-    "precio": 2
+    "precio": 22000.02
   },
   {
     "id": 3,
@@ -57,7 +57,7 @@
     "perfilUsuario": 5,
     "enAlquilter": 1,
     "categoria": 9,
-    "precio": 3
+    "precio": 22000.00
   },
   {
     "id": 4,
@@ -77,7 +77,7 @@
     "perfilUsuario": 62,
     "enAlquilter": 0,
     "categoria": 9,
-    "precio": 4
+    "precio": 22000.02
   },
   {
     "id": 5,
@@ -97,7 +97,7 @@
     "perfilUsuario": 87,
     "enAlquilter": 0,
     "categoria": 9,
-    "precio": 5
+    "precio": 22000.02
   },
   {
     "id": 6,
@@ -117,7 +117,7 @@
     "perfilUsuario": 65,
     "enAlquilter": 0,
     "categoria": 8,
-    "precio": 6
+    "precio": 22000.02
   },
   {
     "id": 7,
@@ -137,7 +137,7 @@
     "perfilUsuario": 36,
     "enAlquilter": 1,
     "categoria": 1,
-    "precio": 7
+    "precio": 22000.02
   },
   {
     "id": 8,
@@ -157,7 +157,7 @@
     "perfilUsuario": 51,
     "enAlquilter": 0,
     "categoria": 6,
-    "precio": 8
+    "precio": 22000.02
   },
   {
     "id": 9,
@@ -177,7 +177,7 @@
     "perfilUsuario": 63,
     "enAlquilter": 1,
     "categoria": 2,
-    "precio": 9
+    "precio": 22000.02
   },
   {
     "id": 10,
@@ -197,7 +197,7 @@
     "perfilUsuario": 90,
     "enAlquilter": 0,
     "categoria": 4,
-    "precio": 10
+    "precio": 22000.02
   },
   {
     "id": 11,
@@ -217,7 +217,7 @@
     "perfilUsuario": 27,
     "enAlquilter": 0,
     "categoria": 1,
-    "precio": 11
+    "precio": 22000.02
   },
   {
     "id": 12,
@@ -237,7 +237,7 @@
     "perfilUsuario": 67,
     "enAlquilter": 1,
     "categoria": 5,
-    "precio": 12
+    "precio": 22000.02
   },
   {
     "id": 13,
@@ -257,7 +257,7 @@
     "perfilUsuario": 87,
     "enAlquilter": 1,
     "categoria": 1,
-    "precio": 13
+    "precio": 22000.02
   },
   {
     "id": 14,
@@ -277,7 +277,7 @@
     "perfilUsuario": 39,
     "enAlquilter": 1,
     "categoria": 3,
-    "precio": 14
+    "precio": 22000.02
   },
   {
     "id": 15,
@@ -297,7 +297,7 @@
     "perfilUsuario": 40,
     "enAlquilter": 0,
     "categoria": 3,
-    "precio": 15
+    "precio": 22000.02
   },
   {
     "id": 16,
@@ -317,7 +317,7 @@
     "perfilUsuario": 55,
     "enAlquilter": 1,
     "categoria": 9,
-    "precio": 16
+    "precio": 22000.02
   },
   {
     "id": 17,
@@ -1077,7 +1077,7 @@
     "perfilUsuario": 24,
     "enAlquilter": 0,
     "categoria": 8,
-    "precio": 54
+    "precio": 22000.02
   },
   {
     "id": 55,

@@ -54,7 +54,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleCreado,
-                    precio: { ...precioRecuperado },
+                    // precio: { ...precioRecuperado },
                     imagenes: [...imagenesGuardadas],
                     categoria: categoriaRecuperada,
                 };
@@ -88,19 +88,19 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 delete inmueble?.imagenesEliminar;
                 await inmuebleRepositorio.update(idInmueble, inmueble);
                 const inmuebleEditado = await inmuebleRepositorio.findOne(idInmueble, {
-                    relations: ['categoria', 'imagenes', 'precio', 'perfilUsuario'],
+                    relations: ['categoria', 'imagenes', 'perfilUsuario'],
                 }
                 );
                 // guardar precio
                 const precioRepositorio = entityManager.getRepository(PrecioEntity);
-                const precioRecuperado = await precioRepositorio.findOne({
-                    where: { id: (inmuebleEditado.precio as PrecioEntity).id },
-                });
-                await precioRepositorio.update(precioRecuperado.id, precio as DeepPartial<PrecioEntity>);
-                const precioRecuperadoActualizado = await precioRepositorio.findOne({
-                    where: { id: precioRecuperado.id },
-                    relations: ['tipoMoneda'],
-                });
+                // const precioRecuperado = await precioRepositorio.findOne({
+                //    where: { id: (inmuebleEditado.precio as PrecioEntity).id },
+                // });
+                // await precioRepositorio.update(precioRecuperado.id, precio as DeepPartial<PrecioEntity>);
+                //const precioRecuperadoActualizado = await precioRepositorio.findOne({
+                 //    where: { id: precioRecuperado.id },
+                //    relations: ['tipoMoneda'],
+                //});
                 // guardar imagenes nuevas
                 const tieneNuevasImagenes = imagenes && imagenes.length > 0;
                 if (tieneNuevasImagenes) {
@@ -118,7 +118,7 @@ export class InmuebleService extends AbstractService<InmuebleEntity> {
                 // Retornamos el inmueble completo
                 const inmuebleCreadoCompleto: InmuebleEntity = {
                     ...inmuebleEditado,
-                    precio: { ...precioRecuperadoActualizado },
+                    // precio: { ...precioRecuperadoActualizado },
                     imagenes: [...imagenesGuardadas],
                 };
                 return inmuebleCreadoCompleto;
