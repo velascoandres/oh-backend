@@ -64,11 +64,11 @@ export class InmuebleCreateDto extends BaseDTO {
     )
     habitaciones: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsNumber()
     parqueaderos: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsTypeOr(
         {
             isNumber: (value) => isNumber(value),
@@ -77,11 +77,11 @@ export class InmuebleCreateDto extends BaseDTO {
     )
     unidadesSanitarias: number;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsIn([0, 1])
     tieneCocina: 0 | 1;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsIn([0, 1])
     tieneSala: 0 | 1;
 
