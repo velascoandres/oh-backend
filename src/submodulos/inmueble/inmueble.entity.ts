@@ -77,6 +77,7 @@ export class InmuebleEntity extends AbstractEntity {
     @Column(
         {
             type: 'int',
+            nullable: true,
         }
     )
     parqueaderos: number;
