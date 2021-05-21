@@ -1,1 +1,0 @@
-export const LETRAS_ESPACIOS = /^[a-z][a-z\s]*$/;
