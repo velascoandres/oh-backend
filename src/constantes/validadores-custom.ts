@@ -1,18 +1,18 @@
-import {isNumber, isNumberString} from 'class-validator';
-import {ValidationFunction} from '@pimba/excalibur/lib';
+import { isNumber, isNumberString } from 'class-validator';
+import { ValidationFunction } from '@pimba/excalibur/lib';
 
-const esNumeroStringNumero = {
-    isNumberString: value => isNumberString(value),
-    isNumber: value => isNumber(value),
+const isNumberStringOrNumber = {
+  isNumberString: value => isNumberString(value),
+  isNumber: value => isNumber(value),
 };
 
-const arregloNumeros = {
-    isArrayNumber: value => value instanceof Array && value.every(val => !isNaN(+val)),
+const isNumberArray = {
+  isArrayNumber: value => value instanceof Array && value.every(val => !isNaN(+val)),
 };
 
-export const VALIDADORES_PERSONALIZADOS: Record<string, Record<string, ValidationFunction>> = {
-    esNumeroStringNumero,
-    arregloNumeros,
+export const CUSTOM_VALIDATORS: Record<string, Record<string, ValidationFunction>> = {
+  isNumberStringOrNumber,
+  isNumberArray,
 };
 
 

@@ -3,480 +3,480 @@
     "id": 1,
     "valor": 2323123,
     "tipoMoneda": 2,
-    "inmueble": 1
+    "publication": 1
   },
   {
     "id": 2,
     "valor": 289621,
     "tipoMoneda": 1,
-    "inmueble": 2
+    "publication": 2
   },
   {
     "id": 3,
     "valor": 54783,
     "tipoMoneda": 3,
-    "inmueble": 3
+    "publication": 3
   },
   {
     "id": 4,
     "valor": 216494,
     "tipoMoneda": 2,
-    "inmueble": 4
+    "publication": 4
   },
   {
     "id": 5,
     "valor": 381323,
     "tipoMoneda": 2,
-    "inmueble": 5
+    "publication": 5
   },
   {
     "id": 6,
     "valor": 409828,
     "tipoMoneda": 1,
-    "inmueble": 6
+    "publication": 6
   },
   {
     "id": 7,
     "valor": 8719,
     "tipoMoneda": 3,
-    "inmueble": 7
+    "publication": 7
   },
   {
     "id": 8,
     "valor": 396732,
     "tipoMoneda": 2,
-    "inmueble": 8
+    "publication": 8
   },
   {
     "id": 9,
     "valor": 167258,
     "tipoMoneda": 1,
-    "inmueble": 9
+    "publication": 9
   },
   {
     "id": 10,
     "valor": 471585,
     "tipoMoneda": 2,
-    "inmueble": 10
+    "publication": 10
   },
   {
     "id": 11,
     "valor": 339682,
     "tipoMoneda": 1,
-    "inmueble": 11
+    "publication": 11
   },
   {
     "id": 12,
     "valor": 376044,
     "tipoMoneda": 1,
-    "inmueble": 12
+    "publication": 12
   },
   {
     "id": 13,
     "valor": 118761,
     "tipoMoneda": 2,
-    "inmueble": 13
+    "publication": 13
   },
   {
     "id": 14,
     "valor": 75592,
     "tipoMoneda": 1,
-    "inmueble": 14
+    "publication": 14
   },
   {
     "id": 15,
     "valor": 304671,
     "tipoMoneda": 2,
-    "inmueble": 15
+    "publication": 15
   },
   {
     "id": 16,
     "valor": 23398,
     "tipoMoneda": 2,
-    "inmueble": 16
+    "publication": 16
   },
   {
     "id": 17,
     "valor": 370444,
     "tipoMoneda": 1,
-    "inmueble": 17
+    "publication": 17
   },
   {
     "id": 18,
     "valor": 180561,
     "tipoMoneda": 1,
-    "inmueble": 18
+    "publication": 18
   },
   {
     "id": 19,
     "valor": 180239,
     "tipoMoneda": 3,
-    "inmueble": 19
+    "publication": 19
   },
   {
     "id": 20,
     "valor": 250564,
     "tipoMoneda": 3,
-    "inmueble": 20
+    "publication": 20
   },
   {
     "id": 21,
     "valor": 234782,
     "tipoMoneda": 2,
-    "inmueble": 21
+    "publication": 21
   },
   {
     "id": 22,
     "valor": 456251,
     "tipoMoneda": 3,
-    "inmueble": 22
+    "publication": 22
   },
   {
     "id": 23,
     "valor": 306018,
     "tipoMoneda": 3,
-    "inmueble": 23
+    "publication": 23
   },
   {
     "id": 24,
     "valor": 211406,
     "tipoMoneda": 3,
-    "inmueble": 24
+    "publication": 24
   },
   {
     "id": 25,
     "valor": 220584,
     "tipoMoneda": 1,
-    "inmueble": 25
+    "publication": 25
   },
   {
     "id": 26,
     "valor": 498142,
     "tipoMoneda": 2,
-    "inmueble": 26
+    "publication": 26
   },
   {
     "id": 27,
     "valor": 404897,
     "tipoMoneda": 2,
-    "inmueble": 27
+    "publication": 27
   },
   {
     "id": 28,
     "valor": 337684,
     "tipoMoneda": 2,
-    "inmueble": 28
+    "publication": 28
   },
   {
     "id": 29,
     "valor": 72490,
     "tipoMoneda": 1,
-    "inmueble": 29
+    "publication": 29
   },
   {
     "id": 30,
     "valor": 144362,
     "tipoMoneda": 3,
-    "inmueble": 30
+    "publication": 30
   },
   {
     "id": 31,
     "valor": 263211,
     "tipoMoneda": 3,
-    "inmueble": 31
+    "publication": 31
   },
   {
     "id": 32,
     "valor": 391597,
     "tipoMoneda": 3,
-    "inmueble": 32
+    "publication": 32
   },
   {
     "id": 33,
     "valor": 241755,
     "tipoMoneda": 1,
-    "inmueble": 33
+    "publication": 33
   },
   {
     "id": 34,
     "valor": 49987,
     "tipoMoneda": 2,
-    "inmueble": 34
+    "publication": 34
   },
   {
     "id": 35,
     "valor": 306454,
     "tipoMoneda": 1,
-    "inmueble": 35
+    "publication": 35
   },
   {
     "id": 36,
     "valor": 115524,
     "tipoMoneda": 1,
-    "inmueble": 36
+    "publication": 36
   },
   {
     "id": 37,
     "valor": 299514,
     "tipoMoneda": 3,
-    "inmueble": 37
+    "publication": 37
   },
   {
     "id": 38,
     "valor": 37324,
     "tipoMoneda": 3,
-    "inmueble": 38
+    "publication": 38
   },
   {
     "id": 39,
     "valor": 266122,
     "tipoMoneda": 1,
-    "inmueble": 39
+    "publication": 39
   },
   {
     "id": 40,
     "valor": 284819,
     "tipoMoneda": 1,
-    "inmueble": 40
+    "publication": 40
   },
   {
     "id": 41,
     "valor": 98171,
     "tipoMoneda": 1,
-    "inmueble": 41
+    "publication": 41
   },
   {
     "id": 42,
     "valor": 348399,
     "tipoMoneda": 3,
-    "inmueble": 42
+    "publication": 42
   },
   {
     "id": 43,
     "valor": 342551,
     "tipoMoneda": 3,
-    "inmueble": 43
+    "publication": 43
   },
   {
     "id": 44,
     "valor": 85320,
     "tipoMoneda": 2,
-    "inmueble": 44
+    "publication": 44
   },
   {
     "id": 45,
     "valor": 251742,
     "tipoMoneda": 2,
-    "inmueble": 45
+    "publication": 45
   },
   {
     "id": 46,
     "valor": 69199,
     "tipoMoneda": 1,
-    "inmueble": 46
+    "publication": 46
   },
   {
     "id": 47,
     "valor": 328642,
     "tipoMoneda": 3,
-    "inmueble": 47
+    "publication": 47
   },
   {
     "id": 48,
     "valor": 401084,
     "tipoMoneda": 1,
-    "inmueble": 48
+    "publication": 48
   },
   {
     "id": 49,
     "valor": 494046,
     "tipoMoneda": 2,
-    "inmueble": 49
+    "publication": 49
   },
   {
     "id": 50,
     "valor": 107332,
     "tipoMoneda": 3,
-    "inmueble": 50
+    "publication": 50
   },
   {
     "id": 51,
     "valor": 479534,
     "tipoMoneda": 2,
-    "inmueble": 51
+    "publication": 51
   },
   {
     "id": 52,
     "valor": 41899,
     "tipoMoneda": 2,
-    "inmueble": 52
+    "publication": 52
   },
   {
     "id": 53,
     "valor": 494527,
     "tipoMoneda": 2,
-    "inmueble": 53
+    "publication": 53
   },
   {
     "id": 54,
     "valor": 252699,
     "tipoMoneda": 1,
-    "inmueble": 54
+    "publication": 54
   },
   {
     "id": 55,
     "valor": 26739,
     "tipoMoneda": 1,
-    "inmueble": 55
+    "publication": 55
   },
   {
     "id": 56,
     "valor": 61111,
     "tipoMoneda": 2,
-    "inmueble": 56
+    "publication": 56
   },
   {
     "id": 57,
     "valor": 453507,
     "tipoMoneda": 2,
-    "inmueble": 57
+    "publication": 57
   },
   {
     "id": 58,
     "valor": 419472,
     "tipoMoneda": 1,
-    "inmueble": 58
+    "publication": 58
   },
   {
     "id": 59,
     "valor": 480035,
     "tipoMoneda": 1,
-    "inmueble": 59
+    "publication": 59
   },
   {
     "id": 60,
     "valor": 392374,
     "tipoMoneda": 2,
-    "inmueble": 60
+    "publication": 60
   },
   {
     "id": 61,
     "valor": 473321,
     "tipoMoneda": 2,
-    "inmueble": 61
+    "publication": 61
   },
   {
     "id": 62,
     "valor": 296765,
     "tipoMoneda": 2,
-    "inmueble": 62
+    "publication": 62
   },
   {
     "id": 63,
     "valor": 105817,
     "tipoMoneda": 2,
-    "inmueble": 63
+    "publication": 63
   },
   {
     "id": 64,
     "valor": 335596,
     "tipoMoneda": 3,
-    "inmueble": 64
+    "publication": 64
   },
   {
     "id": 65,
     "valor": 356808,
     "tipoMoneda": 2,
-    "inmueble": 65
+    "publication": 65
   },
   {
     "id": 66,
     "valor": 342789,
     "tipoMoneda": 1,
-    "inmueble": 66
+    "publication": 66
   },
   {
     "id": 67,
     "valor": 452038,
     "tipoMoneda": 1,
-    "inmueble": 67
+    "publication": 67
   },
   {
     "id": 68,
     "valor": 232474,
     "tipoMoneda": 2,
-    "inmueble": 68
+    "publication": 68
   },
   {
     "id": 69,
     "valor": 410745,
     "tipoMoneda": 2,
-    "inmueble": 69
+    "publication": 69
   },
   {
     "id": 70,
     "valor": 416664,
     "tipoMoneda": 2,
-    "inmueble": 70
+    "publication": 70
   },
   {
     "id": 71,
     "valor": 110161,
     "tipoMoneda": 1,
-    "inmueble": 71
+    "publication": 71
   },
   {
     "id": 72,
     "valor": 150888,
     "tipoMoneda": 1,
-    "inmueble": 72
+    "publication": 72
   },
   {
     "id": 73,
     "valor": 207520,
     "tipoMoneda": 3,
-    "inmueble": 73
+    "publication": 73
   },
   {
     "id": 74,
     "valor": 177125,
     "tipoMoneda": 2,
-    "inmueble": 74
+    "publication": 74
   },
   {
     "id": 75,
     "valor": 282548,
     "tipoMoneda": 1,
-    "inmueble": 75
+    "publication": 75
   },
   {
     "id": 76,
     "valor": 72203,
     "tipoMoneda": 2,
-    "inmueble": 76
+    "publication": 76
   },
   {
     "id": 77,
     "valor": 126006,
     "tipoMoneda": 1,
-    "inmueble": 77
+    "publication": 77
   },
   {
     "id": 78,
     "valor": 368916,
     "tipoMoneda": 3,
-    "inmueble": 78
+    "publication": 78
   },
   {
     "id": 79,
     "valor": 86443,
     "tipoMoneda": 1,
-    "inmueble": 79
+    "publication": 79
   },
   {
     "id": 80,
     "valor": 392603,
     "tipoMoneda": 1,
-    "inmueble": 80
+    "publication": 80
   }
 ]

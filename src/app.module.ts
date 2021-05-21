@@ -1,30 +1,27 @@
 import {Module, OnModuleInit} from '@nestjs/common';
+
+import {DataBaseModule, DataBaseService} from '@nest-excalibur/data-base/lib';
+
+
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {MODULOS} from './constantes/modulos';
-import {DataBaseModule, DataBaseService} from '@pimba/excalibur/lib';
-import {CONFIGURATION_PRODUCCION} from './submodulos/configuracion/config/produccion';
-import {CONFIGURACION_DESARROLLO} from './submodulos/configuracion/config/desarrollo';
+
 import {ENTIDADES_MYSQL} from './constantes/entidades-mysql';
-import {ENTIDADES_MONGO} from './constantes/entidades-mongo';
+import { CONFIGURATION_PRODUCCION } from './constantes/config/produccion';
+import { CONFIGURACION_DESARROLLO } from './constantes/config/desarrollo';
 
 @Module({
     imports: [
         DataBaseModule.forRoot(
             {
-                conections: {
+                connections: {
                     mysql: {
                         ...process.env.NODE_ENV ? CONFIGURATION_PRODUCCION.mysql : CONFIGURACION_DESARROLLO.mysql,
                         entities: [
                             ...ENTIDADES_MYSQL,
                         ],
                     },
-                    mongodb: {
-                        ...process.env.NODE_ENV ? CONFIGURATION_PRODUCCION.mongodb : CONFIGURACION_DESARROLLO.mongodb,
-                        entities: [
-                            ...ENTIDADES_MONGO,
-                        ],
-                    }
                 },
                 productionFlag: !!process.env.NODE_ENV,
             }
