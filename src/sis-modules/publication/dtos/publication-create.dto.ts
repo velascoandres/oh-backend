@@ -22,9 +22,6 @@ export class PublicationCreateDto extends BaseMongoDTO {
   estateId: number;
 
   @IsNotEmpty()
-  owner: number;
-
-  @IsNotEmpty()
   @Length(4, 256)
   address: string;
 

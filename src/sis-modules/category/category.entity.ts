@@ -1,6 +1,6 @@
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
 import { Entity, Column, OneToMany } from 'typeorm';
-import { PropertyEntity } from '../inmueble/property.entity';
+import { PropertyEntity } from '../property/property.entity';
 
 @Entity('category')
 export class CategoryEntity extends AbstractEntity {

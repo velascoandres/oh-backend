@@ -1,765 +1,553 @@
 [
   {
+    "$metaID": 1,
+    "name": "Comvoy Sisquoc",
+    "address": "607 Brightwater Avenue, Grapeview, Montana, 4475",
+    "estateId": 178999991,
+    "description": "Cupidatat veniam eu labore qui pariatur occaecat et cupidatat voluptate.",
+    "area": "471.19",
+    "bedrooms": 2,
+    "parks": 9,
+    "bathrooms": 6,
+    "floors": 9,
+    "enable": 0,
+    "propertyId": 73,
+    "isForRent": 1,
+    "price": 98618,
+    "categoryId": 9,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22716,
-        -78.7651
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2192,
-        -78.7306
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2115,
-        -78.7155
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22191,
-        -78.6219
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21069,
-        -78.7482
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21151,
-        -78.7479
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22092,
-        -78.6783
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22147,
-        -78.7690
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2176,
-        -78.7269
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22196,
-        -78.5772
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21105,
-        -78.5322
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22919,
-        -78.6182
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22526,
-        -78.5666
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21985,
-        -78.6373
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22514,
+        -0.22481,
         -78.7509
       ]
     }
   },
   {
+    "$metaID": 2,
+    "name": "Gadtron Kilbourne",
+    "address": "362 Chase Court, Bagtown, Wisconsin, 9854",
+    "estateId": 178999992,
+    "description": "Occaecat dolore enim veniam et cupidatat elit occaecat in irure pariatur proident dolore cupidatat.",
+    "area": "452.33",
+    "bedrooms": 3,
+    "parks": 7,
+    "bathrooms": 4,
+    "floors": 5,
+    "enable": 1,
+    "propertyId": 65,
+    "isForRent": 0,
+    "price": 75709,
+    "categoryId": 6,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22629,
-        -78.7711
+        -0.21081,
+        -78.6594
       ]
     }
   },
   {
+    "$metaID": 3,
+    "name": "Remold Darrtown",
+    "address": "234 Glenwood Road, Salix, Nevada, 1940",
+    "estateId": 178999993,
+    "description": "Aliqua cillum eiusmod ipsum occaecat ex quis Lorem adipisicing magna esse quis aute magna pariatur.",
+    "area": "443.72",
+    "bedrooms": 6,
+    "parks": 10,
+    "bathrooms": 3,
+    "floors": 5,
+    "enable": 1,
+    "propertyId": 1,
+    "isForRent": 0,
+    "price": 147676,
+    "categoryId": 8,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22394,
-        -78.5436
+        -0.22625,
+        -78.7798
       ]
     }
   },
   {
+    "$metaID": 4,
+    "name": "Darwinium Marshall",
+    "address": "382 Woodpoint Road, Mayfair, Louisiana, 9008",
+    "estateId": 178999994,
+    "description": "Consequat veniam aliqua do nostrud pariatur.",
+    "area": "204.07",
+    "bedrooms": 1,
+    "parks": 7,
+    "bathrooms": 5,
+    "floors": 7,
+    "enable": 1,
+    "propertyId": 72,
+    "isForRent": 1,
+    "price": 12846,
+    "categoryId": 6,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22849,
-        -78.5812
+        -0.21414,
+        -78.5458
       ]
     }
   },
   {
+    "$metaID": 5,
+    "name": "Overfork Aberdeen",
+    "address": "229 Allen Avenue, Leroy, Minnesota, 5008",
+    "estateId": 178999995,
+    "description": "Eiusmod minim do enim dolor.",
+    "area": "378.41",
+    "bedrooms": 1,
+    "parks": 7,
+    "bathrooms": 4,
+    "floors": 5,
+    "enable": 0,
+    "propertyId": 12,
+    "isForRent": 1,
+    "price": 150225,
+    "categoryId": 9,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22016,
-        -78.5268]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21625,
-        -78.6211
+        -0.21789,
+        -78.6409
       ]
     }
   },
   {
+    "$metaID": 6,
+    "name": "Zuvy Rosine",
+    "address": "472 Madison Place, Thynedale, Massachusetts, 5475",
+    "estateId": 178999996,
+    "description": "Amet eiusmod non reprehenderit dolor anim cupidatat in dolor ad duis tempor.",
+    "area": "71.26",
+    "bedrooms": 10,
+    "parks": 4,
+    "bathrooms": 2,
+    "floors": 1,
+    "enable": 0,
+    "propertyId": 66,
+    "isForRent": 1,
+    "price": 196288,
+    "categoryId": 4,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22849,
-        -78.6120
+        -0.21308,
+        -78.7296
       ]
     }
   },
   {
+    "$metaID": 7,
+    "name": "Frolix Waterloo",
+    "address": "406 Stewart Street, Gloucester, North Dakota, 3568",
+    "estateId": 178999997,
+    "description": "Enim qui sunt ea et et.",
+    "area": "494.79",
+    "bedrooms": 5,
+    "parks": 1,
+    "bathrooms": 1,
+    "floors": 2,
+    "enable": 0,
+    "propertyId": 43,
+    "isForRent": 1,
+    "price": 26477,
+    "categoryId": 10,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21038,
+        -0.2234,
+        -78.7377
+      ]
+    }
+  },
+  {
+    "$metaID": 8,
+    "name": "Mobildata Dragoon",
+    "address": "519 Wyckoff Street, Beaverdale, Washington, 4535",
+    "estateId": 178999998,
+    "description": "Fugiat aliquip duis adipisicing pariatur do amet adipisicing ad adipisicing id.",
+    "area": "328.62",
+    "bedrooms": 5,
+    "parks": 7,
+    "bathrooms": 1,
+    "floors": 6,
+    "enable": 1,
+    "propertyId": 76,
+    "isForRent": 0,
+    "price": 2021,
+    "categoryId": 7,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.21135,
+        -78.6328
+      ]
+    }
+  },
+  {
+    "$metaID": 9,
+    "name": "Dancerity Grandview",
+    "address": "749 Kent Street, Orovada, Pennsylvania, 2479",
+    "estateId": 178999999,
+    "description": "Eu voluptate dolor ipsum deserunt.",
+    "area": "458.14",
+    "bedrooms": 5,
+    "parks": 4,
+    "bathrooms": 4,
+    "floors": 7,
+    "enable": 0,
+    "propertyId": 55,
+    "isForRent": 1,
+    "price": 187611,
+    "categoryId": 7,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.21366,
+        -78.7368
+      ]
+    }
+  },
+  {
+    "$metaID": 10,
+    "name": "Blurrybus Neibert",
+    "address": "596 Noel Avenue, Dundee, Indiana, 5072",
+    "estateId": 1789999910,
+    "description": "Lorem aliquip ex do culpa cillum cupidatat velit commodo minim deserunt.",
+    "area": "289.55",
+    "bedrooms": 9,
+    "parks": 5,
+    "bathrooms": 5,
+    "floors": 8,
+    "enable": 1,
+    "propertyId": 62,
+    "isForRent": 0,
+    "price": 175330,
+    "categoryId": 3,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.22557,
+        -78.7032
+      ]
+    }
+  },
+  {
+    "$metaID": 11,
+    "name": "Cemention Hemlock",
+    "address": "666 Fleet Walk, Ruckersville, Idaho, 8064",
+    "estateId": 1789999911,
+    "description": "Mollit laborum ut labore qui culpa cillum aute Lorem irure cillum.",
+    "area": "348.48",
+    "bedrooms": 3,
+    "parks": 10,
+    "bathrooms": 2,
+    "floors": 10,
+    "enable": 1,
+    "propertyId": 27,
+    "isForRent": 1,
+    "price": 139677,
+    "categoryId": 10,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.21186,
+        -78.7635
+      ]
+    }
+  },
+  {
+    "$metaID": 12,
+    "name": "Barkarama Blandburg",
+    "address": "998 Cozine Avenue, Cowiche, Tennessee, 8528",
+    "estateId": 1789999912,
+    "description": "Commodo sint ut reprehenderit quis dolor duis veniam cillum dolor aute tempor ut.",
+    "area": "258.13",
+    "bedrooms": 10,
+    "parks": 10,
+    "bathrooms": 5,
+    "floors": 10,
+    "enable": 1,
+    "propertyId": 49,
+    "isForRent": 0,
+    "price": 136449,
+    "categoryId": 10,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.21389,
+        -78.5761
+      ]
+    }
+  },
+  {
+    "$metaID": 13,
+    "name": "Zepitope Gadsden",
+    "address": "525 Barbey Street, Delshire, South Dakota, 7156",
+    "estateId": 1789999913,
+    "description": "Culpa ex amet exercitation consequat occaecat adipisicing voluptate labore Lorem labore.",
+    "area": "367.1",
+    "bedrooms": 5,
+    "parks": 4,
+    "bathrooms": 5,
+    "floors": 3,
+    "enable": 1,
+    "propertyId": 17,
+    "isForRent": 0,
+    "price": 106533,
+    "categoryId": 5,
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.22633,
         -78.5689
       ]
     }
   },
   {
+    "$metaID": 14,
+    "name": "Zenco Sunnyside",
+    "address": "179 Murdock Court, Reno, Texas, 4095",
+    "estateId": 1789999914,
+    "description": "Ea ullamco sit enim ullamco.",
+    "area": "133.86",
+    "bedrooms": 6,
+    "parks": 5,
+    "bathrooms": 3,
+    "floors": 4,
+    "enable": 0,
+    "propertyId": 87,
+    "isForRent": 1,
+    "price": 2110,
+    "categoryId": 10,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21438,
-        -78.6705
+        -0.22952,
+        -78.7545
       ]
     }
   },
   {
+    "$metaID": 15,
+    "name": "Quarx Ronco",
+    "address": "718 Desmond Court, Warren, American Samoa, 8717",
+    "estateId": 1789999915,
+    "description": "Ipsum commodo consectetur dolor sunt nulla ullamco velit.",
+    "area": "236.38",
+    "bedrooms": 3,
+    "parks": 4,
+    "bathrooms": 3,
+    "floors": 2,
+    "enable": 0,
+    "propertyId": 68,
+    "isForRent": 0,
+    "price": 185516,
+    "categoryId": 6,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21274,
-        -78.6396
+        -0.22693,
+        -78.6016
       ]
     }
   },
   {
+    "$metaID": 16,
+    "name": "Biospan Clarence",
+    "address": "822 Hutchinson Court, Clay, Illinois, 8438",
+    "estateId": 1789999916,
+    "description": "Qui tempor ex dolor occaecat mollit minim incididunt minim ullamco aliquip exercitation qui et velit.",
+    "area": "373.56",
+    "bedrooms": 8,
+    "parks": 6,
+    "bathrooms": 3,
+    "floors": 2,
+    "enable": 0,
+    "propertyId": 59,
+    "isForRent": 1,
+    "price": 168518,
+    "categoryId": 10,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22047,
-        -78.6948
+        -0.22866,
+        -78.6537
       ]
     }
   },
   {
+    "$metaID": 17,
+    "name": "Acruex Sunriver",
+    "address": "954 Post Court, Elfrida, West Virginia, 2075",
+    "estateId": 1789999917,
+    "description": "Anim anim fugiat eiusmod occaecat officia voluptate enim.",
+    "area": "391.53",
+    "bedrooms": 9,
+    "parks": 1,
+    "bathrooms": 8,
+    "floors": 10,
+    "enable": 1,
+    "propertyId": 62,
+    "isForRent": 0,
+    "price": 64190,
+    "categoryId": 3,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22518,
-        -78.5506
+        -0.22723,
+        -78.6255
       ]
     }
   },
   {
+    "$metaID": 18,
+    "name": "Lyria Biddle",
+    "address": "251 Canarsie Road, Jacksonwald, North Carolina, 7363",
+    "estateId": 1789999918,
+    "description": "Duis cillum adipisicing minim sit consectetur cillum.",
+    "area": "261.87",
+    "bedrooms": 5,
+    "parks": 6,
+    "bathrooms": 5,
+    "floors": 1,
+    "enable": 1,
+    "propertyId": 8,
+    "isForRent": 1,
+    "price": 145634,
+    "categoryId": 7,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22247,
-        -78.7063
+        -0.22221,
+        -78.7406
       ]
     }
   },
   {
+    "$metaID": 19,
+    "name": "Stucco Movico",
+    "address": "464 Kensington Walk, Blairstown, New Hampshire, 1486",
+    "estateId": 1789999919,
+    "description": "Quis ea laborum exercitation sit irure reprehenderit laboris elit eu.",
+    "area": "217.84",
+    "bedrooms": 5,
+    "parks": 5,
+    "bathrooms": 10,
+    "floors": 6,
+    "enable": 1,
+    "propertyId": 90,
+    "isForRent": 1,
+    "price": 124422,
+    "categoryId": 3,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.2131,
-        -78.6574
+        -0.21932,
+        -78.6369
       ]
     }
   },
   {
+    "$metaID": 20,
+    "name": "Zidant Jessie",
+    "address": "238 Victor Road, Berlin, Virginia, 4962",
+    "estateId": 1789999920,
+    "description": "Occaecat voluptate dolor velit cupidatat nulla cillum nostrud ad.",
+    "area": "272.15",
+    "bedrooms": 1,
+    "parks": 5,
+    "bathrooms": 3,
+    "floors": 9,
+    "enable": 1,
+    "propertyId": 56,
+    "isForRent": 1,
+    "price": 39340,
+    "categoryId": 1,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21802,
-        -78.5320
+        -0.21858,
+        -78.6378
       ]
     }
   },
   {
+    "$metaID": 21,
+    "name": "Dogspa Galesville",
+    "address": "869 Robert Street, Titanic, Puerto Rico, 6999",
+    "estateId": 1789999921,
+    "description": "Irure sunt adipisicing ipsum laborum culpa exercitation ad labore anim.",
+    "area": "455.25",
+    "bedrooms": 1,
+    "parks": 5,
+    "bathrooms": 8,
+    "floors": 8,
+    "enable": 0,
+    "propertyId": 42,
+    "isForRent": 0,
+    "price": 141661,
+    "categoryId": 5,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.22255,
-        -78.5952
+        -0.2216,
+        -78.7846
       ]
     }
   },
   {
+    "$metaID": 22,
+    "name": "Netplax Shindler",
+    "address": "633 Herkimer Street, Brenton, Kentucky, 4474",
+    "estateId": 1789999922,
+    "description": "Anim enim ex sunt elit qui qui cillum ipsum exercitation laborum veniam.",
+    "area": "469.81",
+    "bedrooms": 9,
+    "parks": 3,
+    "bathrooms": 2,
+    "floors": 1,
+    "enable": 0,
+    "propertyId": 3,
+    "isForRent": 0,
+    "price": 164363,
+    "categoryId": 9,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21635,
-        -78.5866
+        -0.21191,
+        -78.6122
       ]
     }
   },
   {
+    "$metaID": 23,
+    "name": "Emtrac Gouglersville",
+    "address": "483 Colby Court, Carlton, Delaware, 8660",
+    "estateId": 1789999923,
+    "description": "Do nulla adipisicing et id laborum excepteur est fugiat aliqua.",
+    "area": "323.27",
+    "bedrooms": 6,
+    "parks": 1,
+    "bathrooms": 6,
+    "floors": 5,
+    "enable": 1,
+    "propertyId": 90,
+    "isForRent": 0,
+    "price": 196922,
+    "categoryId": 8,
     "location": {
       "type": "Point",
       "coordinates": [
-        -0.21222,
-        -78.6274
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22605,
-        -78.7374
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 34,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22649,
-        -78.5574
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22173,
-        -78.6454
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 36,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21235,
-        -78.7259
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 37,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21168,
-        -78.6101]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 38,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22009,
-        -78.5643
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 39,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22275,
-        -78.7661
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 40,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21249,
-        -78.6776
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 41,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22824,
-        -78.5392
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 42,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22956,
-        -78.5833
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 43,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22813,
-        -78.6022
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 44,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22265,
-        -78.7233
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 45,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22656,
-        -78.7013
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 46,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21508,
-        -78.7463
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 47,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22416,
-        -78.6597]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 48,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22626,
-        -78.7093
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 49,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22496,
-        -78.7489
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 50,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21989,
-        -78.7232
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 51,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22721,
-        -78.5718
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 52,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21327,
-        -78.7797]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 53,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21365,
-        -78.5876
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 54,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22549,
-        -78.5976
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 55,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2295,
-        -78.70,27
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 56,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21564,
-        -78.6741
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 57,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22882,
-        -78.7008
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 58,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21587,
-        -78.6111
-      ]
-    }
-  },
-  {
-    "entidad": "inmueble",
-    "entidadId": 59,
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2221,
-        -78.7138
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22624,
-        -78.6346
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21083,
-        -78.6922
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22004,
-        -78.5319
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22864,
-        -78.5634
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22247,
-        -78.6077]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21409,
-        -78.5673
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22375,
-        -78.6043
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21619,
-        -78.6798
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21861,
-        -78.7553
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21729,
-        -78.6492
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.2155,
-        -78.5831
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21259,
-        -78.7246]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21137,
-        -78.6496
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21629,
-        -78.6223
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21416,
-        -78.6609
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21958,
-        -78.5890
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21338,
-        -78.6836
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21884,
-        -78.5812
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.21106,
-        -78.7024
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22125,
-        -78.5428
-      ]
-    }
-  },
-  {
-    "location": {
-      "type": "Point",
-      "coordinates": [
-        -0.22509,
-        -78.5530
+        -0.22643,
+        -78.7748
       ]
     }
   }

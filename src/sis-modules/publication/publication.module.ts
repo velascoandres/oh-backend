@@ -3,8 +3,8 @@ import {PublicationService} from './publication.service';
 import {PublicationController} from './publication.controller';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {PublicationEntity} from './publication.entity';
-import {DataBaseModule} from '@pimba/excalibur/lib';
 import {PublicationCreateDto} from './dtos/publication-create.dto';
+import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 
 @Module({
     imports: [

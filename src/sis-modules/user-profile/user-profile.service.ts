@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { AbstractService } from '@pimba/excalibur/lib';
 import { UserProfileEntity } from './user-profile.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
+import { AbstractService } from '@nest-excalibur/common-api/lib';
 
 @Injectable()
 export class UserProfileService

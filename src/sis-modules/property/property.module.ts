@@ -6,7 +6,6 @@ import {DataBaseModule} from '@nest-excalibur/data-base/lib';
 import { PropertyController } from './property.controller';
 import { PropertyService } from './property.service';
 import { PropertyEntity } from './property.entity';
-import {ImagenInmuebleModule} from '../imagen-inmueble/imagen-inmueble.module';
 import {PropertyCreateDto} from './dtos/property-create.dto';
 
 @Module({
@@ -17,7 +16,6 @@ import {PropertyCreateDto} from './dtos/property-create.dto';
       ],
       'default'
     ),
-    ImagenInmuebleModule,
     DataBaseModule.forBulkData(
         {
           entity: PropertyEntity,

@@ -1,6 +1,5 @@
-import { Entity, Column, ManyToOne, OneToMany, OneToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToOne } from 'typeorm';
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
-import { ImagenInmuebleEntity } from '../imagen-inmueble/imagen-inmueble.entity';
 
 import { CategoryEntity } from '../category/category.entity';
 import { UserProfileEntity } from '../user-profile/user-profile.entity';
@@ -109,13 +108,6 @@ export class PropertyEntity extends AbstractEntity {
     },
   )
   price: number;
-
-
-  @OneToMany(
-    type => ImagenInmuebleEntity,
-    imagenInmueble => imagenInmueble.inmueble,
-  )
-  pictures: ImagenInmuebleEntity[];
 
   @OneToOne(
     type => UserProfileEntity,

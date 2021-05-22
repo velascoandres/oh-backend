@@ -19,7 +19,7 @@ import {UserProfileController} from './user-profile.controller';
                 entity: UserProfileEntity,
                 dtoClassValidation: UserProfileCreateDto,
                 creationOrder: 1,
-                pathDev: '/src/sis-modules/user-profile/test-data/development/user-profile.json',
+                pathDev: '/src/sis-modules/user-profile/test-data/development/user-profiles.json',
                 pathProd: '/dist/sis-modules/user-profile/test-data/production/user-profile.json',
                 connection: 'default',
             },

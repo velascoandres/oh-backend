@@ -3,6 +3,7 @@ import {TypeOrmModuleOptions} from '@nestjs/typeorm';
 const client = redis.createClient(30502);
 
 export const PRODUCTION_CONFIG = {
+  createTestData: false,
   mysql: {
     type: 'mysql',
     host: 'localhost',

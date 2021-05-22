@@ -13,6 +13,8 @@ import { MYSQL_ENTITIES } from './constants/mysql-entities';
 import { PRODUCTION_CONFIG } from './constants/config/production';
 import { DEVELOPMENT_CONFIG } from './constants/config/development';
 import { MONGODB_ENTITIES } from './constants/mongo-entities';
+import { PropertyPictureModule } from './sis-modules/property-picture/property-picture.module';
+import { UserProfileModule } from './sis-modules/user-profile/user-profile.module';
 
 
 @Module({
@@ -40,6 +42,8 @@ import { MONGODB_ENTITIES } from './constants/mongo-entities';
         FavoritePublicationModule,
         PropertyModule,
         PublicationModule,
+        PropertyPictureModule,
+        UserProfileModule,
     ],
     controllers: [
         AppController
@@ -55,7 +59,7 @@ export class AppModule implements OnModuleInit {
     }
 
     async createData() {
-        if (DEVELOPMENT_CONFIG.crearDatosPrueba) {
+        if (DEVELOPMENT_CONFIG.createTestData) {
             await this.dataBaseService.insertData();
             this.dataBaseService.showSummary(true);
         }
