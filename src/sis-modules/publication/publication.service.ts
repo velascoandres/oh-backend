@@ -3,7 +3,6 @@ import { PublicationEntity } from './publication.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
-import { query } from 'express';
 
 @Injectable()
 export class PublicationService
@@ -59,8 +58,7 @@ export class PublicationService
       ],
     );
     return cursor
-      .skip(skip ?? 0)
-      .limit(take ?? 10)
-      .toArray();
+      .toArray()
+      .then( arr => arr[0]);
   }
 }
