@@ -32,7 +32,7 @@ export const PRODUCTION_CONFIG = {
   },
   mongodb: {
     type: 'mongodb',
-    name: 'conexion_mongo',
+    name: 'mongo_conn',
     useNewUrlParser: true,
     dropSchema: true,
     useUnifiedTopology: true,

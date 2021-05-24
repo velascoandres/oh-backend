@@ -1,5 +1,6 @@
 import redis = require('redis');
-import {TypeOrmModuleOptions} from '@nestjs/typeorm';
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+
 const client = redis.createClient(30502);
 
 export const DEVELOPMENT_CONFIG = {
@@ -33,9 +34,14 @@ export const DEVELOPMENT_CONFIG = {
   mongodb: {
     type: 'mongodb',
     name: 'mongo_conn',
-    useNewUrlParser: true,
-    dropSchema: true,
+    database: 'prueba',
+    dropSchema: false,
     useUnifiedTopology: true,
-    url: `mongodb://pimba_man:12345678@localhost:30503/test?authSource=admin`,
+    synchronize: true,
+    password: '12345678',
+    username: 'pimba_man',
+    host: 'localhost',
+    port: 30503,
+    authSource: 'admin',
   } as TypeOrmModuleOptions,
 };
