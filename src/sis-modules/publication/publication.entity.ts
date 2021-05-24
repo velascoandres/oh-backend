@@ -18,7 +18,14 @@ export class PublicationEntity extends AbstractMongoEntity {
   @Column()
   address: string;
 
-  @Column()
+  @Column(
+    {
+      type: 'decimal',
+      precision: 6,
+      scale: 2,
+      name: 'area',
+    },
+  )
   area: number;
 
   @Column()

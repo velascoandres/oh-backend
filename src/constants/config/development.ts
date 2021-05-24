@@ -35,7 +35,7 @@ export const DEVELOPMENT_CONFIG = {
     type: 'mongodb',
     name: 'mongo_conn',
     database: 'prueba',
-    dropSchema: false,
+    dropSchema: true,
     useUnifiedTopology: true,
     synchronize: true,
     password: '12345678',

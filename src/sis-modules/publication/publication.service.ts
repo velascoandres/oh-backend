@@ -3,6 +3,8 @@ import { PublicationEntity } from './publication.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository, ObjectLiteral } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
+import { PublicationSearchDto } from './dtos/publication-search.dto';
+import { buildRangeCondition, buildSimpleCondition } from '../../helpers/filters';
 
 @Injectable()
 export class PublicationService
@@ -25,13 +27,32 @@ export class PublicationService
   }
 
   async filterByLocation(
-    params: {where: ObjectLiteral, skip: number, take: number},
-    location: [number, number],
-    distance = 1000,
+    params: PublicationSearchDto,
     enable = 1,
   ) {
-    const { skip, take } = params ?? { skip: 0, take: 10 };
-    console.log(location);
+    const {
+      skip,
+      take,
+      distance,
+      lat,
+      lng,
+      maxArea,
+      minArea,
+      bathrooms,
+      bedrooms,
+      description,
+      floors,
+      name,
+      parks,
+    } = params;
+    const location = [lng, lat];
+    const areaConditions = buildRangeCondition('area', minArea, maxArea);
+    const bathroomsConditions = bathrooms ? [buildSimpleCondition('bathrooms', bathrooms)] : [];
+    const bedroomsConditions = bedrooms ? [buildSimpleCondition('bedrooms', bedrooms)]  : [];
+    const floorsConditions = floors ? [buildSimpleCondition('floors', floors)]  : [];
+    const nameConditions = name ? [buildSimpleCondition('name', name)]  : [];
+    const descriptionConditions = description ? [buildSimpleCondition('description', description)] : [];
+    const parksConditions = parks ? [buildSimpleCondition('parks', parks)]  : [];
     const cursor = this.publicationRepository.aggregate(
       [
         {
@@ -45,8 +66,16 @@ export class PublicationService
         {
           $match: {
             // Params
-            enable,
-            ...params?.where ?? {},
+            $and: [
+              { enable },
+              ...areaConditions,
+              ...floorsConditions,
+              ...bathroomsConditions,
+              ...bedroomsConditions,
+              ...nameConditions,
+              ...descriptionConditions,
+              ...parksConditions,
+            ],
           },
         },
         {

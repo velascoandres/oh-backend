@@ -6,18 +6,31 @@ import { IPublicationSearchCriteria, PublicationSearchDto } from '../dtos/public
 @Injectable()
 export class ValidateQueryParamsPipe implements PipeTransform<any> {
   async transform(value: IPublicationSearchCriteria, { metatype }: ArgumentMetadata): Promise<PublicationSearchDto> {
-    console.log(value, metatype);
     const object: PublicationSearchDto = plainToClass(metatype, value);
-    object.query = JSON.parse(value.query as string ?? '{}');
     const errors = await validate(object);
     if (errors.length > 0) {
       throw new BadRequestException(errors);
     }
+    if (Number(object.lng) > 180 || Number(object.lng) < -180 ){
+      throw new BadRequestException('lng must be between -180 and 180 ');
+    }
+    if (Number(object.lat) > 180 || Number(object.lat) < -180 ){
+      throw new BadRequestException('lat must be between -180 and 180 ');
+    }
     return {
-      query: object.query,
       lat: Number(object.lat),
       lng: Number(object.lng),
       distance: Number(object.distance),
+      maxArea: Number(object.maxArea),
+      minArea: Number(object.minArea),
+      name: object.name,
+      description: object.description,
+      parks: Number(object.parks),
+      floors: Number(object.floors),
+      bedrooms: Number(object.bedrooms),
+      bathrooms: Number(object.bathrooms),
+      take: Number(object.take),
+      skip: Number(object.skip),
     };
   }
 }
