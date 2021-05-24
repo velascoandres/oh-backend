@@ -7,6 +7,8 @@ import { PublicationService } from './publication.service';
 import { PublicationCreateDto } from './dtos/publication-create.dto';
 import { PublicationUpdateDto } from './dtos/publication-update.dto';
 import { ObjectLiteral } from 'typeorm';
+import { IPublicationSearchCriteria } from './dtos/publication-search.dto';
+import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
 
 
 const options: CrudOptions = {
@@ -32,8 +34,16 @@ export class PublicationController
 
   @Get()
   findAll(
-    @Query() searchCriteria: ObjectLiteral = {}): any {
-    return this.publicationService.filterByLocation(searchCriteria);
+    @Query(new ValidateQueryParamsPipe()) searchCriteria: IPublicationSearchCriteria,
+  ): Promise<any> {
+    const {distance, query, lat, lng} = searchCriteria;
+    console.log(searchCriteria);
+    return this.publicationService
+      .filterByLocation(
+        query as {where: ObjectLiteral, skip: number, take: number},
+        [lng, lat],
+        distance,
+      );
   }
 
 }

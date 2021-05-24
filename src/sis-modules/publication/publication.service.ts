@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PublicationEntity } from './publication.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MongoRepository } from 'typeorm';
+import { MongoRepository, ObjectLiteral } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 
 @Injectable()
@@ -24,15 +24,29 @@ export class PublicationService
     );
   }
 
-  async filterByLocation(params: Record<string, any>, location?: [number, number], enable = 1) {
-    const { skip, take } = JSON.parse(params?.query) ?? {skip: 0, take: 10};
+  async filterByLocation(
+    params: {where: ObjectLiteral, skip: number, take: number},
+    location: [number, number],
+    distance = 1000,
+    enable = 1,
+  ) {
+    const { skip, take } = params ?? { skip: 0, take: 10 };
+    console.log(location);
     const cursor = this.publicationRepository.aggregate(
       [
+        {
+          $geoNear: {
+            near: { type: 'Point', coordinates: location },
+            maxDistance: distance,
+            spherical: false,
+            distanceField: 'location.distance',
+          },
+        },
         {
           $match: {
             // Params
             enable,
-            ...JSON.parse(params?.query)?.where ?? {},
+            ...params?.where ?? {},
           },
         },
         {
@@ -59,6 +73,6 @@ export class PublicationService
     );
     return cursor
       .toArray()
-      .then( arr => arr[0]);
+      .then(arr => arr[0]);
   }
 }
