@@ -1,35 +1,49 @@
 import {Module, OnModuleInit} from '@nestjs/common';
+
+import {DataBaseModule, DataBaseService} from '@nest-excalibur/data-base/lib';
+
+
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
-import {MODULOS} from './constantes/modulos';
-import {DataBaseModule, DataBaseService} from '@pimba/excalibur/lib';
-import {CONFIGURATION_PRODUCCION} from './submodulos/configuracion/config/produccion';
-import {CONFIGURACION_DESARROLLO} from './submodulos/configuracion/config/desarrollo';
-import {ENTIDADES_MYSQL} from './constantes/entidades-mysql';
-import {ENTIDADES_MONGO} from './constantes/entidades-mongo';
+import { CategoryModule } from './sis-modules/category/category.module';
+import { FavoritePublicationModule } from './sis-modules/favorite-publication/favorite-publication.module';
+import { PropertyModule } from './sis-modules/property/property.module';
+import { PublicationModule } from './sis-modules/publication/publication.module';
+import { MYSQL_ENTITIES } from './constants/mysql-entities';
+import { PRODUCTION_CONFIG } from './constants/config/production';
+import { DEVELOPMENT_CONFIG } from './constants/config/development';
+import { MONGODB_ENTITIES } from './constants/mongo-entities';
+import { PropertyPictureModule } from './sis-modules/property-picture/property-picture.module';
+import { UserProfileModule } from './sis-modules/user-profile/user-profile.module';
+
 
 @Module({
     imports: [
         DataBaseModule.forRoot(
             {
-                conections: {
+                connections: {
                     mysql: {
-                        ...process.env.NODE_ENV ? CONFIGURATION_PRODUCCION.mysql : CONFIGURACION_DESARROLLO.mysql,
+                        ...process.env.NODE_ENV ? PRODUCTION_CONFIG.mysql : DEVELOPMENT_CONFIG.mysql,
                         entities: [
-                            ...ENTIDADES_MYSQL,
+                            ...MYSQL_ENTITIES,
                         ],
                     },
                     mongodb: {
-                        ...process.env.NODE_ENV ? CONFIGURATION_PRODUCCION.mongodb : CONFIGURACION_DESARROLLO.mongodb,
+                        ...process.env.NODE_ENV ? PRODUCTION_CONFIG.mongodb : DEVELOPMENT_CONFIG.mongodb,
                         entities: [
-                            ...ENTIDADES_MONGO,
+                            ...MONGODB_ENTITIES,
                         ],
                     }
                 },
                 productionFlag: !!process.env.NODE_ENV,
             }
         ),
-        ...MODULOS,
+        CategoryModule,
+        FavoritePublicationModule,
+        PropertyModule,
+        PublicationModule,
+        PropertyPictureModule,
+        UserProfileModule,
     ],
     controllers: [
         AppController
@@ -45,7 +59,7 @@ export class AppModule implements OnModuleInit {
     }
 
     async createData() {
-        if (CONFIGURACION_DESARROLLO.crearDatosPrueba) {
+        if (DEVELOPMENT_CONFIG.createTestData) {
             await this.dataBaseService.insertData();
             this.dataBaseService.showSummary(true);
         }
