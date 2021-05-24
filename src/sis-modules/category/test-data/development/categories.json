@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "casa"
+    },
+    {
+        "id": 2,
+        "name": "departamento"
+    },
+    {
+        "id": 3,
+        "name": "terreno"
+    },
+    {
+        "id": 4,
+        "name": "oficina"
+    },
+    {
+        "id": 5,
+        "name": "local comercial"
+    },
+    {
+        "id": 6,
+        "name": "casa rentera"
+    },
+    {
+        "id": 7,
+        "name": "hotel"
+    },
+    {
+        "id": 8,
+        "name": "hostal"
+    },
+    {
+        "id": 9,
+        "name": "suite"
+    }
+]
