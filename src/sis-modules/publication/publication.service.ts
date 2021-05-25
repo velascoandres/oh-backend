@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { PublicationEntity } from './publication.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MongoRepository, ObjectLiteral } from 'typeorm';
+import { MongoRepository } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 import { PublicationSearchDto } from './dtos/publication-search.dto';
-import { buildRangeCondition, buildSimpleCondition } from '../../helpers/filters';
+import { buildLikeCondition, buildRangeCondition, buildSimpleCondition } from '../../helpers/filters';
 
 @Injectable()
 export class PublicationService
@@ -47,12 +47,12 @@ export class PublicationService
     } = params;
     const location = [lng, lat];
     const areaConditions = buildRangeCondition('area', minArea, maxArea);
-    const bathroomsConditions = bathrooms ? [buildSimpleCondition('bathrooms', bathrooms)] : [];
-    const bedroomsConditions = bedrooms ? [buildSimpleCondition('bedrooms', bedrooms)]  : [];
-    const floorsConditions = floors ? [buildSimpleCondition('floors', floors)]  : [];
-    const nameConditions = name ? [buildSimpleCondition('name', name)]  : [];
-    const descriptionConditions = description ? [buildSimpleCondition('description', description)] : [];
-    const parksConditions = parks ? [buildSimpleCondition('parks', parks)]  : [];
+    const bathroomsConditions = buildSimpleCondition('bathrooms', bathrooms);
+    const bedroomsConditions = buildSimpleCondition('bedrooms', bedrooms);
+    const floorsConditions = buildSimpleCondition('floors', floors);
+    const nameConditions = buildLikeCondition('name', name);
+    const descriptionConditions = buildLikeCondition('description', description);
+    const parksConditions = buildSimpleCondition('parks', parks);
     const cursor = this.publicationRepository.aggregate(
       [
         {
