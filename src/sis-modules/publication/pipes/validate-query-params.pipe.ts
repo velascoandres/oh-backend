@@ -31,6 +31,7 @@ export class ValidateQueryParamsPipe implements PipeTransform<any> {
       bathrooms: Number(object.bathrooms),
       take: Number(object.take),
       skip: Number(object.skip),
+      enable: Number(object.enable) as 0 | 1,
     };
   }
 }

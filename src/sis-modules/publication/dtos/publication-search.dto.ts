@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
+import { IsIn, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
 import { IsTypeOr } from '@nest-excalibur/common-api/lib';
 import { CUSTOM_VALIDATORS } from '../../../constants/custom-validators';
 
@@ -14,6 +14,7 @@ export interface IPublicationSearchCriteria {
   lng: number;
   lat: number;
   distance: number;
+  enable: 0 | 1;
   skip: number;
   take: number;
 }
@@ -80,6 +81,11 @@ export class PublicationSearchDto implements IPublicationSearchCriteria {
     CUSTOM_VALIDATORS.isNumberStringOrNumber,
   )
   distance = 1000;
+
+
+  @IsOptional()
+  @IsIn(['0', '1', 0, 1])
+  enable: 0 | 1 = 1;
 
   @IsOptional()
   @IsTypeOr(

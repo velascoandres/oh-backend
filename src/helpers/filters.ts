@@ -18,6 +18,16 @@ export const buildSimpleCondition = (field: string, value: number | string, acce
   return conditions;
 };
 
+export const buildSimpleStatusCondition = (field: string, status: 1 | 0 | '0' | '1') => {
+  const conditions = [];
+    conditions.push(
+      {
+        [field]: Number(status),
+      },
+    );
+  return conditions;
+};
+
 export const buildLikeCondition = (field: string, regexExp: string, acceptEmpty = false) => {
   const conditions = [];
   if (regexExp || acceptEmpty) {
@@ -48,3 +58,42 @@ export const buildRangeCondition = (field: string, minValue = 0, maxValue = 0, a
   }
   return conditions;
 };
+
+
+export const setupResponseWithPagination = (skip: number, take: number) => {
+  return {
+    $facet: {
+      data: [
+        { $skip: skip },
+        { $limit: take },
+      ],
+      pageInfo: [
+        { $group: { _id: null, count: { $sum: 1 } } },
+      ],
+    },
+  };
+};
+
+
+export const setupLookup = (from: string, foreignField: string, as: string, localField = '_id') => {
+ return {
+    $lookup: {
+      from,
+        localField,
+        foreignField,
+        as,
+    },
+  };
+};
+
+
+export const setupGeoNearPoint = (location: number[], distance: number, distanceField: string, spherical = false) => {
+  return {
+    $geoNear: {
+      near: { type: 'Point', coordinates: location },
+      maxDistance: distance,
+      spherical,
+      distanceField,
+    },
+  };
+}

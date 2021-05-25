@@ -6,8 +6,7 @@ import { PublicationEntity } from './publication.entity';
 import { PublicationService } from './publication.service';
 import { PublicationCreateDto } from './dtos/publication-create.dto';
 import { PublicationUpdateDto } from './dtos/publication-update.dto';
-import { ObjectLiteral } from 'typeorm';
-import { IPublicationSearchCriteria, PublicationSearchDto } from './dtos/publication-search.dto';
+import { PublicationSearchDto } from './dtos/publication-search.dto';
 import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
 
 
