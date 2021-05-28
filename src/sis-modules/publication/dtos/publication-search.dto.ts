@@ -5,6 +5,8 @@ import { CUSTOM_VALIDATORS } from '../../../constants/custom-validators';
 export interface IPublicationSearchCriteria {
   maxArea: number;
   minArea: number;
+  minPrice: number;
+  maxPrice: number;
   name: string;
   description: string;
   floors: number;
@@ -33,6 +35,18 @@ export class PublicationSearchDto implements IPublicationSearchCriteria {
     CUSTOM_VALIDATORS.isNumberStringOrNumber,
   )
   minArea = 0;
+
+  @IsOptional()
+  @IsTypeOr(
+    CUSTOM_VALIDATORS.isNumberStringOrNumber,
+  )
+  maxPrice = 0;
+
+  @IsOptional()
+  @IsTypeOr(
+    CUSTOM_VALIDATORS.isNumberStringOrNumber,
+  )
+  minPrice = 0;
 
   @IsOptional()
   name: string;
@@ -64,17 +78,17 @@ export class PublicationSearchDto implements IPublicationSearchCriteria {
   )
   bathrooms = 0;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsTypeOr(
     CUSTOM_VALIDATORS.isNumberStringOrNumber,
   )
-  lng: number;
+  lng = 0;
 
-  @IsNotEmpty()
+  @IsOptional()
   @IsTypeOr(
     CUSTOM_VALIDATORS.isNumberStringOrNumber,
   )
-  lat: number;
+  lat = 0;
 
   @IsNotEmpty()
   @IsTypeOr(

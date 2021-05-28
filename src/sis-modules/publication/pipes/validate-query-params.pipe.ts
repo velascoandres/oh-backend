@@ -32,6 +32,8 @@ export class ValidateQueryParamsPipe implements PipeTransform<any> {
       take: Number(object.take),
       skip: Number(object.skip),
       enable: Number(object.enable) as 0 | 1,
+      maxPrice: Number(object.maxPrice),
+      minPrice: Number(object.minPrice)
     };
   }
 }

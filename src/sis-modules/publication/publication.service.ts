@@ -40,8 +40,8 @@ export class PublicationService
     params: PublicationSearchDto,
   ) {
     const {
-      skip, take, distance, lat, lng, maxArea, minArea, bathrooms,
-      bedrooms, description, floors, name, parks, enable,
+      skip, take, distance, lat, lng, maxArea, minArea, bathrooms, bedrooms,
+      description, floors, name, parks, enable, minPrice, maxPrice
     } = params;
     const location = [lng, lat];
     const cursor = this.publicationRepository.aggregate(
@@ -53,6 +53,7 @@ export class PublicationService
             $and: [
               ...buildSimpleStatusCondition('enable', enable),
               ...buildRangeCondition('area', minArea, maxArea),
+              ...buildRangeCondition('price', minPrice, maxPrice),
               ...buildSimpleCondition('bathrooms', bathrooms),
               ...buildSimpleCondition('bedrooms', bedrooms),
               ...buildLikeCondition('name', name),
@@ -62,7 +63,7 @@ export class PublicationService
             ],
           },
         },
-        setupLookup('property_picture', 'property_picture', 'pictures'),
+        setupLookup('property_picture', 'publicationId', 'pictures'),
         setupResponseWithPagination(skip, take),
       ],
     );
