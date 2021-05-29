@@ -37,9 +37,9 @@ export class PropertyPictureController extends CrudController<PropertyPictureEnt
     FilesInterceptor(
       'pictures',
       10,
-     /* {
+      {
         fileFilter: filterByMimetype('image'),
-      },*/
+      },
     ),
   )
   uploadPictures(
@@ -47,7 +47,6 @@ export class PropertyPictureController extends CrudController<PropertyPictureEnt
     @Param('publicationId') publicationId: string,
     @UploadedFiles() pictures: UploadedFileMetadata[],
   ) {
-    console.log(pictures);
     return this.propertyPictureService.uploadPicture(propertyId, publicationId, pictures);
   }
 }
