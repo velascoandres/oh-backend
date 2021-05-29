@@ -96,4 +96,5 @@ export const setupGeoNearPoint = (location: number[], distance: number, distance
       distanceField,
     },
   };
-}
+};
+
