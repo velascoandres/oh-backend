@@ -24,6 +24,7 @@ import { PropertyModule } from '../property/property.module';
                 useFactory: async (config: ConfigService) => {
                     return { bucketDefaultName: config.get('BUCKET_NAME') };
                 },
+                inject: [ConfigService],
             }
         ),
         DataBaseModule.forBulkData(
