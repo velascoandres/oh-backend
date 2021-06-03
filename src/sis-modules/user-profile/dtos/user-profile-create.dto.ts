@@ -1,4 +1,4 @@
-import {BaseDTO} from '@nest-excalibur/common-api/lib';
+import { BaseDTO } from '@nest-excalibur/common-api/lib';
 import {
     IsNotEmpty,
     IsString,
@@ -34,4 +34,3 @@ export class UserProfileCreateDto extends BaseDTO {
     @IsIn([0, 1, '0', '1'])
     enable: 0 | 1 = 0;
 }
-                       
