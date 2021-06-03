@@ -1,35 +1,46 @@
 # Open House Backend
 
-## Inicializar proyecto
 
-### Recomendaciones 
-
-> Recomiendo que los pasos 1,3,4 se los realizen en la misma terminal.
-> El paso 2 debe ser llevado acabo en otra terminal.
+## Setup project enviroment
 
 
+1. Configure the .env file for example:
 
-1. Instalar dependencias
+```text
+# mail
+MAIL_HOST=smtp.faker.com
+MAIL_USER=email@fake.com
+MAIL_PASSWORD=fake123
+MAIL_FROM=noreply@example.com
+
+# google cloud storage
+BUCKET_NAME=faker
+
+# optional
+MAIL_TRANSPORT=smtp://${MAIL_USER}:${MAIL_PASSWORD}@${MAIL_HOST}
+```
+
+
+2. Install Dependencies
 
 ```shell script
 npm install
 ```
 
-2. Levantar imagenes del docker.
+3. Run docker compose
 
-> En otra terminal
 
 ```shell script
-docker-compose up
+docker-compose up -d
 ```
 
-3. Exportar credenciales GCP.
+4. Exports Google Cloud Credentials
 
 ```shell script
 export GOOGLE_APPLICATION_CREDENTIALS="/<key-path>/<your-key>.json"
 ```
 
-4. Levantar el servidor web en modo desarrollo.
+5. Start the web server on development mode
 
 ```shell script
   npm run start:dev

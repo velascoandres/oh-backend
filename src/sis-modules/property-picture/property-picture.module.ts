@@ -1,9 +1,10 @@
-import {Module} from '@nestjs/common';
-import {PropertyPictureService} from './property-picture.service';
-import {PropertyPictureController} from './property-picture.controller';
-import {TypeOrmModule} from '@nestjs/typeorm';
-import {PropertyPictureEntity} from './property-picture.entity';
-import {GoogleCloudStorageModule} from '@nest-excalibur/google-cloud-storage/lib';
+import { ConfigService } from '@nestjs/config';
+import { Module } from '@nestjs/common';
+import { PropertyPictureService } from './property-picture.service';
+import { PropertyPictureController } from './property-picture.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PropertyPictureEntity } from './property-picture.entity';
+import { GoogleCloudStorageModule } from '@nest-excalibur/google-cloud-storage/lib';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { PropertyPictureCreateDto } from './dtos/property-picture-create.dto';
 import { PublicationEntity } from '../publication/publication.entity';
@@ -18,7 +19,13 @@ import { PropertyModule } from '../property/property.module';
             ],
             'mongo_conn',
         ),
-        GoogleCloudStorageModule.register({bucketDefaultName: 'pimba_test_gcs'}),
+        GoogleCloudStorageModule.registerAsync(
+            {
+                useFactory: async (config: ConfigService) => {
+                    return { bucketDefaultName: config.get('BUCKET_NAME') };
+                },
+            }
+        ),
         DataBaseModule.forBulkData(
             {
                 entity: PropertyPictureEntity,
@@ -31,8 +38,8 @@ import { PropertyModule } from '../property/property.module';
                 }
             },
         ),
-      PropertyModule,
-      PublicationModule,
+        PropertyModule,
+        PublicationModule,
     ],
     providers: [
         PropertyPictureService,
