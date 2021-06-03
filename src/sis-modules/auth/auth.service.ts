@@ -1,11 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
-import { UserProfileEntity } from './../user-profile/user-profile.entity';
-import { MailService } from './../mail/mail.service';
-
 import * as admin from 'firebase-admin';
 import { FirebaseAuthenticationService } from '@aginix/nestjs-firebase-admin';
 
+import { UserProfileEntity } from './../user-profile/user-profile.entity';
+import { MailService } from './../mail/mail.service';
 import { CreateUserDTO } from './dto/user-create.dto';
 import { UserProfileService } from './../user-profile/user-profile.service';
 
@@ -41,13 +40,12 @@ export class AuthService {
         userProfile: UserProfileEntity,
         user: admin.auth.UserRecord,
     }> {
-
         const userVerify = await this.firebaseAuthService.verifyIdToken(idToken);
         const user = await this.firebaseAuthService.getUserByEmail(email);
         // check if user profile is saved
         const [users, total] = await this.userProfileService.findAll({ where: { uid: userVerify.uid } });
         const userProfile = users[0];
-        // if not saved, save the user profile and enable it
+        // if not saved, save the user profile and enable him
         if (total) {
             const hasLogged = userProfile.hasFirstLogin;
             if (!hasLogged) {
@@ -64,7 +62,7 @@ export class AuthService {
                 user,
             };
         } else {
-            await this.userProfileService.createOne(
+           const createUserProfile = await this.userProfileService.createOne(
                 {
                     uid: user.uid,
                     address: '',
@@ -77,7 +75,7 @@ export class AuthService {
             );
             return {
                 idToken,
-                userProfile,
+                userProfile: createUserProfile,
                 user,
             };
         }
