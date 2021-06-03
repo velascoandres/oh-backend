@@ -34,3 +34,5 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 test-gcs-2798b166f770.json
+journal-app-42a81-firebase-adminsdk-uxls5-bb80751f10.json
+.env

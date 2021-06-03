@@ -1,10 +1,10 @@
-import {Module, OnModuleInit} from '@nestjs/common';
+import { Module, OnModuleInit } from '@nestjs/common';
 
-import {DataBaseModule, DataBaseService} from '@nest-excalibur/data-base/lib';
+import { DataBaseModule, DataBaseService } from '@nest-excalibur/data-base/lib';
 
 
-import {AppController} from './app.controller';
-import {AppService} from './app.service';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { CategoryModule } from './sis-modules/category/category.module';
 import { FavoritePublicationModule } from './sis-modules/favorite-publication/favorite-publication.module';
 import { PropertyModule } from './sis-modules/property/property.module';
@@ -15,10 +15,16 @@ import { DEVELOPMENT_CONFIG } from './constants/config/development';
 import { MONGODB_ENTITIES } from './constants/mongo-entities';
 import { PropertyPictureModule } from './sis-modules/property-picture/property-picture.module';
 import { UserProfileModule } from './sis-modules/user-profile/user-profile.module';
+import { AuthModule } from './sis-modules/auth/auth.module';
+import { MailModule } from './sis-modules/mail/mail.module';
+import { ConfigModule } from '@nestjs/config';
 
 
 @Module({
     imports: [
+        ConfigModule.forRoot({
+            isGlobal: true,
+        }),
         DataBaseModule.forRoot(
             {
                 connections: {
@@ -36,7 +42,7 @@ import { UserProfileModule } from './sis-modules/user-profile/user-profile.modul
                     }
                 },
                 productionFlag: !!process.env.NODE_ENV,
-            }
+            },
         ),
         CategoryModule,
         FavoritePublicationModule,
@@ -44,6 +50,8 @@ import { UserProfileModule } from './sis-modules/user-profile/user-profile.modul
         PublicationModule,
         PropertyPictureModule,
         UserProfileModule,
+        AuthModule,
+        MailModule,
     ],
     controllers: [
         AppController

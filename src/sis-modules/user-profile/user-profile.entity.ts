@@ -4,6 +4,24 @@ import { PropertyEntity } from '../property/property.entity';
 
 @Entity('user_profile')
 export class UserProfileEntity extends AbstractEntity {
+
+    @Column(
+        {
+            type: 'varchar',
+            nullable: true,
+        },
+    )
+    uid: string;
+
+    @Column(
+        {
+            type: 'tinyint',
+            default: 0,
+        },
+    )
+    hasFirstLogin: 0 | 1;
+
+
     @Column(
         {
             type: 'varchar',
@@ -17,15 +35,6 @@ export class UserProfileEntity extends AbstractEntity {
         },
     )
     lastnames: string;
-
-    @Column(
-        {
-            type: 'varchar',
-            unique: true,
-            name: 'ide_pais',
-        },
-    )
-    identification: string;
 
     @Column(
         {
