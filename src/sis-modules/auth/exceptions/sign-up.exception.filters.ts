@@ -1,5 +1,11 @@
+import {
+    ExceptionFilter,
+    Catch,
+    ArgumentsHost,
+    HttpStatus,
+} from '@nestjs/common';
+
 import { CreateOneException } from '@nest-excalibur/common-api/lib/api/api-principal/exceptions/crud-exception.filter';
-import { ExceptionFilter, Catch, ArgumentsHost, BadRequestException } from '@nestjs/common';
 import { Request, Response } from 'express';
 
 @Catch()
@@ -8,15 +14,13 @@ export class SignUpExceptionFilter implements ExceptionFilter {
         const ctx = host.switchToHttp();
         const response = ctx.getResponse<Response>();
         const request = ctx.getRequest<Request>();
-        let status = 500;
+        let status = HttpStatus.INTERNAL_SERVER_ERROR;
         let message = 'Server error';
 
         if (exception instanceof CreateOneException) {
-            status = 500;
             message = 'Error on create the user profile';
-            // errorInfo code: 'auth/email-already-exists',
         } else if ((exception as any)?.errorInfo?.code === 'auth/email-already-exists') {
-            status = 400;
+            status = HttpStatus.BAD_REQUEST;
             message = 'User exists';
         }
 
