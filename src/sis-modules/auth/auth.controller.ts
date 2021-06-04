@@ -1,11 +1,9 @@
-import { LoginDTO } from './dto/login.dto';
+import { LoginDTO, CreateUserDTO, ResetAccountDTO } from './dto';
 import { AuthService } from './auth.service';
 import { Body, Controller, Post, ValidationPipe } from '@nestjs/common';
-import { CreateUserDTO } from './dto/user-create.dto';
 
 @Controller('auth')
 export class AuthController {
-
 
     constructor(private readonly authService: AuthService) { }
 
@@ -18,9 +16,16 @@ export class AuthController {
 
     @Post('sign-in')
     login(
-        @Body(ValidationPipe) loginData: LoginDTO,
+        @Body(ValidationPipe) { idToken, email }: LoginDTO,
     ) {
-        return this.authService.loginWithIdToken(loginData.idToken, loginData.email);
+        return this.authService.loginWithIdToken(idToken, email);
+    }
+
+    @Post('reset-account')
+    resetAccount(
+        @Body(ValidationPipe) { email }: ResetAccountDTO,
+    ) {
+        return this.authService.resetAccount(email);
     }
 
 }

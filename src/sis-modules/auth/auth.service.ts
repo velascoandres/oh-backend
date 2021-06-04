@@ -62,7 +62,7 @@ export class AuthService {
                 user,
             };
         } else {
-           const createUserProfile = await this.userProfileService.createOne(
+            const createUserProfile = await this.userProfileService.createOne(
                 {
                     uid: user.uid,
                     address: '',
@@ -80,6 +80,12 @@ export class AuthService {
             };
         }
 
+    }
+
+    async resetAccount(email: string): Promise<any> {
+        const url = await this.firebaseAuthService.generatePasswordResetLink(email);
+        const user = await this.firebaseAuthService.getUserByEmail(email);
+        return this.mailService.sendResetAccountLink(user, url);
     }
 
 }

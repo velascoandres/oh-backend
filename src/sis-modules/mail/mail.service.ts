@@ -22,4 +22,18 @@ export class MailService {
         });
     }
 
+    async sendResetAccountLink({ displayName, email }: { displayName?: string, email?: string }, link: string) {
+
+        await this.mailerService.sendMail({
+            to: email,
+            // from: '"Support Team" <support@example.com>', // override default from
+            subject: 'Reset your account',
+            template: './resel-account', // `.hbs` extension is appended automatically
+            context: { // ✏️ filling curly brackets with content
+                name: displayName || email,
+                link,
+            },
+        });
+    }
+
 }
