@@ -34,7 +34,7 @@ export class AuthService {
         return createdUser;
     }
 
-
+    // FirebaseAuthError.FirebaseError
     async loginWithIdToken(idToken: string, email: string): Promise<{
         idToken: string,
         userProfile: UserProfileEntity,
@@ -82,7 +82,7 @@ export class AuthService {
 
     }
 
-    async resetAccount(email: string): Promise<any> {
+    async resetAccount(email: string): Promise<{ emailSent: boolean }> {
         const url = await this.firebaseAuthService.generatePasswordResetLink(email);
         const user = await this.firebaseAuthService.getUserByEmail(email);
         return this.mailService.sendResetAccountLink(user, url);

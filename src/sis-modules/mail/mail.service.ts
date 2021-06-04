@@ -8,7 +8,7 @@ export class MailService {
         private mailerService: MailerService,
     ) { }
 
-    async sendUserConfirmationLink({ displayName, email }: { displayName?: string, email?: string }, link: string) {
+    async sendUserConfirmationLink({ displayName, email }: { displayName?: string, email?: string }, link: string): Promise<{emailSent: boolean}> {
 
         await this.mailerService.sendMail({
             to: email,
@@ -20,20 +20,21 @@ export class MailService {
                 link,
             },
         });
+        return {emailSent: true};
     }
 
-    async sendResetAccountLink({ displayName, email }: { displayName?: string, email?: string }, link: string) {
-
+    async sendResetAccountLink({ displayName, email }: { displayName?: string, email?: string }, link: string): Promise<{emailSent: boolean}> {
         await this.mailerService.sendMail({
             to: email,
             // from: '"Support Team" <support@example.com>', // override default from
             subject: 'Reset your account',
-            template: './resel-account', // `.hbs` extension is appended automatically
+            template: './reset-account', // `.hbs` extension is appended automatically
             context: { // ✏️ filling curly brackets with content
                 name: displayName || email,
                 link,
             },
         });
+        return {emailSent: true};
     }
 
 }
