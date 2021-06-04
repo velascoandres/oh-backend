@@ -34,3 +34,10 @@ export class UserProfileCreateDto extends BaseDTO {
     @IsIn([0, 1, '0', '1'])
     enable: 0 | 1 = 0;
 }
+
+export class UserProfileCreateTestDTO extends UserProfileCreateDto {
+
+    @IsOptional()
+    @IsString()
+    uid: string;
+}

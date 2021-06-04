@@ -4,6 +4,7 @@ import { Strategy, ExtractJwt } from 'passport-firebase-jwt';
 
 
 import { AuthService } from '../auth.service';
+import { UserData } from '../interfaces';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy, 'firebase-auth') {
@@ -13,7 +14,7 @@ export class LocalStrategy extends PassportStrategy(Strategy, 'firebase-auth') {
         });
     }
 
-    async validate(idToken: string): Promise<any> {
+    async validate(idToken: string): Promise<UserData> {
         try {
             const { user, userVerify, userProfile } = await this.authService.validateUserByTokenId(idToken);
             if (userVerify.email_verified && userProfile && !user.disabled) {

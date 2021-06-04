@@ -2,7 +2,7 @@ import {Module} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {DataBaseModule} from '@nest-excalibur/data-base/lib';
 
-import {UserProfileCreateDto} from './dtos/user-profile-create.dto';
+import {UserProfileCreateTestDTO} from './dtos/user-profile-create.dto';
 import {UserProfileEntity} from './user-profile.entity';
 import {UserProfileService} from './user-profile.service';
 import {UserProfileController} from './user-profile.controller';
@@ -17,7 +17,7 @@ import {UserProfileController} from './user-profile.controller';
         DataBaseModule.forBulkData(
             {
                 entity: UserProfileEntity,
-                dtoClassValidation: UserProfileCreateDto,
+                dtoClassValidation: UserProfileCreateTestDTO,
                 creationOrder: 1,
                 pathDev: '/src/sis-modules/user-profile/test-data/development/user-profiles.json',
                 pathProd: '/dist/sis-modules/user-profile/test-data/production/user-profile.json',

@@ -3,10 +3,10 @@ import { Injectable } from '@nestjs/common';
 import * as admin from 'firebase-admin';
 import { FirebaseAuthenticationService } from '@aginix/nestjs-firebase-admin';
 
-import { UserProfileEntity } from './../user-profile/user-profile.entity';
 import { MailService } from './../mail/mail.service';
 import { CreateUserDTO } from './dto/user-create.dto';
 import { UserProfileService } from './../user-profile/user-profile.service';
+import { UserData, LoginResponse } from './interfaces';
 
 
 @Injectable()
@@ -35,12 +35,7 @@ export class AuthService {
     }
 
 
-    async validateUserByTokenId(idToken: string): Promise<
-        {
-            user: admin.auth.UserRecord,
-            userProfile: UserProfileEntity,
-            userVerify: admin.auth.DecodedIdToken,
-        }> {
+    async validateUserByTokenId(idToken: string): Promise<UserData> {
         const userVerify = await this.firebaseAuthService.verifyIdToken(idToken);
         const user = await this.firebaseAuthService.getUserByEmail(userVerify.email);
         const userProfile = await this.userProfileService.findOne({ where: { uid: userVerify.uid } });
@@ -52,11 +47,7 @@ export class AuthService {
     }
 
     // FirebaseAuthError.FirebaseError
-    async loginWithIdToken(idToken: string): Promise<{
-        idToken: string,
-        userProfile: UserProfileEntity,
-        user: admin.auth.UserRecord,
-    }> {
+    async loginWithIdToken(idToken: string): Promise<LoginResponse> {
         // check if user profile is saved
         const { user, userProfile, userVerify } = await this.validateUserByTokenId(idToken);
         // if not saved, save the user profile and enable him

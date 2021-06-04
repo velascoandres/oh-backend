@@ -40,9 +40,9 @@ export class AuthController {
     @UseGuards(AuthGuard('firebase-auth'))
     @Get('foo')
     doSomething(
-        @Req() { userProfile },
+        @Req() { user },
     ) {
-        return userProfile;
+        return user.userProfile;
     }
 
 }
