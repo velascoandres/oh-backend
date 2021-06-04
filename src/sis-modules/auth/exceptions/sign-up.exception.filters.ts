@@ -3,6 +3,7 @@ import {
     Catch,
     ArgumentsHost,
     HttpStatus,
+    UnauthorizedException,
 } from '@nestjs/common';
 
 import { CreateOneException } from '@nest-excalibur/common-api/lib/api/api-principal/exceptions/crud-exception.filter';
@@ -17,11 +18,18 @@ export class SignUpExceptionFilter implements ExceptionFilter {
         let status = HttpStatus.INTERNAL_SERVER_ERROR;
         let message = 'Server error';
 
+        console.log(exception);
+
+        if (exception instanceof UnauthorizedException) {
+            message = 'Unathorized';
+            status = HttpStatus.UNAUTHORIZED;
+        }
+
         if (exception instanceof CreateOneException) {
             message = 'Error on create the user profile';
-        } else if ((exception as any)?.errorInfo?.code === 'auth/email-already-exists') {
+        } else if ((exception as { errorInfo: { code: string } })?.errorInfo?.code === 'auth/email-already-exists') {
             status = HttpStatus.BAD_REQUEST;
-            message = 'User exists';
+            message = 'User already exists';
         }
 
         response

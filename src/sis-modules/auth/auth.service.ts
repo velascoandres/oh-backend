@@ -34,22 +34,40 @@ export class AuthService {
         return createdUser;
     }
 
+
+    async validateUserByTokenId(idToken: string): Promise<
+        {
+            user: admin.auth.UserRecord,
+            userProfile: UserProfileEntity,
+            userVerify: admin.auth.DecodedIdToken,
+        }> {
+        const userVerify = await this.firebaseAuthService.verifyIdToken(idToken);
+        const user = await this.firebaseAuthService.getUserByEmail(userVerify.email);
+        const userProfile = await this.userProfileService.findOne({ where: { uid: userVerify.uid } });
+        return {
+            user,
+            userProfile,
+            userVerify,
+        };
+    }
+
     // FirebaseAuthError.FirebaseError
-    async loginWithIdToken(idToken: string, email: string): Promise<{
+    async loginWithIdToken(idToken: string): Promise<{
         idToken: string,
         userProfile: UserProfileEntity,
         user: admin.auth.UserRecord,
     }> {
-        const userVerify = await this.firebaseAuthService.verifyIdToken(idToken);
-        const user = await this.firebaseAuthService.getUserByEmail(email);
         // check if user profile is saved
-        const [users, total] = await this.userProfileService.findAll({ where: { uid: userVerify.uid } });
-        const userProfile = users[0];
+        const { user, userProfile, userVerify } = await this.validateUserByTokenId(idToken);
         // if not saved, save the user profile and enable him
-        if (total) {
+        if (userProfile) {
             const hasLogged = userProfile.hasFirstLogin;
             if (!hasLogged) {
-                const updatedUserProfile = await this.userProfileService.updateOne(userProfile.id, { hasFirstLogin: 1, enable: 1 });
+                const updatedUserProfile = await this.userProfileService
+                    .updateOne(
+                        userProfile.id,
+                        { hasFirstLogin: 1, enable: userVerify.email_verified ? 1 : 0 },
+                    );
                 return {
                     idToken,
                     userProfile: updatedUserProfile,
@@ -66,7 +84,7 @@ export class AuthService {
                 {
                     uid: user.uid,
                     address: '',
-                    enable: 1,
+                    enable: userVerify.email_verified ? 1 : 0,
                     hasFirstLogin: 1,
                     firstnames: user.displayName,
                     lastnames: '',
