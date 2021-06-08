@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { RoleService } from './role.service';
 import { RoleController } from './role.controller';
+import { RoleCreateDTO } from './dto/role-create.dto';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { RoleController } from './role.controller';
         connection: 'default',
         creationOrder: 1,
         pathDev: '/src/sis-modules/role/test-data/roles.development.json',
-        pathProd: '/src/sis-modules/role/test-data/roles.production.json'
+        pathProd: '/src/sis-modules/role/test-data/roles.production.json',
+        dtoClassValidation: RoleCreateDTO,
       }
     ),
   ],

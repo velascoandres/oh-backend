@@ -1,3 +1,4 @@
+import { UserProfileRoleModule } from './sis-modules/user-profile-role/user-profile-role.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module, OnModuleInit } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
@@ -53,6 +54,7 @@ import { MONGODB_ENTITIES } from './constants/mongo-entities';
         PublicationModule,
         PropertyPictureModule,
         UserProfileModule,
+        UserProfileRoleModule,
         RoleModule,
         AuthModule,
         MailModule,

@@ -1,6 +1,8 @@
+import { UserProfileRoleModule } from './../user-profile-role/user-profile-role.module';
 import { Entity, Column, OneToMany } from 'typeorm';
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
 import { PropertyEntity } from '../property/property.entity';
+import { UserProfileRoleEntity } from '../user-profile-role/user-profile-role.entity';
 
 @Entity('user_profile')
 export class UserProfileEntity extends AbstractEntity {
@@ -64,5 +66,12 @@ export class UserProfileEntity extends AbstractEntity {
         property => property.owner,
     )
     properties: PropertyEntity[];
+
+
+    @OneToMany(
+        type => UserProfileRoleEntity,
+        userProfileRole => userProfileRole.userProfile,
+    )
+    userProfileRoles: UserProfileRoleEntity[];
 
 }
