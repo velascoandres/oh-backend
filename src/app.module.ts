@@ -24,6 +24,8 @@ import { MYSQL_ENTITIES } from './constants/mysql-entities';
 import { PRODUCTION_CONFIG } from './constants/config/production';
 import { DEVELOPMENT_CONFIG } from './constants/config/development';
 import { MONGODB_ENTITIES } from './constants/mongo-entities';
+import { PermissionModule } from './sis-modules/permission/permission.module';
+import { RolePermissionModule } from './sis-modules/role-permission/role-permission.module';
 
 
 @Module({
@@ -58,6 +60,8 @@ import { MONGODB_ENTITIES } from './constants/mongo-entities';
         RoleModule,
         AuthModule,
         MailModule,
+        PermissionModule,
+        RolePermissionModule,
     ],
     controllers: [
         AppController
