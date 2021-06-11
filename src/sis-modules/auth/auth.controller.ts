@@ -8,6 +8,8 @@ import { SignUpExceptionFilter } from './exceptions/sign-up.exception.filters';
 import { AuthGuard } from '@nestjs/passport';
 import { RoleGuardFactory } from './guards/roles.factory.guard';
 import { RoleEnum } from './enums/role.enum';
+import { PermissionGuard } from './guards/permissions.guard';
+import { PermissionsEnum } from './enums/permisions.enum';
 
 @Controller('auth')
 export class AuthController {
@@ -43,6 +45,7 @@ export class AuthController {
   @UseGuards(
     AuthGuard('firebase-auth'),
     RoleGuardFactory([RoleEnum.Admin, RoleEnum.User, RoleEnum.Agent]),
+    PermissionGuard<PermissionsEnum>([PermissionsEnum.READ, PermissionsEnum.LIST])
   )
   @Get('foo')
   doSomething(

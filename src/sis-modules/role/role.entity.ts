@@ -20,7 +20,7 @@ export class RoleEntity extends AbstractEntity {
 
     @OneToMany(
       type => RolePermissionEntity,
-      rolePermission => rolePermission.permission,
+      rolePermission => rolePermission.role,
     )
     rolePermissions: RolePermissionEntity[];
 }
