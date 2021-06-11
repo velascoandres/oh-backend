@@ -39,15 +39,14 @@ export const PermissionGuard = <T extends string>(
       context: ExecutionContext,
     ): boolean | Promise<boolean> | Observable<boolean> {
 
+      if (!routePermissions) {
+        return true;
+      }
       const { user } = context.switchToHttp().getRequest();
       if (!user) {
         return false;
       }
       const userPermissions = getPermissions(user.userProfile as UserProfileEntity);
-      if (!routePermissions) {
-        return true;
-      }
-
       const hasPermission = () =>
         routePermissions.every(routePermission =>
           userPermissions.includes(routePermission),

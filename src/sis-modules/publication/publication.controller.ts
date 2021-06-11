@@ -11,6 +11,7 @@ import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
 import { AuthGuard } from '@nestjs/passport';
 import { RoleGuardFactory } from '../auth/guards/roles.factory.guard';
 import { RoleEnum } from '../auth/enums/role.enum';
+import { UpdatePublicationGuard } from './guards/update-publication.guard';
 
 
 const options: CrudOptions = {
@@ -27,6 +28,10 @@ const options: CrudOptions = {
     findAll: [
       AuthGuard('firebase-auth'),
       RoleGuardFactory([RoleEnum.Admin, RoleEnum.Agent]),
+    ],
+    updateOne: [
+      AuthGuard('firebase-auth'),
+      UpdatePublicationGuard,
     ],
   },
 )
