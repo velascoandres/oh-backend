@@ -5,6 +5,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
 import {PublicationEntity} from './publication.entity';
 import {PublicationCreateDto} from './dtos/publication-create.dto';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
     imports: [
@@ -22,7 +23,8 @@ import { DataBaseModule } from '@nest-excalibur/data-base/lib';
                 creationOrder: 1,
                 pathDev: '/src/sis-modules/publication/test-data/development/publications.json',
             }
-        )
+        ),
+      AuthModule,
     ],
     providers: [
         PublicationService,
