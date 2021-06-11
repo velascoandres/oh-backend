@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "READ"
+    },
+    {
+        "id": 2,
+        "name": "LIST"
+    },
+    {
+        "id": 3,
+        "name": "CREATE"
+    },
+    {
+        "id": 4,
+        "name": "UPDATE"
+    }
+]
