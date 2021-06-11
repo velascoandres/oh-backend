@@ -12,6 +12,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { RoleGuardFactory } from '../auth/guards/roles.factory.guard';
 import { RoleEnum } from '../auth/enums/role.enum';
 import { UpdatePublicationGuard } from './guards/update-publication.guard';
+import { PermissionGuard } from '../auth/guards/permissions.guard';
+import { PermissionsEnum } from '../auth/enums/permisions.enum';
 
 
 const options: CrudOptions = {
@@ -32,6 +34,13 @@ const options: CrudOptions = {
     updateOne: [
       AuthGuard('firebase-auth'),
       UpdatePublicationGuard,
+    ],
+    deleteOne: [
+      AuthGuard('firebase-auth'),
+      PermissionGuard<PermissionsEnum>([PermissionsEnum.DELETE]),
+    ],
+    createOne: [
+      AuthGuard('firebase-auth'),
     ],
   },
 )
