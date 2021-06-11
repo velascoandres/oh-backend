@@ -61,4 +61,7 @@ export class PublicationEntity extends AbstractMongoEntity {
 
   @Column()
   location: GeoJSON;
+
+  @Column()
+  publisher: { id: number; name: string; phone: number };
 }

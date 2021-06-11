@@ -1,6 +1,7 @@
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
 import { Column, Entity, Index, OneToMany } from 'typeorm';
 import { UserProfileRoleEntity } from '../user-profile-role/user-profile-role.entity';
+import { RoleEnum } from '../auth/enums/role.enum';
 
 @Entity('role')
 @Index(['name'], { unique: true })
@@ -8,7 +9,7 @@ export class RoleEntity extends AbstractEntity {
     @Column({
         type: 'varchar',
     })
-    name: string;
+    name: RoleEnum;
 
     @OneToMany(
         type => UserProfileRoleEntity,

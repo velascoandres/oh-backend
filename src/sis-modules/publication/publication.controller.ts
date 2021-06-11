@@ -19,7 +19,6 @@ const options: CrudOptions = {
   enableErrorMessages: true,
 };
 
-
 @Controller('publication')
 export class PublicationController
   extends CrudController<PublicationEntity>(options) {
