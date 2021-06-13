@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
-import { CrudController, CrudOptions } from '@nest-excalibur/common-api/lib';
+import { CrudController, CrudGuards, CrudOptions } from '@nest-excalibur/common-api/lib';
 import { PropertyService } from './property.service';
 import { PropertyCreateDto } from './dtos/property-create.dto';
 import { PropertyUpdateDto } from './dtos/property-update.dto';
@@ -13,7 +13,11 @@ const options: CrudOptions = {
   enableErrorMessages: true,
 };
 
-
+@CrudGuards(
+  {
+    findAll: [],
+  },
+)
 @Controller('property')
 export class PropertyController extends CrudController(options) {
   constructor(

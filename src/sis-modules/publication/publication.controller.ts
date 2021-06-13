@@ -1,6 +1,7 @@
 import { Controller, Get, Query } from '@nestjs/common';
 
-import { CrudController, CrudGuards, CrudOptions } from '@nest-excalibur/common-api/lib';
+import { CrudController, CrudGuards, CrudMetadata, CrudOptions } from '@nest-excalibur/common-api/lib';
+import { AuthGuard } from '@nestjs/passport';
 
 import { PublicationEntity } from './publication.entity';
 import { PublicationService } from './publication.service';
@@ -8,12 +9,11 @@ import { PublicationCreateDto } from './dtos/publication-create.dto';
 import { PublicationUpdateDto } from './dtos/publication-update.dto';
 import { PublicationSearchDto } from './dtos/publication-search.dto';
 import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
-import { AuthGuard } from '@nestjs/passport';
 import { RoleGuardFactory } from '../auth/guards/roles.factory.guard';
-import { RoleEnum } from '../auth/enums/role.enum';
 import { UpdatePublicationGuard } from './guards/update-publication.guard';
 import { PermissionGuard } from '../auth/guards/permissions.guard';
 import { PermissionsEnum } from '../auth/enums/permisions.enum';
+import { RoleEnum } from '../auth/enums/role.enum';
 
 
 const options: CrudOptions = {
@@ -25,6 +25,16 @@ const options: CrudOptions = {
   enableErrorMessages: true,
 };
 
+@CrudMetadata(
+  {
+    updateOne: [
+      {
+        key: 'permissions',
+        data: [PermissionsEnum.UPDATE],
+      }
+    ],
+  }
+)
 @CrudGuards(
   {
     findAll: [

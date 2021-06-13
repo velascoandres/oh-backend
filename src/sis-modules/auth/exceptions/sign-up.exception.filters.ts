@@ -6,7 +6,7 @@ import {
     UnauthorizedException,
 } from '@nestjs/common';
 
-import { CreateOneException } from '@nest-excalibur/common-api/lib/api/api-principal/exceptions/crud-exception.filter';
+import { CreateOneException } from '@nest-excalibur/common-api/lib';
 import { Request, Response } from 'express';
 
 @Catch()

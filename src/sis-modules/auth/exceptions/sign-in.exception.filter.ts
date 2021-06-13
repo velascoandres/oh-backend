@@ -10,7 +10,7 @@ import {
     FindAllException,
     UpdateOneException,
     CreateOneException,
-} from '@nest-excalibur/common-api/lib/api/api-principal/exceptions/crud-exception.filter';
+} from '@nest-excalibur/common-api/lib/';
 import { Request, Response } from 'express';
 
 @Catch()

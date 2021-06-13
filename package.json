@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@aginix/nestjs-firebase-admin": "^2.2.0",
-    "@nest-excalibur/common-api": "0.0.2-test",
+    "@nest-excalibur/common-api": "0.1.0",
     "@nest-excalibur/data-base": "^1.0.0",
     "@nest-excalibur/google-cloud-storage": "0.0.2-beta",
     "@nestjs-modules/mailer": "^1.6.0",
