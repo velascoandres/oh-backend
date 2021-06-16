@@ -8,27 +8,28 @@ import { UserData } from '../interfaces';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy, 'firebase-auth') {
-    constructor(private authService: AuthService) {
-        super({
-            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-        });
-    }
+  constructor(private authService: AuthService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    });
+  }
 
-    async validate(idToken: string): Promise<UserData> {
-        try {
-            const { user, userVerify, userProfile } = await this.authService.validateUserByTokenId(idToken);
-            if (userVerify.email_verified && userProfile && !user.disabled) {
-                return {
-                    user,
-                    userVerify,
-                    userProfile,
-                };
-            } else {
-                throw new UnauthorizedException();
-            }
-        } catch (error) {
-            console.log(error);
-            throw new UnauthorizedException();
-        }
+  async validate(idToken: string): Promise<UserData> {
+    try {
+      const { user, userVerify, userProfile } = await this.authService.validateUserByTokenId(idToken);
+      const isEnable = userVerify.email_verified && userProfile && !user.disabled && userProfile.enable;
+      if (isEnable) {
+        return {
+          user,
+          userVerify,
+          userProfile,
+        };
+      } else {
+        throw new UnauthorizedException();
+      }
+    } catch (error) {
+      console.log(error);
+      throw new UnauthorizedException();
     }
+  }
 }

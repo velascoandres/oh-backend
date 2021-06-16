@@ -23,7 +23,6 @@ export class UpdatePublicationGuard implements CanActivate {
         'permissions',
         context.getHandler(),
       );
-      console.log(routePermissions);
       if (!routePermissions) {
         return true;
       }
@@ -41,7 +40,7 @@ export class UpdatePublicationGuard implements CanActivate {
         return true;
       } else {
         const publication = await this.publicationService.findOneById(publicationId);
-        return publication.publisher.id === user.userProfile.id;
+        return publication.ownerId === user.userProfile.id;
       }
     } catch (error) {
       return false;

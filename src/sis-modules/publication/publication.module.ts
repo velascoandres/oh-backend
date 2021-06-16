@@ -6,6 +6,7 @@ import {PublicationEntity} from './publication.entity';
 import {PublicationCreateDto} from './dtos/publication-create.dto';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { AuthModule } from '../auth/auth.module';
+import { PropertyModule } from '../property/property.module';
 
 @Module({
     imports: [
@@ -19,12 +20,12 @@ import { AuthModule } from '../auth/auth.module';
             {
                 connection: 'mongo_conn',
                 entity: PublicationEntity,
-                dtoClassValidation: PublicationCreateDto,
                 creationOrder: 1,
                 pathDev: '/src/sis-modules/publication/test-data/development/publications.json',
             }
         ),
       AuthModule,
+      PropertyModule,
     ],
     providers: [
         PublicationService,

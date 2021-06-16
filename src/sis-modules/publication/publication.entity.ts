@@ -1,5 +1,5 @@
 import { AbstractMongoEntity } from '@nest-excalibur/common-api/lib';
-import { Entity, Column, Index, OneToMany } from 'typeorm';
+import { Entity, Column, Index } from 'typeorm';
 import { GeoJSON } from './geo-json';
 import { PropertyPictureEntity } from '../property-picture/property-picture.entity';
 
@@ -10,8 +10,8 @@ export class PublicationEntity extends AbstractMongoEntity {
   @Column()
   name: string;
   @Column()
-
   description: string;
+
   @Column()
   estateId: number;
 
@@ -63,5 +63,11 @@ export class PublicationEntity extends AbstractMongoEntity {
   location: GeoJSON;
 
   @Column()
-  publisher: { id: number; name: string; phone: number };
+  ownerId: string;
+
+/*  @Column()
+  contactPhone: string;
+
+  @Column()
+  email: string;*/
 }

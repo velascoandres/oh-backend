@@ -8,7 +8,6 @@ export class PublicationCreateDto extends BaseMongoDTO {
   name: string;
 
   @IsNotEmpty()
-
   @Length(4, 256)
   description: string;
 
@@ -44,12 +43,6 @@ export class PublicationCreateDto extends BaseMongoDTO {
   categoryId: number;
 
   @IsNotEmpty()
-  @IsTypeOr(
-    {
-      isNumber: (value) => isNumber(value),
-      isNumberString: (value) => isNumberString(value),
-    },
-  )
   propertyId: number;
 
   @IsNotEmpty()
@@ -90,6 +83,9 @@ export class PublicationCreateDto extends BaseMongoDTO {
   @IsOptional()
   @IsIn(['0', '1', 0, 1])
   isForRent: 0 | 1 = 0;
+
+  @IsNotEmpty()
+  ownerId: string;
 
   @IsNotEmpty()
   @ValidateNested()
