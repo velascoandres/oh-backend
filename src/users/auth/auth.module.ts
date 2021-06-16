@@ -7,7 +7,7 @@ import * as admin from 'firebase-admin';
 import { AuthService } from './auth.service';
 import { UserProfileModule } from '../user-profile/user-profile.module';
 import { AuthController } from './auth.controller';
-import { MailModule } from '../mail/mail.module';
+import { MailModule } from '../../mail/mail.module';
 import { ExistEmailPipe } from './pipes/exists-email.pipe';
 import { LocalStrategy } from './strategies/local-strategy';
 

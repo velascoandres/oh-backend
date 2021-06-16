@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
-import { UserProfileEntity } from '../../user-profile/user-profile.entity';
-import { getPermissions } from '../../auth/guards/permissions.guard';
+import { UserProfileEntity } from '../../../users/user-profile/user-profile.entity';
+import { getPermissions } from '../../../users/auth/guards/permissions.guard';
 import { Reflector } from '@nestjs/core';
 import { PublicationService } from '../publication.service';
 

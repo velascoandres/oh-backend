@@ -1,7 +1,7 @@
-import { UserProfileRoleModule } from './../user-profile-role/user-profile-role.module';
+import { UserProfileRoleModule } from '../user-profile-role/user-profile-role.module';
 import { Entity, Column, OneToMany } from 'typeorm';
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
-import { PropertyEntity } from '../property/property.entity';
+import { PropertyEntity } from '../../publications/property/property.entity';
 import { UserProfileRoleEntity } from '../user-profile-role/user-profile-role.entity';
 
 @Entity('user_profile')

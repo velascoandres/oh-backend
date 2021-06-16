@@ -9,11 +9,11 @@ import { PublicationCreateDto } from './dtos/publication-create.dto';
 import { PublicationUpdateDto } from './dtos/publication-update.dto';
 import { PublicationSearchDto } from './dtos/publication-search.dto';
 import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
-import { RoleGuardFactory } from '../auth/guards/roles.factory.guard';
+import { RoleGuardFactory } from '../../users/auth/guards/roles.factory.guard';
 import { UpdatePublicationGuard } from './guards/update-publication.guard';
-import { PermissionGuard } from '../auth/guards/permissions.guard';
-import { PermissionsEnum } from '../auth/enums/permisions.enum';
-import { RoleEnum } from '../auth/enums/role.enum';
+import { PermissionGuard } from '../../users/auth/guards/permissions.guard';
+import { PermissionsEnum } from '../../users/auth/enums/permisions.enum';
+import { RoleEnum } from '../../users/auth/enums/role.enum';
 
 
 const options: CrudOptions = {

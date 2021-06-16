@@ -2,7 +2,7 @@ import { Entity, Column, ManyToOne, OneToOne } from 'typeorm';
 import { AbstractEntity } from '@nest-excalibur/common-api/lib';
 
 import { CategoryEntity } from '../category/category.entity';
-import { UserProfileEntity } from '../user-profile/user-profile.entity';
+import { UserProfileEntity } from '../../users/user-profile/user-profile.entity';
 
 @Entity('property')
 export class PropertyEntity extends AbstractEntity {

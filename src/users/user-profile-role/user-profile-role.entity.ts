@@ -2,7 +2,7 @@ import { AbstractEntity } from '@nest-excalibur/common-api/lib';
 import { Column, Entity, Index, ManyToOne } from 'typeorm';
 import { RoleEntity } from '../role/role.entity';
 
-import { UserProfileEntity } from './../user-profile/user-profile.entity';
+import { UserProfileEntity } from '../user-profile/user-profile.entity';
 
 
 @Entity('user_role')

@@ -15,7 +15,7 @@ import {
   setupLookup,
   setupResponseWithPagination,
 } from '../../helpers';
-import { UserProfileService } from '../user-profile/user-profile.service';
+import { UserProfileService } from '../../users/user-profile/user-profile.service';
 import { PropertyService } from '../property/property.service';
 
 @Injectable()
