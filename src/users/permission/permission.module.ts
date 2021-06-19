@@ -19,8 +19,8 @@ import { CreatePermissionDto } from './dto/create-permission.dto';
         entity: PermissionEntity,
         connection: 'default',
         creationOrder: 2,
-        pathDev: '/src/sis-modules/permission/test-data/permissions.development.json',
-        pathProd: '/src/sis-modules/permission/test-data/permissions.production.json',
+        pathDev: '/src/users/permission/test-data/permissions.development.json',
+        pathProd: '/src/users/permission/test-data/permissions.production.json',
         dtoClassValidation: CreatePermissionDto,
       }
     ),

@@ -21,7 +21,7 @@ import {PropertyCreateDto} from './dtos/property-create.dto';
           entity: PropertyEntity,
           dtoClassValidation: PropertyCreateDto,
           creationOrder: 4,
-          pathDev: '/src/sis-modules/property/test-data/development/properties.json'
+          pathDev: '/src/publications/property/test-data/development/properties.json'
         },
     ),
   ],

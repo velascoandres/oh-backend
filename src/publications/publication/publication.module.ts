@@ -20,7 +20,7 @@ import { PropertyModule } from '../property/property.module';
                 connection: 'mongo_conn',
                 entity: PublicationEntity,
                 creationOrder: 1,
-                pathDev: '/src/sis-modules/publication/test-data/development/publications.json',
+                pathDev: '/src/publications/publication/test-data/development/publications.json',
             }
         ),
       AuthModule,

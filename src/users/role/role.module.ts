@@ -16,8 +16,8 @@ import { RoleCreateDTO } from './dto/role-create.dto';
         entity: RoleEntity,
         connection: 'default',
         creationOrder: 1,
-        pathDev: '/src/sis-modules/role/test-data/roles.development.json',
-        pathProd: '/src/sis-modules/role/test-data/roles.production.json',
+        pathDev: '/src/users/role/test-data/roles.development.json',
+        pathProd: '/src/users/role/test-data/roles.production.json',
         dtoClassValidation: RoleCreateDTO,
       }
     ),

@@ -17,8 +17,8 @@ import { CreateRolePermissionDto } from './dto/create-role-permission.dto';
         entity: RolePermissionEntity,
         connection: 'default',
         creationOrder: 3,
-        pathDev: '/src/sis-modules/role-permission/test-data/role-permission.development.json',
-        pathProd: '/src/sis-modules/role-permission/test-data/role-permission.production.json',
+        pathDev: '/src/users/role-permission/test-data/role-permission.development.json',
+        pathProd: '/src/users/role-permission/test-data/role-permission.production.json',
         dtoClassValidation: CreateRolePermissionDto,
       }
     ),

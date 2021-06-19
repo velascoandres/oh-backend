@@ -32,7 +32,7 @@ import { PropertyModule } from '../property/property.module';
                 entity: PropertyPictureEntity,
                 dtoClassValidation: PropertyPictureCreateDto,
                 creationOrder: 2,
-                pathDev: '/src/sis-modules/property-picture/test-data/development/property-pictures.json',
+                pathDev: '/src/publications/property-picture/test-data/development/property-pictures.json',
                 connection: 'mongo_conn',
                 refs: {
                     publicationId: PublicationEntity,

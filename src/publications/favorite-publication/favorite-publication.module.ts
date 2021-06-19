@@ -20,7 +20,7 @@ import { PublicationEntity } from '../publication/publication.entity';
           entity: FavoritePublicationEntity,
           dtoClassValidation: FavoritePublicationCreateDto,
           creationOrder: 2,
-          pathDev: '/src/sis-modules/favorite-publication/test-data/development/favorite-publications.json',
+          pathDev: '/src/publications/favorite-publication/test-data/development/favorite-publications.json',
           connection: 'mongo_conn',
           refs: {
             publicationId: PublicationEntity,
