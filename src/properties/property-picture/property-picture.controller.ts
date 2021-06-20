@@ -19,7 +19,7 @@ const options: CrudOptions = {
 };
 
 
-@Controller('property-picture')
+@Controller('properties-picture')
 export class PropertyPictureController extends CrudController<PropertyPictureEntity>(options) {
 
   constructor(

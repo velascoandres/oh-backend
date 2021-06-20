@@ -5,7 +5,7 @@ import { MongoRepository } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 
 import { PropertyEntity } from './property.entity';
-import { PublicationSearchDto } from './dtos/publication-search.dto';
+import { PropertySearchDto } from './dtos/property-search.dto';
 import {
   buildLikeCondition,
   buildRangeCondition,
@@ -36,7 +36,7 @@ export class PropertyService extends AbstractMongoService<PropertyEntity> {
   }
 
   async filterByLocation(
-    params: PublicationSearchDto,
+    params: PropertySearchDto,
   ) {
     const {
       skip, take, distance, lat, lng, maxArea, minArea, bathrooms, bedrooms,
@@ -62,7 +62,15 @@ export class PropertyService extends AbstractMongoService<PropertyEntity> {
             ],
           },
         },
-        setupLookup('property_picture', 'publicationId', 'pictures'),
+        setupLookup('property_picture', 'property', 'pictures'),
+        setupLookup('prop_category', '_id', 'category', 'category'),
+        {
+          $unwind: {
+            path: '$category',
+            preserveNullAndEmptyArrays: false,
+          },
+        },
+        { $match: { ['pictures.0']: { $exists: true } } },
         setupResponseWithPagination(skip, take),
       ],
     );

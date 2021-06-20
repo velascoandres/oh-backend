@@ -1,7 +1,7 @@
 import { AbstractMongoEntity } from '@nest-excalibur/common-api/lib';
 import { Entity, Column } from 'typeorm';
 
-@Entity('category')
+@Entity('prop_category')
 export class CategoryEntity extends AbstractMongoEntity {
     @Column(
         {

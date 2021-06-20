@@ -1,9 +1,9 @@
 import { AbstractMongoEntity } from '@nest-excalibur/common-api/lib';
-import { Entity, Column, Index } from 'typeorm';
+import { Entity, Column, Index, ObjectID } from 'typeorm';
 import { GeoJSON } from './geo-json';
 import { PropertyPictureEntity } from '../property-picture/property-picture.entity';
 
-@Index(['categoryId', 'propertyId'])
+@Index(['category'])
 @Entity('publication')
 export class PropertyEntity extends AbstractMongoEntity {
 
@@ -47,10 +47,7 @@ export class PropertyEntity extends AbstractMongoEntity {
   enable: 0 | 1 = 0;
 
   @Column()
-  propertyId: number;
-
-  @Column()
-  categoryId: number;
+  category: string | ObjectID;
 
   @Column()
   price: number;
@@ -63,7 +60,7 @@ export class PropertyEntity extends AbstractMongoEntity {
   location: GeoJSON;
 
   @Column()
-  ownerId: string;
+  userProfile: string;
 
 /*  @Column()
   contactPhone: string;

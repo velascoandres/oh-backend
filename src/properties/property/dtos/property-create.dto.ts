@@ -2,7 +2,7 @@ import { IsNotEmpty, IsNumber, ValidateNested, Length, isNumber, isNumberString,
 import { LocationCreateDto } from './location-create.dto';
 import { BaseMongoDTO, IsTypeOr } from '@nest-excalibur/common-api/lib';
 
-export class PublicationCreateDto extends BaseMongoDTO {
+export class PropertyCreateDto extends BaseMongoDTO {
 
   @IsNotEmpty()
   name: string;
@@ -40,10 +40,7 @@ export class PublicationCreateDto extends BaseMongoDTO {
       isNumberString: (value) => isNumberString(value),
     },
   )
-  categoryId: number;
-
-  @IsNotEmpty()
-  propertyId: number;
+  category: number;
 
   @IsNotEmpty()
   @IsTypeOr(
@@ -85,7 +82,7 @@ export class PublicationCreateDto extends BaseMongoDTO {
   isForRent: 0 | 1 = 0;
 
   @IsNotEmpty()
-  ownerId: string;
+  userProfile: string;
 
   @IsNotEmpty()
   @ValidateNested()

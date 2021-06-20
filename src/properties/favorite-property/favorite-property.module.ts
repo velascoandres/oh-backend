@@ -20,7 +20,7 @@ import { PropertyEntity } from '../property/property.entity';
           entity: FavoritePropertyEntity,
           dtoClassValidation: FavoritePublicationCreateDto,
           creationOrder: 3,
-          pathDev: '/src/publications/favorite-property/test-data/development/favorite-property.json',
+          pathDev: '/src/properties/favorite-property/test-data/development/favorite-property.json',
           connection: 'mongo_conn',
           refs: {
             property: PropertyEntity,

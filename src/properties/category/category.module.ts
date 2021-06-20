@@ -21,7 +21,7 @@ import { CategoryCreateDto } from './dtos/category-create.dto';
         entity: CategoryEntity,
         dtoClassValidation: CategoryCreateDto,
         creationOrder: 1,
-        pathDev: '/src/publications/category/test-data/development/categories.json',
+        pathDev: '/src/properties/category/test-data/development/categories.json',
         connection: 'mongo_conn',
       },
     ),

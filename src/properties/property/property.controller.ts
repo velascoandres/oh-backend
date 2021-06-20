@@ -5,21 +5,19 @@ import { AuthGuard } from '@nestjs/passport';
 
 import { PropertyEntity } from './property.entity';
 import { PropertyService } from './property.service';
-import { PublicationCreateDto } from './dtos/publication-create.dto';
-import { PublicationUpdateDto } from './dtos/publication-update.dto';
-import { PublicationSearchDto } from './dtos/publication-search.dto';
+import { PropertyCreateDto } from './dtos/property-create.dto';
+import { PropertyUpdateDto } from './dtos/property-update.dto';
+import { PropertySearchDto } from './dtos/property-search.dto';
 import { ValidateQueryParamsPipe } from './pipes/validate-query-params.pipe';
-import { RoleGuardFactory } from '../../users/auth/guards/roles.factory.guard';
 import { UpdatePublicationGuard } from './guards/update-publication.guard';
 import { PermissionGuard } from '../../users/auth/guards/permissions.guard';
 import { PermissionsEnum } from '../../users/auth/enums/permisions.enum';
-import { RoleEnum } from '../../users/auth/enums/role.enum';
 
 
 const options: CrudOptions = {
   dtoConfig: {
-    createDtoType: PublicationCreateDto,
-    updateDtoType: PublicationUpdateDto,
+    createDtoType: PropertyCreateDto,
+    updateDtoType: PropertyUpdateDto,
   },
   useMongo: true,
   enableErrorMessages: true,
@@ -39,7 +37,6 @@ const options: CrudOptions = {
   {
     findAll: [
       AuthGuard('firebase-auth'),
-      RoleGuardFactory([RoleEnum.Admin, RoleEnum.Agent]),
     ],
     updateOne: [
       AuthGuard('firebase-auth'),
@@ -67,7 +64,7 @@ export class PropertyController
 
   @Get()
   findAll(
-    @Query(new ValidateQueryParamsPipe()) searchCriteria: PublicationSearchDto,
+    @Query(new ValidateQueryParamsPipe()) searchCriteria: PropertySearchDto,
   ): Promise<any> {
     return this.publicationService
       .filterByLocation(

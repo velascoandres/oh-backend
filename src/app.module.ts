@@ -8,8 +8,6 @@ import { DataBaseModule, DataBaseService } from '@nest-excalibur/data-base/lib';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
-import { CategoryModule } from './publications/category/category.module';
-import { PropertyPictureModule } from './publications/property-picture/property-picture.module';
 import { UserProfileModule } from './users/user-profile/user-profile.module';
 import { RoleModule } from './users/role/role.module';
 
@@ -22,8 +20,10 @@ import { DEVELOPMENT_CONFIG } from './constants/config/development';
 import { MONGODB_ENTITIES } from './constants/mongo-entities';
 import { PermissionModule } from './users/permission/permission.module';
 import { RolePermissionModule } from './users/role-permission/role-permission.module';
-import { PropertyModule } from './publications/property/property.module';
-import { FavoritePropertyModule } from './publications/favorite-property/favorite-property.module';
+import { CategoryModule } from './properties/category/category.module';
+import { FavoritePropertyModule } from './properties/favorite-property/favorite-property.module';
+import { PropertyModule } from './properties/property/property.module';
+import { PropertyPictureModule } from './properties/property-picture/property-picture.module';
 
 
 @Module({

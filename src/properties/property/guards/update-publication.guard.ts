@@ -40,7 +40,7 @@ export class UpdatePublicationGuard implements CanActivate {
         return true;
       } else {
         const publication = await this.publicationService.findOneById(publicationId);
-        return publication.ownerId === user.userProfile.id;
+        return publication.userProfile === user.userProfile.id;
       }
     } catch (error) {
       return false;

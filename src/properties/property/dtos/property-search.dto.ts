@@ -1,4 +1,4 @@
-import { IsIn, IsNotEmpty, IsNumber, IsOptional, Max, Min } from 'class-validator';
+import { IsIn, IsNotEmpty, IsOptional } from 'class-validator';
 import { IsTypeOr } from '@nest-excalibur/common-api/lib';
 import { CUSTOM_VALIDATORS } from '../../../constants/custom-validators';
 
@@ -22,7 +22,7 @@ export interface IPublicationSearchCriteria {
 }
 
 
-export class PublicationSearchDto implements IPublicationSearchCriteria {
+export class PropertySearchDto implements IPublicationSearchCriteria {
 
   @IsOptional()
   @IsTypeOr(

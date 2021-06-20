@@ -25,7 +25,7 @@ export class PropertyPictureService
     publicationId: string,
     pictures: UploadedFileMetadata[],
   ): Promise<PropertyPictureEntity[]> {
-    // validate property
+    // validate properties
     const publication = await this.propertyService.findOneById(publicationId);
 
     // upload to cloud

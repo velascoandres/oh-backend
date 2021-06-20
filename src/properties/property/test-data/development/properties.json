@@ -12,10 +12,10 @@
     "floors": 9,
     "enable": 0,
     "propertyId": 73,
-    "ownerID": "16",
+    "userProfile": "16",
     "isForRent": 1,
     "price": 98618,
-    "categoryId": 6,
+    "category": 6,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -39,8 +39,8 @@
     "propertyId": 65,
     "isForRent": 0,
     "price": 75709,
-    "categoryId": 6,
-    "ownerID": "5",
+    "category": 6,
+    "userProfile": "5",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -64,8 +64,8 @@
     "propertyId": 1,
     "isForRent": 0,
     "price": 147676,
-    "categoryId": 6,
-    "ownerID": "13",
+    "category": 6,
+    "userProfile": "13",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -89,8 +89,8 @@
     "propertyId": 72,
     "isForRent": 1,
     "price": 12846,
-    "categoryId": 6,
-    "ownerID": "14",
+    "category": 6,
+    "userProfile": "14",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -114,8 +114,8 @@
     "propertyId": 12,
     "isForRent": 1,
     "price": 150225,
-    "categoryId": 1,
-    "ownerID": "15",
+    "category": 1,
+    "userProfile": "15",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -139,8 +139,8 @@
     "propertyId": 66,
     "isForRent": 1,
     "price": 196288,
-    "categoryId": 4,
-    "ownerID": "11",
+    "category": 4,
+    "userProfile": "11",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -164,8 +164,8 @@
     "propertyId": 43,
     "isForRent": 1,
     "price": 26477,
-    "categoryId": 1,
-    "ownerID": "11",
+    "category": 1,
+    "userProfile": "11",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -189,8 +189,8 @@
     "propertyId": 76,
     "isForRent": 0,
     "price": 2021,
-    "categoryId": 1,
-    "ownerID": "16",
+    "category": 1,
+    "userProfile": "16",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -214,8 +214,8 @@
     "propertyId": 55,
     "isForRent": 1,
     "price": 187611,
-    "categoryId": 3,
-    "ownerID": "2",
+    "category": 3,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -239,8 +239,8 @@
     "propertyId": 62,
     "isForRent": 0,
     "price": 175330,
-    "categoryId": 3,
-    "ownerID": "2",
+    "category": 3,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -264,8 +264,8 @@
     "propertyId": 27,
     "isForRent": 1,
     "price": 139677,
-    "categoryId": 1,
-    "ownerID": "2",
+    "category": 1,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -289,8 +289,8 @@
     "propertyId": 49,
     "isForRent": 0,
     "price": 136449,
-    "categoryId": 2,
-    "ownerID": "1",
+    "category": 2,
+    "userProfile": "1",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -314,8 +314,8 @@
     "propertyId": 17,
     "isForRent": 0,
     "price": 106533,
-    "categoryId": 5,
-    "ownerID": "6",
+    "category": 5,
+    "userProfile": "6",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -337,10 +337,10 @@
     "floors": 4,
     "enable": 0,
     "propertyId": 87,
-    "ownerID": "4",
+    "userProfile": "4",
     "isForRent": 1,
     "price": 2110,
-    "categoryId": 2,
+    "category": 2,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -363,9 +363,9 @@
     "enable": 0,
     "propertyId": 68,
     "isForRent": 0,
-    "ownerID": "3",
+    "userProfile": "3",
     "price": 185516,
-    "categoryId": 6,
+    "category": 6,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -389,8 +389,8 @@
     "propertyId": 59,
     "isForRent": 1,
     "price": 168518,
-    "categoryId": 2,
-    "ownerID": "2",
+    "category": 2,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -414,8 +414,8 @@
     "propertyId": 62,
     "isForRent": 0,
     "price": 64190,
-    "ownerID": "1",
-    "categoryId": 3,
+    "userProfile": "1",
+    "category": 3,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -439,8 +439,8 @@
     "propertyId": 8,
     "isForRent": 1,
     "price": 145634,
-    "ownerID": "1",
-    "categoryId": 4,
+    "userProfile": "1",
+    "category": 4,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -464,8 +464,8 @@
     "propertyId": 90,
     "isForRent": 1,
     "price": 124422,
-    "categoryId": 3,
-    "ownerID": "4",
+    "category": 3,
+    "userProfile": "4",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -489,8 +489,8 @@
     "propertyId": 56,
     "isForRent": 1,
     "price": 39340,
-    "categoryId": 1,
-    "ownerID": "3",
+    "category": 1,
+    "userProfile": "3",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -514,8 +514,8 @@
     "propertyId": 42,
     "isForRent": 0,
     "price": 141661,
-    "categoryId": 5,
-    "ownerID": "2",
+    "category": 5,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -539,8 +539,8 @@
     "propertyId": 3,
     "isForRent": 0,
     "price": 164363,
-    "categoryId": 6,
-    "ownerID": "2",
+    "category": 6,
+    "userProfile": "2",
     "location": {
       "type": "Point",
       "coordinates": [
@@ -562,10 +562,10 @@
     "floors": 5,
     "enable": 1,
     "propertyId": 90,
-    "ownerID": "1",
+    "userProfile": "1",
     "isForRent": 0,
     "price": 196922,
-    "categoryId": 5,
+    "category": 5,
     "location": {
       "type": "Point",
       "coordinates": [

@@ -20,9 +20,9 @@ import { CategoryEntity } from '../category/category.entity';
         connection: 'mongo_conn',
         entity: PropertyEntity,
         creationOrder: 2,
-        pathDev: '/src/publications/property/test-data/development/properties.json',
+        pathDev: '/src/properties/property/test-data/development/properties.json',
         refs: {
-          categoryId: CategoryEntity,
+          category: CategoryEntity,
         },
       },
     ),

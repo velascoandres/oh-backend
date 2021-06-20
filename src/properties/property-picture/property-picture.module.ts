@@ -31,7 +31,7 @@ import { PropertyModule } from '../property/property.module';
                 entity: PropertyPictureEntity,
                 dtoClassValidation: PropertyPictureCreateDto,
                 creationOrder: 2,
-                pathDev: '/src/publications/property-picture/test-data/development/property-pictures.json',
+                pathDev: '/src/properties/property-picture/test-data/development/property-pictures.json',
                 connection: 'mongo_conn',
                 refs: {
                     property: PropertyEntity,
