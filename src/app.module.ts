@@ -5,13 +5,10 @@ import { ConfigModule } from '@nestjs/config';
 
 import { DataBaseModule, DataBaseService } from '@nest-excalibur/data-base/lib';
 
-
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { CategoryModule } from './publications/category/category.module';
-import { FavoritePublicationModule } from './publications/favorite-publication/favorite-publication.module';
-import { PublicationModule } from './publications/publication/publication.module';
 import { PropertyPictureModule } from './publications/property-picture/property-picture.module';
 import { UserProfileModule } from './users/user-profile/user-profile.module';
 import { RoleModule } from './users/role/role.module';
@@ -25,14 +22,18 @@ import { DEVELOPMENT_CONFIG } from './constants/config/development';
 import { MONGODB_ENTITIES } from './constants/mongo-entities';
 import { PermissionModule } from './users/permission/permission.module';
 import { RolePermissionModule } from './users/role-permission/role-permission.module';
+import { PropertyModule } from './publications/property/property.module';
+import { FavoritePropertyModule } from './publications/favorite-property/favorite-property.module';
 
 
 @Module({
     imports: [
-        ConfigModule.forRoot({
+        ConfigModule
+          .forRoot({
             isGlobal: true,
         }),
-        TypeOrmModule.forRoot(
+        TypeOrmModule
+          .forRoot(
             {
                 ...process.env.NODE_ENV ? PRODUCTION_CONFIG.mysql : DEVELOPMENT_CONFIG.mysql,
                 entities: [
@@ -40,7 +41,8 @@ import { RolePermissionModule } from './users/role-permission/role-permission.mo
                 ],
             }
         ),
-        TypeOrmModule.forRoot(
+        TypeOrmModule
+          .forRoot(
             {
                 ...process.env.NODE_ENV ? PRODUCTION_CONFIG.mongodb : DEVELOPMENT_CONFIG.mongodb,
                 entities: [
@@ -48,10 +50,11 @@ import { RolePermissionModule } from './users/role-permission/role-permission.mo
                 ],
             },
         ),
-        DataBaseModule.forRoot({productionFlag: false}),
+        DataBaseModule
+          .forRoot({productionFlag: false}),
         CategoryModule,
-        FavoritePublicationModule,
-        PublicationModule,
+        FavoritePropertyModule,
+        PropertyModule,
         PropertyPictureModule,
         UserProfileModule,
         UserProfileRoleModule,

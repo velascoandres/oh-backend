@@ -2,7 +2,7 @@ import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { UserProfileEntity } from '../../../users/user-profile/user-profile.entity';
 import { getPermissions } from '../../../users/auth/guards/permissions.guard';
 import { Reflector } from '@nestjs/core';
-import { PublicationService } from '../publication.service';
+import { PropertyService } from '../property.service';
 
 
 @Injectable()
@@ -10,7 +10,7 @@ export class UpdatePublicationGuard implements CanActivate {
 
   constructor(
     private readonly reflector: Reflector,
-    private readonly publicationService: PublicationService,
+    private readonly publicationService: PropertyService,
   ) {
   }
 

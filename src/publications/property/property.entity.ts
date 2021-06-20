@@ -5,7 +5,7 @@ import { PropertyPictureEntity } from '../property-picture/property-picture.enti
 
 @Index(['categoryId', 'propertyId'])
 @Entity('publication')
-export class PublicationEntity extends AbstractMongoEntity {
+export class PropertyEntity extends AbstractMongoEntity {
 
   @Column()
   name: string;

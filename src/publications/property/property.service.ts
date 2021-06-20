@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 
-import { PublicationEntity } from './publication.entity';
+import { PropertyEntity } from './property.entity';
 import { PublicationSearchDto } from './dtos/publication-search.dto';
 import {
   buildLikeCondition,
@@ -17,11 +17,11 @@ import {
 } from '../../helpers';
 
 @Injectable()
-export class PublicationService extends AbstractMongoService<PublicationEntity> {
+export class PropertyService extends AbstractMongoService<PropertyEntity> {
 
   constructor(
-    @InjectRepository(PublicationEntity, 'mongo_conn')
-    private readonly publicationRepository: MongoRepository<PublicationEntity>,
+    @InjectRepository(PropertyEntity, 'mongo_conn')
+    private readonly publicationRepository: MongoRepository<PropertyEntity>,
   ) {
     super(
       publicationRepository,

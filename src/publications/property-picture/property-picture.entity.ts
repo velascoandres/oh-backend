@@ -7,5 +7,5 @@ export class PropertyPictureEntity extends AbstractMongoEntity {
   url: string;
 
   @Column()
-  publicationId: string | ObjectID;
+  property: string | ObjectID;
 }

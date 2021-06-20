@@ -7,8 +7,8 @@ import { PropertyPictureEntity } from './property-picture.entity';
 import { GoogleCloudStorageModule } from '@nest-excalibur/google-cloud-storage/lib';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { PropertyPictureCreateDto } from './dtos/property-picture-create.dto';
-import { PublicationEntity } from '../publication/publication.entity';
-import { PublicationModule } from '../publication/publication.module';
+import { PropertyEntity } from '../property/property.entity';
+import { PropertyModule } from '../property/property.module';
 
 @Module({
     imports: [
@@ -34,11 +34,11 @@ import { PublicationModule } from '../publication/publication.module';
                 pathDev: '/src/publications/property-picture/test-data/development/property-pictures.json',
                 connection: 'mongo_conn',
                 refs: {
-                    publicationId: PublicationEntity,
+                    property: PropertyEntity,
                 }
             },
         ),
-        PublicationModule,
+      PropertyModule,
     ],
     providers: [
         PropertyPictureService,

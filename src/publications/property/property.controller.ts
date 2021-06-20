@@ -3,8 +3,8 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { CrudController, CrudGuards, CrudMetadata, CrudOptions } from '@nest-excalibur/common-api/lib';
 import { AuthGuard } from '@nestjs/passport';
 
-import { PublicationEntity } from './publication.entity';
-import { PublicationService } from './publication.service';
+import { PropertyEntity } from './property.entity';
+import { PropertyService } from './property.service';
 import { PublicationCreateDto } from './dtos/publication-create.dto';
 import { PublicationUpdateDto } from './dtos/publication-update.dto';
 import { PublicationSearchDto } from './dtos/publication-search.dto';
@@ -55,10 +55,10 @@ const options: CrudOptions = {
   },
 )
 @Controller('publication')
-export class PublicationController
-  extends CrudController<PublicationEntity>(options) {
+export class PropertyController
+  extends CrudController<PropertyEntity>(options) {
   constructor(
-    private readonly publicationService: PublicationService,
+    private readonly publicationService: PropertyService,
   ) {
     super(
       publicationService,

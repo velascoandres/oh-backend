@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty } from 'class-validator';
 import {CUSTOM_VALIDATORS} from '../../../constants/custom-validators';
 import { BaseMongoDTO, IsTypeOr } from '@nest-excalibur/common-api/lib';
 
@@ -7,8 +7,8 @@ export class FavoritePublicationCreateDto extends BaseMongoDTO {
     @IsTypeOr(
         CUSTOM_VALIDATORS.isNumberStringOrNumber,
     )
-    userProfileId: number;
+    userProfile: number;
 
     @IsNotEmpty()
-    publicationId: string;
+    property: string;
 }

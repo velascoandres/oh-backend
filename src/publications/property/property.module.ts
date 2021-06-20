@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { PublicationService } from './publication.service';
-import { PublicationController } from './publication.controller';
+import { PropertyService } from './property.service';
+import { PropertyController } from './property.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PublicationEntity } from './publication.entity';
+import { PropertyEntity } from './property.entity';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { AuthModule } from '../../users/auth/auth.module';
 import { CategoryEntity } from '../category/category.entity';
@@ -11,16 +11,16 @@ import { CategoryEntity } from '../category/category.entity';
   imports: [
     TypeOrmModule.forFeature(
       [
-        PublicationEntity,
+        PropertyEntity,
       ],
       'mongo_conn',
     ),
     DataBaseModule.forBulkData(
       {
         connection: 'mongo_conn',
-        entity: PublicationEntity,
+        entity: PropertyEntity,
         creationOrder: 2,
-        pathDev: '/src/publications/publication/test-data/development/publications.json',
+        pathDev: '/src/publications/property/test-data/development/properties.json',
         refs: {
           categoryId: CategoryEntity,
         },
@@ -29,12 +29,12 @@ import { CategoryEntity } from '../category/category.entity';
     AuthModule,
   ],
   providers: [
-    PublicationService,
+    PropertyService,
   ],
-  controllers: [PublicationController],
+  controllers: [PropertyController],
   exports: [
-    PublicationService,
+    PropertyService,
   ],
 })
-export class PublicationModule {
+export class PropertyModule {
 }

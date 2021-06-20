@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { MongoRepository } from 'typeorm';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 import { GoogleCloudStorageService, UploadedFileMetadata } from '@nest-excalibur/google-cloud-storage';
-import { PublicationService } from '../publication/publication.service';
+import { PropertyService } from '../property/property.service';
 
 @Injectable()
 export class PropertyPictureService
@@ -14,7 +14,7 @@ export class PropertyPictureService
     @InjectRepository(PropertyPictureEntity, 'mongo_conn')
     private readonly propertyPictureRepository: MongoRepository<PropertyPictureEntity>,
     private readonly googleCloudService: GoogleCloudStorageService,
-    private readonly publicationService: PublicationService,
+    private readonly propertyService: PropertyService,
   ) {
     super(
       propertyPictureRepository,
@@ -26,7 +26,7 @@ export class PropertyPictureService
     pictures: UploadedFileMetadata[],
   ): Promise<PropertyPictureEntity[]> {
     // validate property
-    const publication = await this.publicationService.findOneById(publicationId);
+    const publication = await this.propertyService.findOneById(publicationId);
 
     // upload to cloud
     const uploadedFiles: PropertyPictureEntity[] = [];
@@ -36,7 +36,7 @@ export class PropertyPictureService
       });
       const propertyPicture = await this.createOne(
         {
-          publicationId: publication.id,
+          property: publication.id,
           url,
         },
       );
