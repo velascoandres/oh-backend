@@ -11,7 +11,6 @@ import { AppService } from './app.service';
 
 import { CategoryModule } from './publications/category/category.module';
 import { FavoritePublicationModule } from './publications/favorite-publication/favorite-publication.module';
-import { PropertyModule } from './publications/property/property.module';
 import { PublicationModule } from './publications/publication/publication.module';
 import { PropertyPictureModule } from './publications/property-picture/property-picture.module';
 import { UserProfileModule } from './users/user-profile/user-profile.module';
@@ -52,7 +51,6 @@ import { RolePermissionModule } from './users/role-permission/role-permission.mo
         DataBaseModule.forRoot({productionFlag: false}),
         CategoryModule,
         FavoritePublicationModule,
-        PropertyModule,
         PublicationModule,
         PropertyPictureModule,
         UserProfileModule,

@@ -1,21 +1,14 @@
-import { AbstractEntity } from '@nest-excalibur/common-api/lib';
-import { Entity, Column, OneToMany } from 'typeorm';
-import { PropertyEntity } from '../property/property.entity';
+import { AbstractMongoEntity } from '@nest-excalibur/common-api/lib';
+import { Entity, Column } from 'typeorm';
 
 @Entity('category')
-export class CategoryEntity extends AbstractEntity {
+export class CategoryEntity extends AbstractMongoEntity {
     @Column(
         {
             type: 'varchar',
         }
     )
     name: string;
-
-    @OneToMany(
-        type => PropertyEntity,
-        property => property.category,
-    )
-    properties: PropertyEntity[];
 
     @Column(
         {

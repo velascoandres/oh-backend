@@ -31,7 +31,7 @@ export class PropertyPictureController extends CrudController<PropertyPictureEnt
   }
 
 
-  @Post('upload/:propertyId/:publicationId')
+  @Post('upload/:publicationId')
   @UseFilters(new UploadPicturesExceptionsFilters())
   @UseInterceptors(
     FilesInterceptor(
@@ -43,10 +43,9 @@ export class PropertyPictureController extends CrudController<PropertyPictureEnt
     ),
   )
   uploadPictures(
-    @Param('propertyId', ParseIntPipe) propertyId: number,
     @Param('publicationId') publicationId: string,
     @UploadedFiles() pictures: UploadedFileMetadata[],
   ) {
-    return this.propertyPictureService.uploadPicture(propertyId, publicationId, pictures);
+    return this.propertyPictureService.uploadPicture(publicationId, pictures);
   }
 }

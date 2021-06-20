@@ -1,38 +1,26 @@
 [
     {
-        "id": 1,
-        "name": "casa"
+        "$metaID": 1,
+        "name": "house"
     },
     {
-        "id": 2,
-        "name": "departamento"
+        "$metaID": 2,
+        "name": "apartment"
     },
     {
-        "id": 3,
-        "name": "terreno"
+        "$metaID": 3,
+        "name": "terrain"
     },
     {
-        "id": 4,
-        "name": "oficina"
+        "$metaID": 4,
+        "name": "office"
     },
     {
-        "id": 5,
-        "name": "local comercial"
+        "$metaID": 5,
+        "name": "shop"
     },
     {
-        "id": 6,
-        "name": "casa rentera"
-    },
-    {
-        "id": 7,
-        "name": "hotel"
-    },
-    {
-        "id": 8,
-        "name": "hostal"
-    },
-    {
-        "id": 9,
-        "name": "suite"
+        "$metaID": 6,
+        "name": "rent house"
     }
 ]

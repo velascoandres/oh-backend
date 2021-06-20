@@ -9,7 +9,6 @@ import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { PropertyPictureCreateDto } from './dtos/property-picture-create.dto';
 import { PublicationEntity } from '../publication/publication.entity';
 import { PublicationModule } from '../publication/publication.module';
-import { PropertyModule } from '../property/property.module';
 
 @Module({
     imports: [
@@ -39,7 +38,6 @@ import { PropertyModule } from '../property/property.module';
                 }
             },
         ),
-        PropertyModule,
         PublicationModule,
     ],
     providers: [

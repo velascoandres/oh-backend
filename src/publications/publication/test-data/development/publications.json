@@ -15,7 +15,7 @@
     "ownerID": "16",
     "isForRent": 1,
     "price": 98618,
-    "categoryId": 9,
+    "categoryId": 6,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -64,7 +64,7 @@
     "propertyId": 1,
     "isForRent": 0,
     "price": 147676,
-    "categoryId": 8,
+    "categoryId": 6,
     "ownerID": "13",
     "location": {
       "type": "Point",
@@ -114,7 +114,7 @@
     "propertyId": 12,
     "isForRent": 1,
     "price": 150225,
-    "categoryId": 9,
+    "categoryId": 1,
     "ownerID": "15",
     "location": {
       "type": "Point",
@@ -164,7 +164,7 @@
     "propertyId": 43,
     "isForRent": 1,
     "price": 26477,
-    "categoryId": 10,
+    "categoryId": 1,
     "ownerID": "11",
     "location": {
       "type": "Point",
@@ -189,7 +189,7 @@
     "propertyId": 76,
     "isForRent": 0,
     "price": 2021,
-    "categoryId": 7,
+    "categoryId": 1,
     "ownerID": "16",
     "location": {
       "type": "Point",
@@ -214,7 +214,7 @@
     "propertyId": 55,
     "isForRent": 1,
     "price": 187611,
-    "categoryId": 7,
+    "categoryId": 3,
     "ownerID": "2",
     "location": {
       "type": "Point",
@@ -264,7 +264,7 @@
     "propertyId": 27,
     "isForRent": 1,
     "price": 139677,
-    "categoryId": 10,
+    "categoryId": 1,
     "ownerID": "2",
     "location": {
       "type": "Point",
@@ -289,7 +289,7 @@
     "propertyId": 49,
     "isForRent": 0,
     "price": 136449,
-    "categoryId": 10,
+    "categoryId": 2,
     "ownerID": "1",
     "location": {
       "type": "Point",
@@ -340,7 +340,7 @@
     "ownerID": "4",
     "isForRent": 1,
     "price": 2110,
-    "categoryId": 10,
+    "categoryId": 2,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -389,7 +389,7 @@
     "propertyId": 59,
     "isForRent": 1,
     "price": 168518,
-    "categoryId": 10,
+    "categoryId": 2,
     "ownerID": "2",
     "location": {
       "type": "Point",
@@ -440,7 +440,7 @@
     "isForRent": 1,
     "price": 145634,
     "ownerID": "1",
-    "categoryId": 7,
+    "categoryId": 4,
     "location": {
       "type": "Point",
       "coordinates": [
@@ -539,7 +539,7 @@
     "propertyId": 3,
     "isForRent": 0,
     "price": 164363,
-    "categoryId": 9,
+    "categoryId": 6,
     "ownerID": "2",
     "location": {
       "type": "Point",
@@ -565,7 +565,7 @@
     "ownerID": "1",
     "isForRent": 0,
     "price": 196922,
-    "categoryId": 8,
+    "categoryId": 5,
     "location": {
       "type": "Point",
       "coordinates": [
