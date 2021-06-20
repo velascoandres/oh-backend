@@ -1,6 +1,6 @@
-import redis = require('redis');
+// import redis = require('redis');
 import {TypeOrmModuleOptions} from '@nestjs/typeorm';
-const client = redis.createClient(30502);
+// const client = redis.createClient(30502);
 
 export const PRODUCTION_CONFIG = {
   createTestData: false,
@@ -22,7 +22,7 @@ export const PRODUCTION_CONFIG = {
     ssl: false,
   } as TypeOrmModuleOptions,
   redisConnection: {
-    client,
+    // client,
     host: 'localhost',
     port: 30502,
   },

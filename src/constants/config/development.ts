@@ -1,14 +1,14 @@
 import redis = require('redis');
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-const client = redis.createClient(30502);
+const client = redis.createClient({host: 'redis_db', port: '6379'});
 
 export const DEVELOPMENT_CONFIG = {
   createTestData: true,
   mysql: {
     type: 'mysql',
-    host: 'localhost',
-    port: 30501,
+    host: 'mysql_db',
+    port: 3306,
     username: 'pimba_man',
     password: '12345678',
     database: 'prueba',
@@ -24,12 +24,12 @@ export const DEVELOPMENT_CONFIG = {
   } as TypeOrmModuleOptions,
   redisConnection: {
     client,
-    host: 'localhost',
-    port: 30502,
+    host: 'redis_db',
+    port: 6379,
   },
   redisStoreOptions: {
-    port: 30502,
-    host: 'localhost',
+    port: 6379,
+    host: 'redis_db',
   },
   mongodb: {
     type: 'mongodb',
@@ -40,8 +40,8 @@ export const DEVELOPMENT_CONFIG = {
     synchronize: true,
     password: '12345678',
     username: 'pimba_man',
-    host: 'localhost',
-    port: 30503,
+    host: 'mongo_db',
+    port: 27017,
     authSource: 'admin',
   } as TypeOrmModuleOptions,
 };
