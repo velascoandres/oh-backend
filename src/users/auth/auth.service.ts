@@ -4,7 +4,7 @@ import * as admin from 'firebase-admin';
 import { FirebaseAuthenticationService } from '@aginix/nestjs-firebase-admin';
 
 import { MailService } from '../../mail/mail.service';
-import { CreateUserDTO } from './dto/user-create.dto';
+import { CreateUserDTO } from './dto';
 import { UserProfileService } from '../user-profile/user-profile.service';
 import { UserData, LoginResponse } from './interfaces';
 import { FindFullQuery } from '@nest-excalibur/common-api/lib';

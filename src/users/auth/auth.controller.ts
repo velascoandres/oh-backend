@@ -53,5 +53,4 @@ export class AuthController {
   ) {
     return user.userProfile;
   }
-
 }

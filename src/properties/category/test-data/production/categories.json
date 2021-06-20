@@ -1,0 +1,26 @@
+[
+    {
+        "$metaID": 1,
+        "name": "house"
+    },
+    {
+        "$metaID": 2,
+        "name": "apartment"
+    },
+    {
+        "$metaID": 3,
+        "name": "terrain"
+    },
+    {
+        "$metaID": 4,
+        "name": "office"
+    },
+    {
+        "$metaID": 5,
+        "name": "shop"
+    },
+    {
+        "$metaID": 6,
+        "name": "rent house"
+    }
+]

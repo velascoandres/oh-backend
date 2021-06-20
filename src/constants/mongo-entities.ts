@@ -1,9 +1,11 @@
-import { FavoritePublicationEntity } from '../publications/favorite-publication/favorite-publication.entity';
-import { PublicationEntity } from '../publications/publication/publication.entity';
-import { PropertyPictureEntity } from '../publications/property-picture/property-picture.entity';
+import { PropertyPictureEntity } from '../properties/property-picture/property-picture.entity';
+import { CategoryEntity } from '../properties/category/category.entity';
+import { PropertyEntity } from '../properties/property/property.entity';
+import { FavoritePropertyEntity } from '../properties/favorite-property/favorite-property.entity';
 
 export const MONGODB_ENTITIES = [
-    PublicationEntity,
-    FavoritePublicationEntity,
-    PropertyPictureEntity,
+  PropertyEntity,
+  FavoritePropertyEntity,
+  PropertyPictureEntity,
+  CategoryEntity,
 ];

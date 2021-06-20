@@ -1,0 +1,42 @@
+[
+  {
+    "userProfile": 1,
+    "property": 1
+  },
+  {
+    "userProfile": 1,
+    "property": 2
+  },
+  {
+    "userProfile": 2,
+    "property": 3
+  },
+  {
+    "userProfile": 2,
+    "property": 4
+  },
+  {
+    "userProfile": 1,
+    "property": 5
+  },
+  {
+    "userProfile": 1,
+    "property": 10
+  },
+  {
+    "userProfile": 1,
+    "property": 11
+  },
+  {
+    "userProfile": 2,
+    "property": 12
+  },
+  {
+    "userProfile": 2,
+    "property": 20
+  },
+  {
+    "userProfile": 1,
+    "property": 23
+  }
+]
