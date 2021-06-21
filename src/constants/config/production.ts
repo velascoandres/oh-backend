@@ -1,13 +1,11 @@
-// import redis = require('redis');
 import {TypeOrmModuleOptions} from '@nestjs/typeorm';
-// const client = redis.createClient(30502);
 
 export const PRODUCTION_CONFIG = {
   createTestData: false,
   mysql: {
     type: 'mysql',
-    host: 'localhost',
-    port: 30501,
+    host: 'mysql_db',
+    port: 3306,
     username: 'pimba_man',
     password: '12345678',
     database: 'prueba',
@@ -21,21 +19,17 @@ export const PRODUCTION_CONFIG = {
     timezone: 'local',
     ssl: false,
   } as TypeOrmModuleOptions,
-  redisConnection: {
-    // client,
-    host: 'localhost',
-    port: 30502,
-  },
-  redisStoreOptions: {
-    port: 30502,
-    host: 'localhost',
-  },
   mongodb: {
     type: 'mongodb',
     name: 'mongo_conn',
-    useNewUrlParser: true,
+    database: 'prueba',
     dropSchema: true,
     useUnifiedTopology: true,
-    url: `mongodb://pimba_man:12345678@localhost:30503/test?authSource=admin`,
+    synchronize: true,
+    password: '12345678',
+    username: 'pimba_man',
+    host: 'localhost',
+    port: 30503,
+    authSource: 'admin',
   } as TypeOrmModuleOptions,
 };

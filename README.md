@@ -3,8 +3,14 @@
 
 ## Setup project enviroment
 
+1. [With Dockerized application](#with-dockerized-application)
+2. [Without Dockerized application](#without-dockerized-application)
 
-1. Configure the .env file for example:
+
+### With Dockerized application
+This application was dockerized, So you need to have docker installed in your virtual machine
+
+1. Configure the .env like the following template
 
 ```text
 # mail
@@ -13,35 +19,37 @@ MAIL_USER=email@fake.com
 MAIL_PASSWORD=fake123
 MAIL_FROM=noreply@example.com
 
-# google cloud storage
+# google cloud and firebase
 BUCKET_NAME=faker
+GOOGLE_APPLICATION_CREDENTIALS=/usr/src/app/<key.json>
+
+# redis
+REDIS_HOST=localhost
+REDIS_PORT=30502
 
 # optional
 MAIL_TRANSPORT=smtp://${MAIL_USER}:${MAIL_PASSWORD}@${MAIL_HOST}
 ```
 
 
-2. Install Dependencies
+2. Run docker compose
+
 
 ```shell script
-npm install
+docker-compose up -d dev
 ```
 
-3. Run docker compose
+### Without Dockerized application
+
+Just run docker compose for the following services
 
 
 ```shell script
-docker-compose up -d
+docker-compose up -d mysql_db mongo_db redis_db 
 ```
 
-4. Exports Google Cloud Credentials
+Run the server on development mode
 
 ```shell script
-export GOOGLE_APPLICATION_CREDENTIALS="/<key-path>/<your-key>.json"
-```
-
-5. Start the web server on development mode
-
-```shell script
-  npm run start:dev
+npm run start:dev
 ```
