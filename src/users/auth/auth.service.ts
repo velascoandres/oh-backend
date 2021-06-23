@@ -59,6 +59,7 @@ export class AuthService {
           role: {
             $join: 'left',
             rolePermissions: {
+              $join: 'left',
               permission: {
                 $join: 'left',
               }

@@ -3,11 +3,8 @@
 
 ## Setup project enviroment
 
-1. [With Dockerized application](#with-dockerized-application)
-2. [Without Dockerized application](#without-dockerized-application)
 
 
-### With Dockerized application
 This application was dockerized, So you need to have docker installed in your virtual machine
 
 1. Configure the .env like the following template
@@ -31,6 +28,7 @@ REDIS_PORT=30502
 MAIL_TRANSPORT=smtp://${MAIL_USER}:${MAIL_PASSWORD}@${MAIL_HOST}
 ```
 
+### With Dockerized application
 
 2. Run docker compose
 

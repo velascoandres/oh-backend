@@ -36,7 +36,6 @@ export class SignInExceptionFilter implements ExceptionFilter {
       status = HttpStatus.FORBIDDEN;
       message = 'Id token has expired';
     }
-
     response
       .status(status)
       .json({
