@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "userProfile": 3,
+    "property": 4
+  },
+  {
+    "id": 2,
+    "userProfile": 6,
+    "property": 3
+  },
+  {
+    "id": 3,
+    "userProfile": 7,
+    "property": 10
+  },
+  {
+    "id": 4,
+    "userProfile": 1,
+    "property": 2
+  },
+  {
+    "id": 5,
+    "userProfile": 9,
+    "property": 9
+  },
+  {
+    "id": 6,
+    "userProfile": 6,
+    "property": 5
+  },
+  {
+    "id": 7,
+    "userProfile": 1,
+    "property": 10
+  },
+  {
+    "id": 8,
+    "userProfile": 9,
+    "property": 3
+  },
+  {
+    "id": 9,
+    "userProfile": 7,
+    "property": 10
+  },
+  {
+    "id": 10,
+    "userProfile": 5,
+    "property": 3
+  },
+  {
+    "id": 11,
+    "userProfile": 4,
+    "property": 1
+  },
+  {
+    "id": 12,
+    "userProfile": 1,
+    "property": 1
+  },
+  {
+    "id": 13,
+    "userProfile": 2,
+    "property": 9
+  },
+  {
+    "id": 14,
+    "userProfile": 5,
+    "property": 4
+  },
+  {
+    "id": 15,
+    "userProfile": 8,
+    "property": 8
+  },
+  {
+    "id": 16,
+    "userProfile": 1,
+    "property": 15
+  },
+  {
+    "id": 17,
+    "userProfile": 4,
+    "property": 8
+  },
+  {
+    "id": 18,
+    "userProfile": 10,
+    "property": 8
+  },
+  {
+    "id": 19,
+    "userProfile": 3,
+    "property": 10
+  },
+  {
+    "id": 20,
+    "userProfile": 9,
+    "property": 4
+  },
+  {
+    "id": 21,
+    "userProfile": 5,
+    "property": 5
+  },
+  {
+    "id": 22,
+    "userProfile": 2,
+    "property": 14
+  },
+  {
+    "id": 23,
+    "userProfile": 10,
+    "property": 12
+  },
+  {
+    "id": 24,
+    "userProfile": 9,
+    "property": 10
+  },
+  {
+    "id": 25,
+    "userProfile": 5,
+    "property": 6
+  },
+  {
+    "id": 26,
+    "userProfile": 8,
+    "property": 12
+  },
+  {
+    "id": 27,
+    "userProfile": 4,
+    "property": 5
+  },
+  {
+    "id": 28,
+    "userProfile": 5,
+    "property": 4
+  },
+  {
+    "id": 29,
+    "userProfile": 2,
+    "property": 13
+  },
+  {
+    "id": 30,
+    "userProfile": 6,
+    "property": 8
+  },
+  {
+    "id": 31,
+    "userProfile": 8,
+    "property": 3
+  },
+  {
+    "id": 32,
+    "userProfile": 2,
+    "property": 5
+  },
+  {
+    "id": 33,
+    "userProfile": 5,
+    "property": 7
+  },
+  {
+    "id": 34,
+    "userProfile": 10,
+    "property": 1
+  },
+  {
+    "id": 35,
+    "userProfile": 8,
+    "property": 12
+  },
+  {
+    "id": 36,
+    "userProfile": 8,
+    "property": 14
+  },
+  {
+    "id": 37,
+    "userProfile": 5,
+    "property": 13
+  },
+  {
+    "id": 38,
+    "userProfile": 3,
+    "property": 5
+  },
+  {
+    "id": 39,
+    "userProfile": 1,
+    "property": 10
+  },
+  {
+    "id": 40,
+    "userProfile": 8,
+    "property": 11
+  },
+  {
+    "id": 41,
+    "userProfile": 10,
+    "property": 6
+  },
+  {
+    "id": 42,
+    "userProfile": 1,
+    "property": 5
+  },
+  {
+    "id": 43,
+    "userProfile": 5,
+    "property": 12
+  },
+  {
+    "id": 44,
+    "userProfile": 1,
+    "property": 6
+  },
+  {
+    "id": 45,
+    "userProfile": 9,
+    "property": 8
+  },
+  {
+    "id": 46,
+    "userProfile": 8,
+    "property": 11
+  },
+  {
+    "id": 47,
+    "userProfile": 6,
+    "property": 14
+  },
+  {
+    "id": 48,
+    "userProfile": 7,
+    "property": 11
+  },
+  {
+    "id": 49,
+    "userProfile": 2,
+    "property": 7
+  },
+  {
+    "id": 50,
+    "userProfile": 2,
+    "property": 4
+  },
+  {
+    "id": 51,
+    "userProfile": 6,
+    "property": 2
+  },
+  {
+    "id": 52,
+    "userProfile": 7,
+    "property": 3
+  },
+  {
+    "id": 53,
+    "userProfile": 6,
+    "property": 7
+  },
+  {
+    "id": 54,
+    "userProfile": 8,
+    "property": 9
+  },
+  {
+    "id": 55,
+    "userProfile": 1,
+    "property": 5
+  },
+  {
+    "id": 56,
+    "userProfile": 8,
+    "property": 1
+  },
+  {
+    "id": 57,
+    "userProfile": 7,
+    "property": 15
+  },
+  {
+    "id": 58,
+    "userProfile": 8,
+    "property": 11
+  },
+  {
+    "id": 59,
+    "userProfile": 2,
+    "property": 6
+  },
+  {
+    "id": 60,
+    "userProfile": 9,
+    "property": 14
+  }
+]

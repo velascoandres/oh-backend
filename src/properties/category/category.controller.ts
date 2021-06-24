@@ -11,6 +11,7 @@ const options: CrudOptions = {
         createDtoType: CategoryCreateDto,
         updateDtoType: CategoryUpdateDto,
     },
+    useMongo: true,
     enableErrorMessages: true,
 };
 

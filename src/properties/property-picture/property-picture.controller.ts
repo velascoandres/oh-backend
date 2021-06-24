@@ -1,4 +1,4 @@
-import { Controller, Param, ParseIntPipe, ParseUUIDPipe, Post, UploadedFiles, UseFilters, UseInterceptors } from '@nestjs/common';
+import { Controller, Param, Post, UploadedFiles, UseFilters, UseInterceptors } from '@nestjs/common';
 import { PropertyPictureEntity } from './property-picture.entity';
 import { PropertyPictureService } from './property-picture.service';
 import { PropertyPictureCreateDto } from './dtos/property-picture-create.dto';
@@ -15,6 +15,7 @@ const options: CrudOptions = {
     createDtoType: PropertyPictureCreateDto,
     updateDtoType: PropertyPictureUpdateDto,
   },
+  useMongo: true,
   enableErrorMessages: true,
 };
 

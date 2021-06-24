@@ -24,6 +24,7 @@ import { CategoryModule } from './properties/category/category.module';
 import { FavoritePropertyModule } from './properties/favorite-property/favorite-property.module';
 import { PropertyModule } from './properties/property/property.module';
 import { PropertyPictureModule } from './properties/property-picture/property-picture.module';
+import { HistoryModule } from './properties/history/history.module';
 
 
 @Module({
@@ -63,6 +64,7 @@ import { PropertyPictureModule } from './properties/property-picture/property-pi
         MailModule,
         PermissionModule,
         RolePermissionModule,
+        HistoryModule,
     ],
     controllers: [
         AppController
