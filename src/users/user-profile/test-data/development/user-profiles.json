@@ -11,12 +11,13 @@
     },
     {
       "id": 2,
+      "uid": "2VHxJi0ZlKafqCj0oTirevl0kKr1",
       "firstnames": "Morgan Madge",
       "lastnames": "Tran Cantu",
       "phone": "+02 (912) 561-3893",
       "address": "908 Willoughby Street, Gasquet, New Jersey, 611",
       "identification": 17899999692,
-      "enable": 0
+      "enable": 1
     },
     {
       "id": 3,

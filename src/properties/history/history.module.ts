@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { HistoryEntity } from './history.entity';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { PropertyEntity } from '../property/property.entity';
+import { AuthModule } from '../../users/auth/auth.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { PropertyEntity } from '../property/property.entity';
           }
         },
       ),
+    AuthModule,
   ],
   providers: [
     HistoryService,

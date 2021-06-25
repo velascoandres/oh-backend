@@ -1,9 +1,10 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Query, Req, UseGuards } from '@nestjs/common';
 import { CrudController, CrudOptions } from '@nest-excalibur/common-api/lib';
 import { HistoryCreateDto } from './dtos/history-create.dto';
 import { HistoryUpdateDto } from './dtos/history-update.dto';
 import { HistoryEntity } from './history.entity';
 import { HistoryService } from './history.service';
+import { AuthGuard } from '@nestjs/passport';
 
 const options: CrudOptions = {
   dtoConfig: {
@@ -20,12 +21,15 @@ export class HistoryController extends CrudController<HistoryEntity>(options) {
     super(historyService);
   }
 
-  @Get('latest-history/:userId')
+  @UseGuards(
+    AuthGuard('firebase-auth'),
+  )
+  @Get('latest-history')
   async getLatestHistory(
-    @Param('userId') userId: number,
+    @Req() { user },
     @Query() { skip, take }: { skip: number, take: number },
   ) {
-    return this.historyService.getLatestHistoryByUser(userId, skip, take);
+    return this.historyService.getLatestHistoryByUser(user.userProfile.id, skip, take);
   }
 
 }
