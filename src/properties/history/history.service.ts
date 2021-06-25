@@ -44,6 +44,29 @@ export class HistoryService extends AbstractMongoService<HistoryEntity> {
             },
           },
           {
+            $lookup: {
+              from: 'property_picture',
+              localField: 'property._id',
+              foreignField: 'property',
+              as: 'property.pictures',
+            },
+          },
+          {
+            $lookup: {
+              from: 'prop_category',
+              localField: 'property.category',
+              foreignField: '_id',
+              as: 'property.category',
+            },
+          },
+          {
+            $unwind: {
+              path: '$property.category',
+              preserveNullAndEmptyArrays: false,
+            },
+          },
+          { $match: { ['property.pictures.0']: { $exists: true } } },
+          {
             $match: {
               'property.enable': 1,
             },
