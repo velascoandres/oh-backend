@@ -4,7 +4,7 @@ import { GeoJSON } from './geo-json';
 import { PropertyPictureEntity } from '../property-picture/property-picture.entity';
 
 @Index(['category'])
-@Entity('publication')
+@Entity('property')
 export class PropertyEntity extends AbstractMongoEntity {
 
   @Column()

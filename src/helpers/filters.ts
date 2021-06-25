@@ -20,11 +20,11 @@ export const buildSimpleCondition = (field: string, value: number | string, acce
 
 export const buildSimpleStatusCondition = (field: string, status: 1 | 0 | '0' | '1') => {
   const conditions = [];
-    conditions.push(
-      {
-        [field]: Number(status),
-      },
-    );
+  conditions.push(
+    {
+      [field]: Number(status),
+    },
+  );
   return conditions;
 };
 
@@ -76,12 +76,12 @@ export const setupResponseWithPagination = (skip: number, take: number) => {
 
 
 export const setupLookup = (from: string, foreignField: string, as: string, localField = '_id') => {
- return {
+  return {
     $lookup: {
       from,
-        localField,
-        foreignField,
-        as,
+      localField,
+      foreignField,
+      as,
     },
   };
 };

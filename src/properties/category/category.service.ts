@@ -9,12 +9,12 @@ import { CategoryEntity } from './category.entity';
 
 @Injectable()
 export class CategoryService extends AbstractMongoService<CategoryEntity> {
-    constructor(
-        @InjectRepository(CategoryEntity, 'mongo_conn')
-        private readonly categoryRepository: MongoRepository<CategoryEntity>,
-    ){
-        super(
-          categoryRepository,
-        );
-    }
+  constructor(
+    @InjectRepository(CategoryEntity, 'mongo_conn')
+    private readonly categoryRepository: MongoRepository<CategoryEntity>,
+  ) {
+    super(
+      categoryRepository,
+    );
+  }
 }
