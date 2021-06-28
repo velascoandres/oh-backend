@@ -51,7 +51,7 @@ const options: CrudOptions = {
     ],
   },
 )
-@Controller('publication')
+@Controller('property')
 export class PropertyController
   extends CrudController<PropertyEntity>(options) {
   constructor(

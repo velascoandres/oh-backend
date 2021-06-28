@@ -77,7 +77,7 @@ export class HistoryService extends AbstractMongoService<HistoryEntity> {
               count: { $sum: 1 },
             },
           },
-          { $sort: { count: -1 } },
+          { $sort: { _id: -1 } },
           setupResponseWithPagination(skip, take),
         ],
       );
