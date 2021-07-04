@@ -6,6 +6,7 @@ import { HistoryEntity } from './history.entity';
 import { DataBaseModule } from '@nest-excalibur/data-base/lib';
 import { PropertyEntity } from '../property/property.entity';
 import { AuthModule } from '../../users/auth/auth.module';
+import { HistoryCreateDto } from './dtos/history-create.dto';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { AuthModule } from '../../users/auth/auth.module';
           connection: 'mongo_conn',
           creationOrder: 4,
           entity: HistoryEntity,
+          dtoClassValidation: HistoryCreateDto,
           pathDev: 'src/properties/history/test-data/history.development.json',
           refs: {
             property: PropertyEntity

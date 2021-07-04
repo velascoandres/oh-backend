@@ -11,6 +11,11 @@ const options: CrudOptions = {
     createDtoType: HistoryCreateDto,
     updateDtoType: HistoryUpdateDto,
   },
+  pipesConfig: {
+    createOne: {
+      pipes: [],
+    },
+  },
   useMongo: true,
 };
 
@@ -29,7 +34,7 @@ export class HistoryController extends CrudController<HistoryEntity>(options) {
     @Req() { user },
     @Query() { skip, take }: { skip: number, take: number },
   ) {
-    return this.historyService.getLatestHistoryByUser(user.userProfile.id, skip, take);
+    return this.historyService.getLatestHistoryByUser(user.userProfile.id.toString(), skip, take);
   }
 
 }

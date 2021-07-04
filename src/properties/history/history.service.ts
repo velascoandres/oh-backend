@@ -2,8 +2,10 @@ import { Injectable } from '@nestjs/common';
 import { AbstractMongoService } from '@nest-excalibur/common-api/lib';
 import { HistoryEntity } from './history.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MongoRepository } from 'typeorm';
+import { DeepPartial, MongoRepository } from 'typeorm';
 import { setupResponseWithPagination } from '../../helpers';
+import { HistoryCreateDto } from './dtos/history-create.dto';
+import { ObjectID } from 'mongodb';
 
 @Injectable()
 export class HistoryService extends AbstractMongoService<HistoryEntity> {
@@ -15,8 +17,14 @@ export class HistoryService extends AbstractMongoService<HistoryEntity> {
     super(historyRepository);
   }
 
+  async createOne(row: HistoryCreateDto | DeepPartial<HistoryEntity>): Promise<HistoryEntity> {
+    return this.historyRepository.save({
+      ...row,
+      property: new ObjectID(row.property as string),
+    } as DeepPartial<HistoryEntity>);
+  }
 
-  getLatestHistoryByUser(user: number, skip = 0, take = 10) {
+  getLatestHistoryByUser(user: string, skip = 0, take = 10) {
     const cursor = this.historyRepository
       .aggregate(
         [
@@ -24,7 +32,7 @@ export class HistoryService extends AbstractMongoService<HistoryEntity> {
             $match: {
               $and: [
                 {
-                  userProfile: Number(user),
+                  userProfile: user,
                 },
               ],
             },
