@@ -11,11 +11,6 @@ const options: CrudOptions = {
     createDtoType: HistoryCreateDto,
     updateDtoType: HistoryUpdateDto,
   },
-  pipesConfig: {
-    createOne: {
-      pipes: [],
-    },
-  },
   useMongo: true,
 };
 

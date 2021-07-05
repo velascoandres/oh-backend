@@ -6,6 +6,7 @@ import { DeepPartial, MongoRepository } from 'typeorm';
 import { setupResponseWithPagination } from '../../helpers';
 import { HistoryCreateDto } from './dtos/history-create.dto';
 import { ObjectID } from 'mongodb';
+import { CreateOneException } from '@nest-excalibur/common-api/lib/';
 
 @Injectable()
 export class HistoryService extends AbstractMongoService<HistoryEntity> {
@@ -17,11 +18,21 @@ export class HistoryService extends AbstractMongoService<HistoryEntity> {
     super(historyRepository);
   }
 
-  async createOne(row: HistoryCreateDto | DeepPartial<HistoryEntity>): Promise<HistoryEntity> {
-    return this.historyRepository.save({
-      ...row,
-      property: new ObjectID(row.property as string),
-    } as DeepPartial<HistoryEntity>);
+  async createOne(document: HistoryCreateDto | DeepPartial<HistoryEntity>): Promise<HistoryEntity> {
+    try {
+      return this.historyRepository.save({
+        ...document,
+        property: new ObjectID(document.property as string),
+      } as DeepPartial<HistoryEntity>);
+    } catch (error) {
+      throw new CreateOneException(
+        {
+          data: document,
+          error,
+          message: 'Error on create history document'
+        }
+      );
+    }
   }
 
   getLatestHistoryByUser(user: string, skip = 0, take = 10) {
