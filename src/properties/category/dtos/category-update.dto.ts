@@ -1,8 +1,12 @@
 import { BaseDTO } from '@nest-excalibur/common-api/lib';
-import { IsOptional, IsAlpha } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class CategoryUpdateDto extends BaseDTO {
-    @IsOptional()
-    @IsAlpha()
-    name: string;
+  @IsOptional()
+  @IsString()
+  name: string;
+
+  @IsOptional()
+  @IsString()
+  code: string;
 }

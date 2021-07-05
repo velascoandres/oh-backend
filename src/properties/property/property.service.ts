@@ -9,7 +9,7 @@ import { PropertySearchDto } from './dtos/property-search.dto';
 import {
   buildLikeCondition,
   buildRangeCondition,
-  buildSimpleCondition,
+  buildSimpleCondition, buildSimpleMatchCondition,
   buildSimpleStatusCondition,
   setupGeoNearPoint,
   setupLookup,
@@ -40,7 +40,7 @@ export class PropertyService extends AbstractMongoService<PropertyEntity> {
   ) {
     const {
       skip, take, distance, lat, lng, maxArea, minArea, bathrooms, bedrooms,
-      description, floors, name, parks, enable, minPrice, maxPrice,
+      description, floors, name, parks, enable, minPrice, maxPrice, category
     } = params;
     const location = [lng, lat];
     const cursor = this.publicationRepository.aggregate(
@@ -71,6 +71,7 @@ export class PropertyService extends AbstractMongoService<PropertyEntity> {
           },
         },
         { $match: { ['pictures.0']: { $exists: true } } },
+        ...buildSimpleMatchCondition('category.code', category),
         setupResponseWithPagination(skip, take),
       ],
     );

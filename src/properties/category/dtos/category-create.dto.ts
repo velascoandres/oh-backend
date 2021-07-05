@@ -1,12 +1,16 @@
 import { BaseDTO } from '@nest-excalibur/common-api/lib';
 
 import {
-    IsNotEmpty,
-    IsString
+  IsNotEmpty,
+  IsString,
 } from 'class-validator';
 
 export class CategoryCreateDto extends BaseDTO {
-    @IsNotEmpty()
-    @IsString()
-    name: string;
+  @IsNotEmpty()
+  @IsString()
+  name: string;
+
+  @IsNotEmpty()
+  @IsString()
+  code: string;
 }

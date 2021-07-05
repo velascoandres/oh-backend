@@ -17,6 +17,7 @@ export interface IPublicationSearchCriteria {
   lat: number;
   distance: number;
   enable: 0 | 1;
+  category: string;
   skip: number;
   take: number;
 }
@@ -50,6 +51,9 @@ export class PropertySearchDto implements IPublicationSearchCriteria {
 
   @IsOptional()
   name: string;
+
+  @IsOptional()
+  category: string;
 
   @IsOptional()
   description: string;

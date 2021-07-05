@@ -18,6 +18,18 @@ export const buildSimpleCondition = (field: string, value: number | string, acce
   return conditions;
 };
 
+export const buildSimpleMatchCondition = (field: string, value: number | string, acceptEmpty = false) => {
+  if (!value) {
+    return [];
+  }
+  return [{
+    $match: {
+      [field]: value,
+    },
+  }];
+};
+
+
 export const buildSimpleStatusCondition = (field: string, status: 1 | 0 | '0' | '1') => {
   const conditions = [];
   conditions.push(
