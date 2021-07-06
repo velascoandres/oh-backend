@@ -72,7 +72,7 @@ export class PropertyService extends AbstractMongoService<PropertyEntity> {
         },
         { $match: { ['pictures.0']: { $exists: true } } },
         ...buildSimpleMatchCondition('category.code', category),
-        setupResponseWithPagination(skip, take),
+        setupResponseWithPagination(Number(skip), Number(take)),
       ],
     );
     return cursor

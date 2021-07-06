@@ -36,7 +36,7 @@ const options: CrudOptions = {
 @CrudGuards(
   {
     findAll: [
-      AuthGuard('firebase-auth'),
+      // AuthGuard('firebase-auth'),
     ],
     updateOne: [
       AuthGuard('firebase-auth'),
