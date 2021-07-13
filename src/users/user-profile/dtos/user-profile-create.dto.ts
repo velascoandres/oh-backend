@@ -26,7 +26,7 @@ export class UserProfileCreateDto extends BaseDTO {
     @Length(10, 20)
     phone: string;
 
-    @IsNotEmpty()
+    @IsOptional()
     @IsString()
     address: string;
 
